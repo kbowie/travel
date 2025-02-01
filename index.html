@@ -159,7 +159,67 @@ window.onload = function(){
 }
 	</script>
 
+<script>
+	// Get modal elements
+	const modal = document.getElementById("contactModal");
+	const openModalBtn = document.getElementById("openModal");
+	const closeModalBtn = document.querySelector(".close");
+
+	// Open the modal
+	openModalBtn.addEventListener("click", () => {
+		modal.style.display = "block";
+	});
+
+	// Close the modal
+	closeModalBtn.addEventListener("click", () => {
+		modal.style.display = "none";
+	});
+
+	// Close modal when clicking outside the content
+	window.addEventListener("click", (event) => {
+		if (event.target === modal) {
+			modal.style.display = "none";
+		}
+	});
+</script>
+
+
 	<style>
+
+.modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            width: 50%;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 90%;
+            }
+        }
 
 	.iconbox-color-pippin .iconbox-icon-container {
 		color: #ffffff;
@@ -200,6 +260,14 @@ window.onload = function(){
 	
 </head>
 <body data-mobile-nav-trigger-alignment="right" data-mobile-nav-align="left" data-mobile-nav-style="modern" data-mobile-nav-shceme="gray" data-mobile-header-scheme="gray" data-mobile-nav-breakpoint="1199">
+	
+	<div id="contactModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<!-- Brevo Contact Form iframe -->
+			<iframe width="540" height="305" src="https://sibforms.com/serve/MUIFAGeLwxsZpiABybyrLp5vK4hmvQrpOtl31N-6uULzpMiLXUkcdcyGakajP0a4GLa-dCC4bS3887FiFMSpHEoBWd-bQ19GTUDuYux3zlCQtCY7CIHGwRD4-m3PfvvdTtw3UTlRb38-Rs70uqo3B7lmygC5UEbrmOwepGZo20Lxx64bjPYrc5Kxz39WS6hSEAz-9exJWCfsI53L" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+		</div>
+	</div>
 	
 	<div id="wrap">
 		
@@ -315,21 +383,18 @@ window.onload = function(){
 								
 							</div><!-- /.col -->
 						
-							<!--<div class="col text-right">
+							<div class="col text-right">
+							
 
 								<div class="header-module">
-									<p>CALL US 24/7: <span style="color: var(--color-primary);">+0093 1468 09 03</span></p>
-								</div>/.header-module -->
-
-								<!-- <div class="header-module">
-									<a href="#" class="btn btn-default text-uppercase btn-sm circle btn-bordered border-thin px-2">
+									<a href="#" id="openModal" class="btn btn-default text-uppercase btn-sm circle btn-bordered border-thin px-2">
 										<span>
-											<span class="btn-txt">Purchase now</span>
+											<span class="btn-txt">Contact Us</span>
 										</span>
 									</a>
-								</div> /.header-module -->
+								</div>
 								
-							<!--</div> /.col -->
+							</div>
 						
 						</div><!-- /.mainbar-row -->
 					</div><!-- /.mainbar -->
