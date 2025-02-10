@@ -1777,7 +1777,7 @@ Welcome, brave adventurers, bold in your thirst for knowledge and discovery! Ste
 					};
 					let responseDiv = document.getElementById("responseMessage");
 					try {
-						let response = await fetch("https://app.ccetours.com/.netlify/functions/sendEmail.js", {
+						let response = await fetch("https://app.ccetours.com/.netlify/functions/sendEmail", {
 							method: "POST",
 							headers: { "Content-Type": "application/json" },
 							body: JSON.stringify(formData)
