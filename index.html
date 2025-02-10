@@ -1729,67 +1729,70 @@ Welcome, brave adventurers, bold in your thirst for knowledge and discovery! Ste
 			<section class="vc_row pb-100" id="contact-us">
 				<div class="container">
 					<div class="row">
-
 						<div class="lqd-column col-md-12 px-4 pt-45 pb-30 bg-white box-shadow-1">
-
 							<div class="row d-flex flex-wrap align-items-center">
-
 								<div class="lqd-column col-md-6 col-md-offset-1">
-
 									<header class="fancy-title">
 										<h2>Drop us a line</h2>
 										<p>We are here to answer any question you may have</p>
-									</header><!-- /.fancy-title -->
-
-								</div><!-- /.lqd-column col-md-6 col-md-offset-1 -->
-
-								<div class="lqd-column col-md-4 hidden-sm hidden-xs text-right">
-
-									<div class="iconbox text-right iconbox-xl" data-animate-icon="true" data-plugin-options='{"resetOnHover":true,"color":"rgb(216, 219, 226)","hoverColor":"rgb(0, 0, 0)"}'>
-										<div class="iconbox-icon-wrap">
-											<span class="iconbox-icon-container">
-												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve"> <polygon stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10" points="1,30 63,1 23,41" /> <polygon stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10" points="34,63 63,1 23,41" /> </svg>
-											</span>
-										</div><!-- /.iconbox-icon-wrap -->
-									</div><!-- /.iconbox -->
-								</div><!-- /.lqd-column col-md-4 hidden-sm hidden-xs -->
-
-							</div><!-- /.row -->
-
+									</header>
+								</div>
+							</div>
 							<div class="row">
-
 								<div class="lqd-column col-md-10 col-md-offset-1">
-
-									<div class="contact-form contact-form-inputs-underlined contact-form-button-circle">
-										<form action="" method="post" novalidate="novalidate">
+									<div class="contact-form">
+										<form id="contactForm">
 											<div class="row d-flex flex-wrap">
 												<div class="lqd-column col-md-6 mb-20">
-													<input class="lh-35 mb-25" type="text" name="name" aria-required="true" aria-invalid="false" placeholder="First Name" required>
-													<input class="lh-35 mb-25" type="email" name="email" aria-required="true" aria-invalid="false" placeholder="Your email address" required>
-												</div><!-- /.col-md-6 -->
+													<input class="lh-20 mb-25" type="text" id="name" name="name" placeholder="First Name" required>
+													<input class="lh-20 mb-25" type="email" id="email" name="email" placeholder="Your email address" required>
+												</div>
 												<div class="lqd-column col-md-6 mb-20">
-													<textarea cols="10" rows="3" style="line-height: 1.9;" name="message" aria-required="true" aria-invalid="false" placeholder="Message" required></textarea>
-												</div><!-- /.col-md-12 -->
+													<textarea id="message" name="message" cols="10" style="line-height: 1.9;" rows="3" placeholder="Message" required></textarea>
+												</div>
 												<div class="lqd-column col-md-6">
-													<p class="font-size-16 opacity-07"><em>We all know how important your information is. They are always safe with us.</em></p>
-												</div><!-- /.col-md-6 -->
+													<p><em>We all know how important your information is. They are always safe with us.</em></p>
+												</div>
 												<div class="lqd-column col-md-6 text-md-right">
-													<input type="submit" value="Send message" class="font-size-13 ltr-sp-1 font-weight-bold">
-												</div><!-- /.col-md-6 -->
-											</div><!-- /.row -->
+													<button type="submit">Send message</button>
+												</div>
+											</div>
 										</form>
-										<div class="contact-form-result hidden"></div><!-- /.contact-form-result -->
-									</div><!-- /.contact-form -->
-
-								</div><!-- /.col-md-10 col-md-offset-1 -->
-
-							</div><!-- /.row -->
-
-						</div><!-- /.lqd-column col-md-12 -->
-
-					</div><!-- /.row -->
-				</div><!-- /.container -->
+										<div id="responseMessage"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
+			
+			<script>
+				document.getElementById("contactForm").addEventListener("submit", async function (e) {
+					e.preventDefault();
+					let formData = {
+						name: document.getElementById("name").value,
+						email: document.getElementById("email").value,
+						message: document.getElementById("message").value
+					};
+					let responseDiv = document.getElementById("responseMessage");
+					try {
+						let response = await fetch("https://app.ccetours.com/.netlify/functions/sendEmail.js", {
+							method: "POST",
+							headers: { "Content-Type": "application/json" },
+							body: JSON.stringify(formData)
+						});
+						let result = await response.json();
+						if (result.success) {
+							responseDiv.innerHTML = "<p style='color: green;'>Message sent successfully!</p>";
+						} else {
+							responseDiv.innerHTML = "<p style='color: red;'>Error sending message.</p>";
+						}
+					} catch (error) {
+						responseDiv.innerHTML = "<p style='color: red;'>Failed to send. Try again later.</p>";
+					}
+				});
+			</script>
 			
 		</main><!-- /#content.content -->
 		
