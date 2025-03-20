@@ -1,0 +1,40 @@
+.language-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+    display: flex;
+    gap: 10px;
+}
+
+.language-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.language-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.language-btn.active {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Hide content in non-selected languages by default */
+[lang] {
+    display: none;
+}
+
+/* English is default */
+[lang="en"] {
+    display: block;
+}

@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCE Tours - For Companies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/language-selector.css">
+    <style>
+        :root {
+            --primary-color: #3a3d7a;
+            --secondary-color: #f2b880;
+            --text-color: #333;
+            --light-color: #f5f5f5;
+            --dark-color: #222;
+            --accent-color: #e67e22;
+            --success-color: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        .presentation-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(58, 61, 122, 0.8), rgba(58, 61, 122, 0.8)), url('https://images.unsplash.com/photo-1556761175-b413da4baf72');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 2.5rem;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature-content {
+            padding: 30px;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .value-list {
+            margin: 30px 0;
+        }
+        
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .value-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .value-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 50px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            margin: 20px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .quote-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 50px 0;
+            position: relative;
+        }
+        
+        .quote-box:before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .quote-text {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .image-container {
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .benefit-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .benefit-card p {
+            margin-bottom: 20px;
+        }
+        
+        .benefit-list {
+            list-style: none;
+        }
+        
+        .benefit-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .benefit-list li:before {
+            content: '✓';
+            color: var(--success-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .contact-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .contact-item {
+            margin: 20px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+        
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                gap: 0;
+                flex-direction: column;
+                background-color: var(--primary-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-item {
+                margin: 16px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="language-btn active" data-lang="en">EN</button>
+        <button class="language-btn" data-lang="pt">PT</button>
+        <button class="language-btn" data-lang="ru">RU</button>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav class="navbar">
+            <a href="index_multilingual.html" class="nav-logo">CCE Tours</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index_multilingual.html" class="nav-link">
+                        <span lang="en">Home</span>
+                        <span lang="pt">Início</span>
+                        <span lang="ru">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="municipalities_multilingual.html" class="nav-link">
+                        <span lang="en">Municipalities</span>
+                        <span lang="pt">Municípios</span>
+                        <span lang="ru">Муниципалитеты</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="companies_multilingual.html" class="nav-link">
+                        <span lang="en">Companies</span>
+                        <span lang="pt">Empresas</span>
+                        <span lang="ru">Компании</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="personal_multilingual.html" class="nav-link">
+                        <span lang="en">Personal</span>
+                        <span lang="pt">Pessoal</span>
+                        <span lang="ru">Личное</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">
+                        <span lang="en">Contact</span>
+                        <span lang="pt">Contato</span>
+                        <span lang="ru">Контакты</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="presentation-container">
+            <h1>
+                <span lang="en">Elevate Your Brand Experience</span>
+                <span lang="pt">Eleve a Experiência da Sua Marca</span>
+                <span lang="ru">Улучшите Опыт Вашего Бренда</span>
+            </h1>
+            <p>
+                <span lang="en">Immersive audio tours that strengthen brand storytelling, enhance customer experiences, and create engaging team building activities.</span>
+                <span lang="pt">Tours de áudio imersivos que fortalecem a narrativa da marca, melhoram as experiências dos clientes e criam atividades envolventes de team building.</span>
+                <span lang="ru">Иммерсивные аудио-экскурсии, которые усиливают повествование о бренде, улучшают клиентский опыт и создают увлекательные мероприятия по командообразованию.</span>
+            </p>
+            <a href="#benefits" class="cta-button">
+                <span lang="en">Discover the Benefits</span>
+                <span lang="pt">Descubra os Benefícios</span>
+                <span lang="ru">Откройте Преимущества</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section class="section-challenges">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">The Modern Brand Challenge</span>
+                    <span lang="pt">O Desafio da Marca Moderna</span>
+                    <span lang="ru">Вызов Современного Бренда</span>
+                </h2>
+                <p>
+                    <span lang="en">Companies face unique challenges in today's rapidly evolving consumer landscape.</span>
+                    <span lang="pt">As empresas enfrentam desafios únicos no panorama de consumo em rápida evolução de hoje.</span>
+                    <span lang="ru">Компании сталкиваются с уникальными проблемами в быстро меняющемся потребительском ландшафте.</span>
+                </p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Changing Consumer Expectations</span>
+                            <span lang="pt">Mudança nas Expectativas dos Consumidores</span>
+                            <span lang="ru">Изменение Ожиданий Потребителей</span>
+                        </h3>
+                        <p lang="en">Today's consumers seek authentic, memorable experiences rather than traditional marketing. They want brands to engage them on an emotional level and create meaningful connections.</p>
+                        <p lang="pt">Os consumidores de hoje buscam experiências autênticas e memoráveis em vez de marketing tradicional. Eles querem que as marcas os envolvam em um nível emocional e criem conexões significativas.</p>
+                        <p lang="ru">Современные потребители ищут аутентичные, запоминающиеся впечатления вместо традиционного маркетинга. Они хотят, чтобы бренды взаимодействовали с ними на эмоциональном уровне и создавали значимые связи.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Storytelling Complexity</span>
+                            <span lang="pt">Complexidade da Narrativa</span>
+                            <span lang="ru">Сложность Повествования</span>
+                        </h3>
+                        <p lang="en">Communicating brand values and heritage in engaging ways is increasingly challenging in a crowded marketplace where attention spans are limited.</p>
+                        <p lang="pt">Comunicar os valores e o patrimônio da marca de maneiras envolventes é cada vez mais desafiador em um mercado lotado onde a capacidade de atenção é limitada.</p>
+                        <p lang="ru">Передача ценностей и наследия бренда увлекательными способами становится все более сложной задачей на переполненном рынке, где внимание ограничено.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Team Engagement</span>
+                            <span lang="pt">Engajamento da Equipe</span>
+                            <span lang="ru">Вовлеченность Команды</span>
+                        </h3>
+                        <p lang="en">Creating meaningful team building experiences that align with company values while being genuinely enjoyable and memorable for employees is a persistent challenge.</p>
+                        <p lang="pt">Criar experiências significativas de team building que se alinhem com os valores da empresa, sendo genuinamente agradáveis e memoráveis para os funcionários, é um desafio persistente.</p>
+                        <p lang="ru">Создание значимых командообразующих мероприятий, которые соответствуют ценностям компании, будучи при этом действительно приятными и запоминающимися для сотрудников, является постоянной проблемой.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-box">
+                <p class="quote-text">
+                    <span lang="en">The brands that will thrive in the future are those that create immersive, multi-sensory experiences that forge emotional connections with their audiences.</span>
+                    <span lang="pt">As marcas que prosperarão no futuro são aquelas que criam experiências imersivas e multissensoriais que forjam conexões emocionais com seu público.</span>
+                    <span lang="ru">Бренды, которые будут процветать в будущем, - это те, которые создают иммерсивные, мультисенсорные впечатления, формирующие эмоциональные связи с их аудиторией.</span>
+                </p>
+                <p class="quote-author">
+                    <span lang="en">- Brand Experience Report 2024</span>
+                    <span lang="pt">- Relatório de Experiência de Marca 2024</span>
+                    <span lang="ru">- Отчет об опыте бренда 2024</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section-benefits">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Value for Companies</span>
+                    <span lang="pt">Valor para Empresas</span>
+                    <span lang="ru">Ценность для Компаний</span>
+                </h2>
+                <p>
+                    <span lang="en">Our immersive audio tour solution offers comprehensive benefits for corporate brand experiences.</span>
+                    <span lang="pt">Nossa solução de tour de áudio imersivo oferece benefícios abrangentes para experiências de marca corporativa.</span>
+                    <span lang="ru">Наше решение иммерсивных аудио-экскурсий предлагает комплексные преимущества для корпоративного опыта бренда.</span>
+                </p>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">38%</div>
+                    <div class="stat-label">
+                        <span lang="en">Increase in customer engagement</span>
+                        <span lang="pt">Aumento no engajamento do cliente</span>
+                        <span lang="ru">Увеличение вовлеченности клиентов</span>
+                    </div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">27%</div>
+                    <div class="stat-label">
+                        <span lang="en">Growth in brand recall</span>
+                        <span lang="pt">Crescimento na lembrança da marca</span>
+                        <span lang="ru">Рост узнаваемости бренда</span>
+                    </div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">45%</div>
+                    <div class="stat-label">
+                        <span lang="en">Improvement in team cohesion</span>
+                        <span lang="pt">Melhoria na coesão da equipe</span>
+                        <span lang="ru">Улучшение сплоченности команды</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>
+                    <span lang="en">Enhanced Brand Storytelling</span>
+                    <span lang="pt">Narrativa de Marca Aprimorada</span>
+                    <span lang="ru">Улучшенное Повествование о Бренде</span>
+                </h3>
+                <p lang="en">Create immersive audio experiences that bring your brand's history, values, and vision to life in a way that resonates emotionally with customers. Our character-driven storytelling approach creates memorable narratives that strengthen brand loyalty and advocacy.</p>
+                <p lang="pt">Crie experiências de áudio imersivas que dão vida à história, valores e visão da sua marca de uma forma que ressoa emocionalmente com os clientes. Nossa abordagem de narrativa baseada em personagens cria narrativas memoráveis que fortalecem a fidelidade e a defesa da marca.</p>
+                <p lang="ru">Создавайте иммерсивные аудио-впечатления, которые оживляют историю, ценности и видение вашего бренда таким образом, что эмоционально резонирует с клиентами. Наш подход к повествованию, основанный на персонажах, создает запоминающиеся истории, которые укрепляют лояльность к бренду и его защиту.</p>
+                <ul class="benefit-list">
+                    <li>
+                        <span lang="en">Emotionally engaging narratives</span>
+                        <span lang="pt">Narrativas emocionalmente envolventes</span>
+                        <span lang="ru">Эмоционально вовлекающие повествования</span>
+                    </li>
+                    <li>
+                        <span lang="en">Authentic brand heritage communication</span>
+                        <span lang="pt">Comunicação autêntica do patrimônio da marca</span>
+                        <span lang="ru">Аутентичная коммуникация наследия бренда</span>
+                    </li>
+                    <li>
+                        <span lang="en">Consistent messaging across touchpoints</span>
+                        <span lang="pt">Mensagens consistentes em todos os pontos de contato</span>
+                        <span lang="ru">Последовательные сообщения во всех точках контакта</span>
+                    </li>
+                    <li>
+                        <span lang="en">Memorable customer experiences</span>
+                        <span lang="pt">Experiências memoráveis para o cliente</span>
+                        <span lang="ru">Запоминающиеся впечатления клиентов</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>
+                    <span lang="en">Innovative Customer Experiences</span>
+                    <span lang="pt">Experiências Inovadoras para Clientes</span>
+                    <span lang="ru">Инновационный Клиентский Опыт</span>
+                </h3>
+                <p lang="en">Transform physical spaces like retail stores, corporate headquarters, or brand museums into interactive storytelling environments. Audio tours guide customers through meaningful brand journeys that increase dwell time, enhance product understanding, and create shareable moments.</p>
+                <p lang="pt">Transforme espaços físicos como lojas de varejo, sedes corporativas ou museus de marca em ambientes interativos de narrativa. Os tours de áudio guiam os clientes através de jornadas significativas da marca que aumentam o tempo de permanência, melhoram a compreensão do produto e criam momentos compartilháveis.</p>
+                <p lang="ru">Превратите физические пространства, такие как розничные магазины, корпоративные штаб-квартиры или музеи бренда, в интерактивные среды для повествования. Аудио-экскурсии проводят клиентов через значимые путешествия бренда, которые увеличивают время пребывания, улучшают понимание продукта и создают моменты, которыми можно поделиться.</p>
+                <ul class="benefit-list">
+                    <li>
+                        <span lang="en">Increased customer dwell time</span>
+                        <span lang="pt">Aumento do tempo de permanência do cliente</span>
+                        <span lang="ru">Увеличение времени пребывания клиентов</span>
+                    </li>
+                    <li>
+                        <span lang="en">Enhanced product education</span>
+                        <span lang="pt">Educação aprimorada sobre o produto</span>
+                        <span lang="ru">Улучшенное обучение продукту</span>
+                    </li>
+                    <li>
+                        <span lang="en">Differentiated retail experience</span>
+                        <span lang="pt">Experiência de varejo diferenciada</span>
+                        <span lang="ru">Дифференцированный розничный опыт</span>
+                    </li>
+                    <li>
+                        <span lang="en">Social media sharing opportunities</span>
+                        <span lang="pt">Oportunidades de compartilhamento em mídias sociais</span>
+                        <span lang="ru">Возможности для обмена в социальных сетях</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>
+                    <span lang="en">Engaging Team Building</span>
+                    <span lang="pt">Team Building Envolvente</span>
+                    <span lang="ru">Увлекательное Командообразование</span>
+                </h3>
+                <p lang="en">Create custom team building experiences that combine storytelling, problem-solving, and exploration in meaningful locations. Our audio-guided quests foster collaboration, communication, and shared experiences that strengthen team bonds while reinforcing company values.</p>
+                <p lang="pt">Crie experiências personalizadas de team building que combinam narrativa, resolução de problemas e exploração em locais significativos. Nossas missões guiadas por áudio promovem colaboração, comunicação e experiências compartilhadas que fortalecem os laços da equipe enquanto reforçam os valores da empresa.</p>
+                <p lang="ru">Создавайте индивидуальные командообразующие мероприятия, которые сочетают повествование, решение проблем и исследование в значимых местах. Наши аудио-квесты способствуют сотрудничеству, коммуникации и общим впечатлениям, которые укрепляют командные связи, одновременно усиливая ценности компании.</p>
+                <ul class="benefit-list">
+                    <li>
+                        <span lang="en">Collaborative problem-solving</span>
+                        <span lang="pt">Resolução colaborativa de problemas</span>
+                        <span lang="ru">Совместное решение проблем</span>
+                    </li>
+                    <li>
+                        <span lang="en">Shared memorable experiences</span>
+                        <span lang="pt">Experiências memoráveis compartilhadas</span>
+                        <span lang="ru">Общие запоминающиеся впечатления</span>
+                    </li>
+                    <li>
+                        <span lang="en">Value-aligned activities</span>
+                        <span lang="pt">Atividades alinhadas com valores</span>
+                        <span lang="ru">Деятельность, согласованная с ценностями</span>
+                    </li>
+                    <li>
+                        <span lang="en">Improved team communication</span>
+                        <span lang="pt">Comunicação de equipe aprimorada</span>
+                        <span lang="ru">Улучшенная командная коммуникация</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>
+                    <span lang="en">Event Enhancement</span>
+                    <span lang="pt">Aprimoramento de Eventos</span>
+                    <span lang="ru">Улучшение Мероприятий</span>
+                </h3>
+                <p lang="en">Elevate corporate events, product launches, and trade shows with custom audio experiences that guide attendees through immersive brand journeys. Create memorable moments that differentiate your brand and leave lasting impressions on clients, partners, and industry influencers.</p>
+                <p lang="pt">Eleve eventos corporativos, lançamentos de produtos e feiras comerciais com experiências de áudio personalizadas que guiam os participantes através de jornadas imersivas da marca. Crie momentos memoráveis que diferenciam sua marca e deixam impressões duradouras em clientes, parceiros e influenciadores do setor.</p>
+                <p lang="ru">Улучшайте корпоративные мероприятия, запуски продуктов и торговые выставки с помощью индивидуальных аудио-впечатлений, которые проводят участников через иммерсивные путешествия бренда. Создавайте запоминающиеся моменты, которые выделяют ваш бренд и оставляют долгосрочные впечатления у клиентов, партнеров и отраслевых влиятельных лиц.</p>
+                <ul class="benefit-list">
+                    <li>
+                        <span lang="en">Differentiated event experiences</span>
+                        <span lang="pt">Experiências de eventos diferenciadas</span>
+                        <span lang="ru">Дифференцированные впечатления от мероприятий</span>
+                    </li>
+                    <li>
+                        <span lang="en">Guided product storytelling</span>
+                        <span lang="pt">Narrativa guiada de produtos</span>
+                        <span lang="ru">Управляемое повествование о продукте</span>
+                    </li>
+                    <li>
+                        <span lang="en">Memorable brand activations</span>
+                        <span lang="pt">Ativações de marca memoráveis</span>
+                        <span lang="ru">Запоминающиеся активации бренда</span>
+                    </li>
+                    <li>
+                        <span lang="en">Enhanced attendee engagement</span>
+                        <span lang="pt">Engajamento aprimorado dos participantes</span>
+                        <span lang="ru">Улучшенное вовлечение участников</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>
+                    <span lang="en">Corporate Heritage Preservation</span>
+                    <span lang="pt">Preservação do Patrimônio Corporativo</span>
+                    <span lang="ru">Сохранение Корпоративного Наследия</span>
+                </h3>
+                <p lang="en">Document and share your company's history, milestones, and cultural heritage in engaging digital format. Audio tours can preserve the voices and stories of key figures in your organization's history, creating a living archive that connects past achievements with future vision.</p>
+                <p lang="pt">Documente e compartilhe a história, marcos e patrimônio cultural da sua empresa em formato digital envolvente. Os tours de áudio podem preservar as vozes e histórias de figuras-chave na história da sua organização, criando um arquivo vivo que conecta conquistas passadas com a visão futura.</p>
+                <p lang="ru">Документируйте и делитесь историей, вехами и культурным наследием вашей компании в увлекательном цифровом формате. Аудио-экскурсии могут сохранить голоса и истории ключевых фигур в истории вашей организации, создавая живой архив, который связывает прошлые достижения с будущим видением.</p>
+                <ul class="benefit-list">
+                    <li>
+                        <span lang="en">Digital documentation of company history</span>
+                        <span lang="pt">Documentação digital da história da empresa</span>
+                        <span lang="ru">Цифровая документация истории компании</span>
+                    </li>
+                    <li>
+                        <span lang="en">Preservation of founder stories</span>
+                        <span lang="pt">Preservação das histórias dos fundadores</span>
+                        <span lang="ru">Сохранение историй основателей</span>
+                    </li>
+                    <li>
+                        <span lang="en">Engaging onboarding tool</span>
+                        <span lang="pt">Ferramenta envolvente de integração</span>
+                        <span lang="ru">Увлекательный инструмент для адаптации</span>
+                    </li>
+                    <li>
+                        <span lang="en">Connection between heritage and vision</span>
+                        <span lang="pt">Conexão entre patrimônio e visão</span>
+                        <span lang="ru">Связь между наследием и видением</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Section -->
+    <section class="section-implementation">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Implementation Advantages</span>
+                    <span lang="pt">Vantagens de Implementação</span>
+                    <span lang="ru">Преимущества Внедрения</span>
+                </h2>
+                <p>
+                    <span lang="en">Our solution offers significant operational benefits compared to traditional brand experience approaches.</span>
+                    <span lang="pt">Nossa solução oferece benefícios operacionais significativos em comparação com abordagens tradicionais de experiência de marca.</span>
+                    <span lang="ru">Наше решение предлагает значительные операционные преимущества по сравнению с традиционными подходами к опыту бренда.</span>
+                </p>
+            </div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <div class="benefit-card">
+                        <h3>
+                            <span lang="en">Scalable Deployment</span>
+                            <span lang="pt">Implantação Escalável</span>
+                            <span lang="ru">Масштабируемое Развертывание</span>
+                        </h3>
+                        <p lang="en">Once developed, audio tours can be deployed across multiple locations with minimal additional cost, making them ideal for companies with multiple offices or retail locations.</p>
+                        <p lang="pt">Uma vez desenvolvidos, os tours de áudio podem ser implantados em vários locais com custo adicional mínimo, tornando-os ideais para empresas com vários escritórios ou locais de varejo.</p>
+                        <p lang="ru">После разработки аудио-экскурсии могут быть развернуты в нескольких местах с минимальными дополнительными затратами, что делает их идеальными для компаний с несколькими офисами или розничными точками.</p>
+                        <ul class="benefit-list">
+                            <li>
+                                <span lang="en">Multi-location consistency</span>
+                                <span lang="pt">Consistência em vários locais</span>
+                                <span lang="ru">Согласованность в нескольких местах</span>
+                            </li>
+                            <li>
+                                <span lang="en">Cost-effective expansion</span>
+                                <span lang="pt">Expansão econômica</span>
+                                <span lang="ru">Экономичное расширение</span>
+                            </li>
+                            <li>
+                                <span lang="en">Centralized content management</span>
+                                <span lang="pt">Gerenciamento centralizado de conteúdo</span>
+                                <span lang="ru">Централизованное управление контентом</span>
+                            </li>
+                            <li>
+                                <span lang="en">Consistent brand messaging</span>
+                                <span lang="pt">Mensagens consistentes da marca</span>
+                                <span lang="ru">Последовательные сообщения бренда</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h3>
+                            <span lang="en">Flexible Content Updates</span>
+                            <span lang="pt">Atualizações Flexíveis de Conteúdo</span>
+                            <span lang="ru">Гибкие Обновления Контента</span>
+                        </h3>
+                        <p lang="en">Digital content can be easily updated to reflect new products, seasonal campaigns, or evolving brand messaging without physical infrastructure changes.</p>
+                        <p lang="pt">O conteúdo digital pode ser facilmente atualizado para refletir novos produtos, campanhas sazonais ou mensagens de marca em evolução sem alterações na infraestrutura física.</p>
+                        <p lang="ru">Цифровой контент может быть легко обновлен, чтобы отразить новые продукты, сезонные кампании или развивающиеся сообщения бренда без изменений физической инфраструктуры.</p>
+                        <ul class="benefit-list">
+                            <li>
+                                <span lang="en">Seasonal content refreshes</span>
+                                <span lang="pt">Atualizações de conteúdo sazonal</span>
+                                <span lang="ru">Сезонные обновления контента</span>
+                            </li>
+                            <li>
+                                <span lang="en">Product launch integration</span>
+                                <span lang="pt">Integração de lançamento de produtos</span>
+                                <span lang="ru">Интеграция запуска продукта</span>
+                            </li>
+                            <li>
+                                <span lang="en">Campaign-specific messaging</span>
+                                <span lang="pt">Mensagens específicas de campanha</span>
+                                <span lang="ru">Сообщения для конкретных кампаний</span>
+                            </li>
+                            <li>
+                                <span lang="en">Rapid deployment of updates</span>
+                                <span lang="pt">Implantação rápida de atualizações</span>
+                                <span lang="ru">Быстрое развертывание обновлений</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="benefit-card">
+                        <h3>
+                            <span lang="en">Multilingual Capabilities</span>
+                            <span lang="pt">Capacidades Multilíngues</span>
+                            <span lang="ru">Многоязычные Возможности</span>
+                        </h3>
+                        <p lang="en">Audio tours can be easily produced in multiple languages, allowing for consistent brand storytelling across global markets while respecting local cultural nuances.</p>
+                        <p lang="pt">Os tours de áudio podem ser facilmente produzidos em vários idiomas, permitindo uma narrativa de marca consistente em mercados globais, respeitando as nuances culturais locais.</p>
+                        <p lang="ru">Аудио-экскурсии могут быть легко созданы на нескольких языках, обеспечивая последовательное повествование о бренде на глобальных рынках с учетом местных культурных нюансов.</p>
+                        <ul class="benefit-list">
+                            <li>
+                                <span lang="en">Global market consistency</span>
+                                <span lang="pt">Consistência no mercado global</span>
+                                <span lang="ru">Согласованность на глобальном рынке</span>
+                            </li>
+                            <li>
+                                <span lang="en">Cultural adaptation</span>
+                                <span lang="pt">Adaptação cultural</span>
+                                <span lang="ru">Культурная адаптация</span>
+                            </li>
+                            <li>
+                                <span lang="en">International visitor support</span>
+                                <span lang="pt">Suporte a visitantes internacionais</span>
+                                <span lang="ru">Поддержка международных посетителей</span>
+                            </li>
+                            <li>
+                                <span lang="en">Inclusive customer experience</span>
+                                <span lang="pt">Experiência inclusiva do cliente</span>
+                                <span lang="ru">Инклюзивный клиентский опыт</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h3>
+                            <span lang="en">Data-Driven Insights</span>
+                            <span lang="pt">Insights Baseados em Dados</span>
+                            <span lang="ru">Аналитика На Основе Данных</span>
+                        </h3>
+                        <p lang="en">Our platform provides valuable anonymized data on user engagement, popular content, and usage patterns to inform future marketing strategies and experience optimization.</p>
+                        <p lang="pt">Nossa plataforma fornece dados anônimos valiosos sobre engajamento do usuário, conteúdo popular e padrões de uso para informar futuras estratégias de marketing e otimização de experiência.</p>
+                        <p lang="ru">Наша платформа предоставляет ценные анонимизированные данные о вовлеченности пользователей, популярном контенте и моделях использования для информирования будущих маркетинговых стратегий и оптимизации опыта.</p>
+                        <ul class="benefit-list">
+                            <li>
+                                <span lang="en">User engagement analytics</span>
+                                <span lang="pt">Análise de engajamento do usuário</span>
+                                <span lang="ru">Аналитика вовлеченности пользователей</span>
+                            </li>
+                            <li>
+                                <span lang="en">Content effectiveness measurement</span>
+                                <span lang="pt">Medição da eficácia do conteúdo</span>
+                                <span lang="ru">Измерение эффективности контента</span>
+                            </li>
+                            <li>
+                                <span lang="en">Customer journey insights</span>
+                                <span lang="pt">Insights sobre a jornada do cliente</span>
+                                <span lang="ru">Аналитика пути клиента</span>
+                            </li>
+                            <li>
+                                <span lang="en">ROI measurement capabilities</span>
+                                <span lang="pt">Capacidades de medição de ROI</span>
+                                <span lang="ru">Возможности измерения ROI</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="section-case-study">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Success Stories</span>
+                    <span lang="pt">Histórias de Sucesso</span>
+                    <span lang="ru">Истории Успеха</span>
+                </h2>
+                <p>
+                    <span lang="en">See how companies have transformed their brand experiences with our audio tours.</span>
+                    <span lang="pt">Veja como as empresas transformaram suas experiências de marca com nossos tours de áudio.</span>
+                    <span lang="ru">Посмотрите, как компании преобразили свой опыт бренда с помощью наших аудио-экскурсий.</span>
+                </p>
+            </div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8" alt="Retail Store">
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <h3>
+                        <span lang="en">Luxury Retail Brand</span>
+                        <span lang="pt">Marca de Varejo de Luxo</span>
+                        <span lang="ru">Люксовый Розничный Бренд</span>
+                    </h3>
+                    <p lang="en">A global luxury brand implemented our audio tour solution in their flagship stores to tell their heritage story and enhance the customer shopping experience. The result was a 32% increase in customer dwell time, 28% increase in average purchase value, and significant growth in social media mentions as customers shared their immersive experience.</p>
+                    <p lang="pt">Uma marca de luxo global implementou nossa solução de tour de áudio em suas lojas principais para contar sua história de patrimônio e melhorar a experiência de compra do cliente. O resultado foi um aumento de 32% no tempo de permanência do cliente, 28% de aumento no valor médio de compra e crescimento significativo nas menções em mídias sociais, à medida que os clientes compartilhavam sua experiência imersiva.</p>
+                    <p lang="ru">Глобальный люксовый бренд внедрил наше решение аудио-экскурсий в своих флагманских магазинах, чтобы рассказать историю своего наследия и улучшить покупательский опыт клиентов. Результатом стало увеличение времени пребывания клиентов на 32%, увеличение средней стоимости покупки на 28% и значительный рост упоминаний в социальных сетях, поскольку клиенты делились своими иммерсивными впечатлениями.</p>
+                    
+                    <div class="value-list">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="value-text">
+                                <h4>
+                                    <span lang="en">Challenge</span>
+                                    <span lang="pt">Desafio</span>
+                                    <span lang="ru">Вызов</span>
+                                </h4>
+                                <p lang="en">Communicating brand heritage and craftsmanship story in a way that resonated with modern consumers and differentiated the in-store experience.</p>
+                                <p lang="pt">Comunicar o patrimônio da marca e a história do artesanato de uma forma que ressoasse com os consumidores modernos e diferenciasse a experiência na loja.</p>
+                                <p lang="ru">Передача наследия бренда и истории мастерства таким образом, чтобы это резонировало с современными потребителями и отличало опыт в магазине.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="value-text">
+                                <h4>
+                                    <span lang="en">Solution</span>
+                                    <span lang="pt">Solução</span>
+                                    <span lang="ru">Решение</span>
+                                </h4>
+                                <p lang="en">Character-driven audio tour that brought the founder's story to life and guided customers through the brand's history, craftsmanship process, and product highlights.</p>
+                                <p lang="pt">Tour de áudio baseado em personagens que deu vida à história do fundador e guiou os clientes através da história da marca, processo de artesanato e destaques do produto.</p>
+                                <p lang="ru">Аудио-экскурсия на основе персонажей, которая оживила историю основателя и провела клиентов через историю бренда, процесс мастерства и особенности продукта.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="value-text">
+                                <h4>
+                                    <span lang="en">Results</span>
+                                    <span lang="pt">Resultados</span>
+                                    <span lang="ru">Результаты</span>
+                                </h4>
+                                <p lang="en">Increased customer engagement, higher purchase values, and significant social media amplification of the brand experience.</p>
+                                <p lang="pt">Aumento do engajamento do cliente, valores de compra mais altos e amplificação significativa da experiência da marca nas mídias sociais.</p>
+                                <p lang="ru">Повышенная вовлеченность клиентов, более высокие значения покупок и значительное усиление опыта бренда в социальных сетях.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="two-column" style="margin-top: 60px;">
+                <div class="column">
+                    <h3>
+                        <span lang="en">Global Technology Company</span>
+                        <span lang="pt">Empresa Global de Tecnologia</span>
+                        <span lang="ru">Глобальная Технологическая Компания</span>
+                    </h3>
+                    <p lang="en">A leading technology company created a custom team building experience using our audio tour platform. The interactive quest combined company history, values, and collaborative challenges across their campus. Employee feedback was overwhelmingly positive, with 94% rating it as their most memorable team building experience and measurable improvements in cross-team collaboration.</p>
+                    <p lang="pt">Uma empresa de tecnologia líder criou uma experiência personalizada de team building usando nossa plataforma de tour de áudio. A missão interativa combinou história da empresa, valores e desafios colaborativos em todo o campus. O feedback dos funcionários foi extremamente positivo, com 94% classificando-a como sua experiência de team building mais memorável e melhorias mensuráveis na colaboração entre equipes.</p>
+                    <p lang="ru">Ведущая технологическая компания создала индивидуальное мероприятие по командообразованию с использованием нашей платформы аудио-экскурсий. Интерактивный квест объединил историю компании, ценности и совместные задачи по всему кампусу. Отзывы сотрудников были чрезвычайно положительными, 94% оценили его как самое запоминающееся мероприятие по командообразованию, и были измеримые улучшения в сотрудничестве между командами.</p>
+                    
+                    <div class="value-list">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="value-text">
+                                <h4>
+                                    <span lang="en">Challenge</span>
+                                    <span lang="pt">Desafio</span>
+                                    <span lang="ru">Вызов</span>
+                                </h4>
+                                <p lang="en">Creating a team building activity that was genuinely engaging, aligned with company values, and fostered meaningful connections between team members.</p>
+                                <p lang="pt">Criar uma atividade de team building que fosse genuinamente envolvente, alinhada com os valores da empresa e promovesse conexões significativas entre os membros da equipe.</p>
+                                <p lang="ru">Создание мероприятия по командообразованию, которое было бы действительно увлекательным, соответствовало ценностям компании и способствовало значимым связям между членами команды.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="value-text">
+                                <h4>
+                                    <span lang="en">Solution</span>
+                                    <span lang="pt">Solução</span>
+                                    <span lang="ru">Решение</span>
+                                </h4>
+                                <p lang="en">Interactive audio-guided quest that combined storytelling with collaborative challenges, requiring teams to work together to solve problems while learning about company history and values.</p>
+                                <p lang="pt">Missão interativa guiada por áudio que combinou narrativa com desafios colaborativos, exigindo que as equipes trabalhassem juntas para resolver problemas enquanto aprendiam sobre a história e os valores da empresa.</p>
+                                <p lang="ru">Интерактивный аудио-квест, который сочетал повествование с совместными задачами, требуя от команд совместной работы для решения проблем, одновременно изучая историю и ценности компании.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="value-text">
+                                <h4>
+                                    <span lang="en">Results</span>
+                                    <span lang="pt">Resultados</span>
+                                    <span lang="ru">Результаты</span>
+                                </h4>
+                                <p lang="en">Highly rated team experience, improved cross-team collaboration, and stronger alignment with company values and history.</p>
+                                <p lang="pt">Experiência de equipe altamente avaliada, colaboração aprimorada entre equipes e alinhamento mais forte com os valores e história da empresa.</p>
+                                <p lang="ru">Высоко оцененный командный опыт, улучшенное сотрудничество между командами и более сильное соответствие ценностям и истории компании.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Team Building">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Ready to Transform Your Brand Experience?</span>
+                    <span lang="pt">Pronto para Transformar a Experiência da Sua Marca?</span>
+                    <span lang="ru">Готовы Преобразить Опыт Вашего Бренда?</span>
+                </h2>
+                <p>
+                    <span lang="en">Contact us today to discuss how our immersive audio solutions can work for your company.</span>
+                    <span lang="pt">Entre em contato conosco hoje para discutir como nossas soluções de áudio imersivas podem funcionar para sua empresa.</span>
+                    <span lang="ru">Свяжитесь с нами сегодня, чтобы обсудить, как наши иммерсивные аудио-решения могут работать для вашей компании.</span>
+                </p>
+            </div>
+            
+            <a href="#" class="cta-button">
+                <span lang="en">Request a Demo</span>
+                <span lang="pt">Solicitar uma Demonstração</span>
+                <span lang="ru">Запросить Демо</span>
+            </a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <p>info@ccetours.com</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <p>+XX XXX XXX XXX</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <p>
+                        <span lang="en">Lisbon, Portugal</span>
+                        <span lang="pt">Lisboa, Portugal</span>
+                        <span lang="ru">Лиссабон, Португалия</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>
+                <span lang="en">CCE Tours - Immersive Audio Experiences</span>
+                <span lang="pt">CCE Tours - Experiências de Áudio Imersivas</span>
+                <span lang="ru">CCE Tours - Иммерсивные Аудио Экскурсии</span>
+            </p>
+            
+            <div class="footer-links">
+                <a href="index_multilingual.html">
+                    <span lang="en">Home</span>
+                    <span lang="pt">Início</span>
+                    <span lang="ru">Главная</span>
+                </a>
+                <a href="municipalities_multilingual.html">
+                    <span lang="en">Municipalities</span>
+                    <span lang="pt">Municípios</span>
+                    <span lang="ru">Муниципалитеты</span>
+                </a>
+                <a href="companies_multilingual.html">
+                    <span lang="en">Companies</span>
+                    <span lang="pt">Empresas</span>
+                    <span lang="ru">Компании</span>
+                </a>
+                <a href="personal_multilingual.html">
+                    <span lang="en">Personal</span>
+                    <span lang="pt">Pessoal</span>
+                    <span lang="ru">Личное</span>
+                </a>
+            </div>
+            
+            <p class="copyright">
+                <span lang="en">© 2025 CCE Tours. All rights reserved.</span>
+                <span lang="pt">© 2025 CCE Tours. Todos os direitos reservados.</span>
+                <span lang="ru">© 2025 CCE Tours. Все права защищены.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/language-selector.js"></script>
+    <script>
+        // Mobile Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            });
+            
+            document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }));
+            
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Animation on scroll
+            const fadeElements = document.querySelectorAll('.feature-card, .benefit-card');
+            
+            const fadeInOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -100px 0px"
+            };
+            
+            const fadeInObserver = new IntersectionObserver(function(entries, fadeInObserver) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('fade-in');
+                        fadeInObserver.unobserve(entry.target);
+                    }
+                });
+            }, fadeInOptions);
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

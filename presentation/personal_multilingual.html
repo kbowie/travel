@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCE Tours - For Personal Use</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/language-selector.css">
+    <style>
+        :root {
+            --primary-color: #3a3d7a;
+            --secondary-color: #f2b880;
+            --text-color: #333;
+            --light-color: #f5f5f5;
+            --dark-color: #222;
+            --accent-color: #e67e22;
+            --success-color: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        .presentation-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(58, 61, 122, 0.8), rgba(58, 61, 122, 0.8)), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 2.5rem;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature-content {
+            padding: 30px;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .value-list {
+            margin: 30px 0;
+        }
+        
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .value-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .value-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 50px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            margin: 20px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .quote-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 50px 0;
+            position: relative;
+        }
+        
+        .quote-box:before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .quote-text {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .image-container {
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .benefit-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .benefit-card p {
+            margin-bottom: 20px;
+        }
+        
+        .benefit-list {
+            list-style: none;
+        }
+        
+        .benefit-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .benefit-list li:before {
+            content: '✓';
+            color: var(--success-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .contact-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .contact-item {
+            margin: 20px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+        
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                gap: 0;
+                flex-direction: column;
+                background-color: var(--primary-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-item {
+                margin: 16px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="language-btn active" data-lang="en">EN</button>
+        <button class="language-btn" data-lang="pt">PT</button>
+        <button class="language-btn" data-lang="ru">RU</button>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav class="navbar">
+            <a href="index_multilingual.html" class="nav-logo">CCE Tours</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index_multilingual.html" class="nav-link">
+                        <span lang="en">Home</span>
+                        <span lang="pt">Início</span>
+                        <span lang="ru">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="municipalities_multilingual.html" class="nav-link">
+                        <span lang="en">Municipalities</span>
+                        <span lang="pt">Municípios</span>
+                        <span lang="ru">Муниципалитеты</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="companies_multilingual.html" class="nav-link">
+                        <span lang="en">Companies</span>
+                        <span lang="pt">Empresas</span>
+                        <span lang="ru">Компании</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="personal_multilingual.html" class="nav-link">
+                        <span lang="en">Personal</span>
+                        <span lang="pt">Pessoal</span>
+                        <span lang="ru">Личное</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">
+                        <span lang="en">Contact</span>
+                        <span lang="pt">Contato</span>
+                        <span lang="ru">Контакты</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="presentation-container">
+            <h1>
+                <span lang="en">Create Unforgettable Personal Experiences</span>
+                <span lang="pt">Crie Experiências Pessoais Inesquecíveis</span>
+                <span lang="ru">Создайте Незабываемые Личные Впечатления</span>
+            </h1>
+            <p>
+                <span lang="en">From team building adventures to romantic proposals, our immersive audio tours create meaningful moments that last a lifetime.</span>
+                <span lang="pt">De aventuras de team building a propostas românticas, nossos tours de áudio imersivos criam momentos significativos que duram uma vida inteira.</span>
+                <span lang="ru">От командообразующих приключений до романтических предложений, наши иммерсивные аудио-экскурсии создают значимые моменты, которые длятся всю жизнь.</span>
+            </p>
+            <a href="#ideas" class="cta-button">
+                <span lang="en">Explore Ideas</span>
+                <span lang="pt">Explorar Ideias</span>
+                <span lang="ru">Изучить Идеи</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Personal Use Cases Section -->
+    <section id="ideas" class="section-use-cases">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Personal Experience Ideas</span>
+                    <span lang="pt">Ideias de Experiências Pessoais</span>
+                    <span lang="ru">Идеи для Личного Опыта</span>
+                </h2>
+                <p>
+                    <span lang="en">Discover how our audio tours can transform personal occasions into extraordinary experiences.</span>
+                    <span lang="pt">Descubra como nossos tours de áudio podem transformar ocasiões pessoais em experiências extraordinárias.</span>
+                    <span lang="ru">Узнайте, как наши аудио-экскурсии могут превратить личные события в необычные впечатления.</span>
+                </p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Marriage Proposals</span>
+                            <span lang="pt">Pedidos de Casamento</span>
+                            <span lang="ru">Предложения Руки и Сердца</span>
+                        </h3>
+                        <p lang="en">Create a personalized audio journey that leads your partner through meaningful locations in your relationship, culminating in the perfect proposal moment. Our custom audio tours can include your voice, your favorite music, and even messages from friends and family.</p>
+                        <p lang="pt">Crie uma jornada de áudio personalizada que leva seu parceiro por locais significativos em seu relacionamento, culminando no momento perfeito para o pedido. Nossos tours de áudio personalizados podem incluir sua voz, sua música favorita e até mensagens de amigos e familiares.</p>
+                        <p lang="ru">Создайте персонализированное аудио-путешествие, которое проведет вашего партнера через значимые места в ваших отношениях, кульминацией которого станет идеальный момент для предложения. Наши индивидуальные аудио-экскурсии могут включать ваш голос, вашу любимую музыку и даже сообщения от друзей и семьи.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Team Building Quests</span>
+                            <span lang="pt">Missões de Team Building</span>
+                            <span lang="ru">Квесты для Командообразования</span>
+                        </h3>
+                        <p lang="en">Organize engaging team building activities that combine exploration, problem-solving, and fun. Our audio-guided quests can be customized to include team challenges, trivia about team members, and activities that foster collaboration and communication.</p>
+                        <p lang="pt">Organize atividades envolventes de team building que combinam exploração, resolução de problemas e diversão. Nossas missões guiadas por áudio podem ser personalizadas para incluir desafios de equipe, curiosidades sobre os membros da equipe e atividades que promovem colaboração e comunicação.</p>
+                        <p lang="ru">Организуйте увлекательные мероприятия по командообразованию, которые сочетают исследование, решение проблем и развлечение. Наши аудио-квесты могут быть настроены так, чтобы включать командные задачи, викторины о членах команды и мероприятия, способствующие сотрудничеству и коммуникации.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Special Occasions</span>
+                            <span lang="pt">Ocasiões Especiais</span>
+                            <span lang="ru">Особые Случаи</span>
+                        </h3>
+                        <p lang="en">Celebrate birthdays, anniversaries, and other special moments with custom audio experiences. Create scavenger hunts that lead to gifts, surprise parties, or meaningful locations, all guided by personalized audio narration that makes the recipient feel truly special.</p>
+                        <p lang="pt">Celebre aniversários, datas comemorativas e outros momentos especiais com experiências de áudio personalizadas. Crie caças ao tesouro que levam a presentes, festas surpresa ou locais significativos, tudo guiado por narração de áudio personalizada que faz o destinatário se sentir verdadeiramente especial.</p>
+                        <p lang="ru">Отмечайте дни рождения, годовщины и другие особые моменты с помощью индивидуальных аудио-впечатлений. Создавайте поиски сокровищ, которые ведут к подаркам, сюрпризным вечеринкам или значимым местам, все это сопровождается персонализированным аудио-повествованием, которое заставляет получателя чувствовать себя действительно особенным.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Building Section -->
+    <section class="section-team-building">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Team Building Adventures</span>
+                    <span lang="pt">Aventuras de Team Building</span>
+                    <span lang="ru">Командообразующие Приключения</span>
+                </h2>
+                <p>
+                    <span lang="en">Create memorable team experiences that foster collaboration and connection.</span>
+                    <span lang="pt">Crie experiências memoráveis em equipe que promovam colaboração e conexão.</span>
+                    <span lang="ru">Создавайте запоминающиеся командные впечатления, которые способствуют сотрудничеству и связи.</span>
+                </p>
+            </div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952" alt="Team Building">
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="benefit-card">
+                        <h3>
+                            <span lang="en">Interactive City Quests</span>
+                            <span lang="pt">Missões Interativas pela Cidade</span>
+                            <span lang="ru">Интерактивные Городские Квесты</span>
+                        </h3>
+                        <p lang="en">Transform any urban environment into an engaging playground for team building. Our audio-guided city quests combine exploration, problem-solving, and team challenges that encourage collaboration and communication while discovering hidden gems in your city.</p>
+                        <p lang="pt">Transforme qualquer ambiente urbano em um playground envolvente para team building. Nossas missões urbanas guiadas por áudio combinam exploração, resolução de problemas e desafios de equipe que incentivam a colaboração e comunicação enquanto descobrem joias escondidas em sua cidade.</p>
+                        <p lang="ru">Превратите любую городскую среду в увлекательную площадку для командообразования. Наши аудио-городские квесты сочетают исследование, решение проблем и командные задачи, которые поощряют сотрудничество и коммуникацию, одновременно открывая скрытые жемчужины вашего города.</p>
+                        <ul class="benefit-list">
+                            <li>
+                                <span lang="en">Customized to team size and dynamics</span>
+                                <span lang="pt">Personalizado para o tamanho e dinâmica da equipe</span>
+                                <span lang="ru">Настроено под размер и динамику команды</span>
+                            </li>
+                            <li>
+                                <span lang="en">Incorporates company values and goals</span>
+                                <span lang="pt">Incorpora valores e objetivos da empresa</span>
+                                <span lang="ru">Включает ценности и цели компании</span>
+                            </li>
+                            <li>
+                                <span lang="en">Flexible duration options</span>
+                                <span lang="pt">Opções flexíveis de duração</span>
+                                <span lang="ru">Гибкие варианты продолжительности</span>
+                            </li>
+                            <li>
+                                <span lang="en">Available in multiple languages</span>
+                                <span lang="pt">Disponível em vários idiomas</span>
+                                <span lang="ru">Доступно на нескольких языках</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-box">
+                <p class="quote-text">
+                    <span lang="en">Our team still talks about the audio quest experience months later. It was the perfect blend of fun, challenge, and meaningful connection that brought our remote team closer together.</span>
+                    <span lang="pt">Nossa equipe ainda fala sobre a experiência da missão de áudio meses depois. Foi a mistura perfeita de diversão, desafio e conexão significativa que aproximou nossa equipe remota.</span>
+                    <span lang="ru">Наша команда до сих пор говорит об опыте аудио-квеста спустя месяцы. Это было идеальное сочетание веселья, вызова и значимой связи, которое сблизило нашу удаленную команду.</span>
+                </p>
+                <p class="quote-author">
+                    <span lang="en">- Sarah J., HR Director</span>
+                    <span lang="pt">- Sarah J., Diretora de RH</span>
+                    <span lang="ru">- Сара Дж., Директор по персоналу</span>
+                </p>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">94%</div>
+                    <div class="stat-label">
+                        <span lang="en">Participant satisfaction</span>
+                        <span lang="pt">Satisfação dos participantes</span>
+                        <span lang="ru">Удовлетворенность участников</span>
+                    </div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">87%</div>
+                    <div class="stat-label">
+                        <span lang="en">Report improved team communication</span>
+                        <span lang="pt">Relatam comunicação de equipe aprimorada</span>
+                        <span lang="ru">Сообщают об улучшении командной коммуникации</span>
+                    </div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">78%</div>
+                    <div class="stat-label">
+                        <span lang="en">Increase in team collaboration</span>
+                        <span lang="pt">Aumento na colaboração da equipe</span>
+                        <span lang="ru">Увеличение командного сотрудничества</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposal Section -->
+    <section class="section-proposals">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Unforgettable Proposals</span>
+                    <span lang="pt">Pedidos Inesquecíveis</span>
+                    <span lang="ru">Незабываемые Предложения</span>
+                </h2>
+                <p>
+                    <span lang="en">Create the perfect moment to ask that life-changing question.</span>
+                    <span lang="pt">Crie o momento perfeito para fazer aquela pergunta que muda a vida.</span>
+                    <span lang="ru">Создайте идеальный момент, чтобы задать тот самый вопрос, меняющий жизнь.</span>
+                </p>
+            </div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <div class="benefit-card">
+                        <h3>
+                            <span lang="en">Personalized Proposal Journeys</span>
+                            <span lang="pt">Jornadas de Pedido Personalizadas</span>
+                            <span lang="ru">Персонализированные Путешествия для Предложения</span>
+                        </h3>
+                        <p lang="en">Our custom proposal experiences guide your partner through a meaningful audio journey that builds anticipation and emotion before culminating in your perfect proposal moment. We work closely with you to incorporate your unique love story, inside jokes, and special memories.</p>
+                        <p lang="pt">Nossas experiências de pedido personalizadas guiam seu parceiro através de uma jornada de áudio significativa que constrói antecipação e emoção antes de culminar no seu momento perfeito de proposta. Trabalhamos em estreita colaboração com você para incorporar sua história de amor única, piadas internas e memórias especiais.</p>
+                        <p lang="ru">Наши индивидуальные впечатления для предложения проведут вашего партнера через значимое аудио-путешествие, которое создает предвкушение и эмоции, прежде чем кульминировать в вашем идеальном моменте предложения. Мы тесно сотрудничаем с вами, чтобы включить вашу уникальную историю любви, внутренние шутки и особые воспоминания.</p>
+                        <ul class="benefit-list">
+                            <li>
+                                <span lang="en">Incorporates your personal love story</span>
+                                <span lang="pt">Incorpora sua história de amor pessoal</span>
+                                <span lang="ru">Включает вашу личную историю любви</span>
+                            </li>
+                            <li>
+                                <span lang="en">Visits meaningful relationship locations</span>
+                                <span lang="pt">Visita locais significativos do relacionamento</span>
+                                <span lang="ru">Посещает значимые места отношений</span>
+                            </li>
+                            <li>
+                                <span lang="en">Includes your favorite music</span>
+                                <span lang="pt">Inclui sua música favorita</span>
+                                <span lang="ru">Включает вашу любимую музыку</span>
+                            </li>
+                            <li>
+                                <span lang="en">Professional recording options</span>
+                                <span lang="pt">Opções de gravação profissional</span>
+                                <span lang="ru">Варианты профессиональной записи</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="quote-box">
+                        <p class="quote-text">
+                            <span lang="en">The audio tour proposal was absolutely magical. As I followed the journey through our favorite places, hearing our story narrated with our special songs playing in the background, I was completely surprised and overwhelmed with emotion when he was waiting at the final stop to propose.</span>
+                            <span lang="pt">O pedido de casamento com tour de áudio foi absolutamente mágico. Enquanto eu seguia a jornada por nossos lugares favoritos, ouvindo nossa história narrada com nossas músicas especiais tocando ao fundo, fiquei completamente surpresa e sobrecarregada de emoção quando ele estava esperando na parada final para fazer o pedido.</span>
+                            <span lang="ru">Предложение с аудио-экскурсией было абсолютно волшебным. Когда я следовала по маршруту через наши любимые места, слушая нашу историю, рассказанную с нашими особыми песнями, играющими на фоне, я была полностью удивлена и переполнена эмоциями, когда он ждал на последней остановке, чтобы сделать предложение.</span>
+                        </p>
+                        <p class="quote-author">
+                            <span lang="en">- Maria C., Newly Engaged</span>
+                            <span lang="pt">- Maria C., Recém Noiva</span>
+                            <span lang="ru">- Мария К., Недавно Обрученная</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8" alt="Proposal">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Occasions Section -->
+    <section class="section-special-occasions">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Celebrate Special Moments</span>
+                    <span lang="pt">Celebre Momentos Especiais</span>
+                    <span lang="ru">Отмечайте Особые Моменты</span>
+                </h2>
+                <p>
+                    <span lang="en">Transform birthdays, anniversaries, and celebrations into extraordinary experiences.</span>
+                    <span lang="pt">Transforme aniversários, datas comemorativas e celebrações em experiências extraordinárias.</span>
+                    <span lang="ru">Превратите дни рождения, годовщины и праздники в необычные впечатления.</span>
+                </p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Birthday Adventures</span>
+                            <span lang="pt">Aventuras de Aniversário</span>
+                            <span lang="ru">Приключения на День Рождения</span>
+                        </h3>
+                        <p lang="en">Create a special birthday experience with an audio-guided treasure hunt that leads to gifts, surprises, and meaningful locations. Include messages from friends and family, favorite music, and personalized narration to make the birthday person feel truly celebrated.</p>
+                        <p lang="pt">Crie uma experiência especial de aniversário com uma caça ao tesouro guiada por áudio que leva a presentes, surpresas e locais significativos. Inclua mensagens de amigos e familiares, música favorita e narração personalizada para fazer o aniversariante se sentir verdadeiramente celebrado.</p>
+                        <p lang="ru">Создайте особое впечатление на день рождения с аудио-поиском сокровищ, который ведет к подаркам, сюрпризам и значимым местам. Включите сообщения от друзей и семьи, любимую музыку и персонализированное повествование, чтобы именинник чувствовал себя по-настоящему празднуемым.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Anniversary Celebrations</span>
+                            <span lang="pt">Celebrações de Aniversário</span>
+                            <span lang="ru">Празднования Годовщин</span>
+                        </h3>
+                        <p lang="en">Commemorate your relationship milestones with a custom audio journey that revisits the key moments in your relationship. From first date locations to meaningful shared experiences, our anniversary tours create a romantic walk down memory lane.</p>
+                        <p lang="pt">Comemore os marcos do seu relacionamento com uma jornada de áudio personalizada que revisita os momentos-chave do seu relacionamento. Desde locais do primeiro encontro até experiências significativas compartilhadas, nossos tours de aniversário criam um passeio romântico pelas memórias.</p>
+                        <p lang="ru">Отметьте вехи ваших отношений с помощью индивидуального аудио-путешествия, которое возвращается к ключевым моментам ваших отношений. От мест первого свидания до значимых совместных впечатлений, наши экскурсии к годовщине создают романтическую прогулку по воспоминаниям.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Graduation & Achievement</span>
+                            <span lang="pt">Formatura e Conquistas</span>
+                            <span lang="ru">Выпускной и Достижения</span>
+                        </h3>
+                        <p lang="en">Celebrate academic and personal achievements with a custom audio experience that honors the journey and hard work. Include congratulatory messages from mentors, friends, and family, along with a guided tour of meaningful locations in the achievement journey.</p>
+                        <p lang="pt">Celebre conquistas acadêmicas e pessoais com uma experiência de áudio personalizada que honra a jornada e o trabalho árduo. Inclua mensagens de parabéns de mentores, amigos e familiares, junto com um tour guiado de locais significativos na jornada de conquista.</p>
+                        <p lang="ru">Отпразднуйте академические и личные достижения с помощью индивидуального аудио-опыта, который чтит путь и упорный труд. Включите поздравительные сообщения от наставников, друзей и семьи, а также экскурсию по значимым местам в пути достижения.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section-how-it-works">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">How It Works</span>
+                    <span lang="pt">Como Funciona</span>
+                    <span lang="ru">Как Это Работает</span>
+                </h2>
+                <p>
+                    <span lang="en">Creating your personalized audio experience is simple and collaborative.</span>
+                    <span lang="pt">Criar sua experiência de áudio personalizada é simples e colaborativo.</span>
+                    <span lang="ru">Создание вашего персонализированного аудио-опыта просто и основано на сотрудничестве.</span>
+                </p>
+            </div>
+            
+            <div class="value-list">
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-1"></i>
+                    </div>
+                    <div class="value-text">
+                        <h4>
+                            <span lang="en">Consultation</span>
+                            <span lang="pt">Consulta</span>
+                            <span lang="ru">Консультация</span>
+                        </h4>
+                        <p lang="en">We begin with a detailed consultation to understand your vision, goals, and the special elements you want to include in your audio experience.</p>
+                        <p lang="pt">Começamos com uma consulta detalhada para entender sua visão, objetivos e os elementos especiais que você deseja incluir em sua experiência de áudio.</p>
+                        <p lang="ru">Мы начинаем с подробной консультации, чтобы понять ваше видение, цели и особые элементы, которые вы хотите включить в ваш аудио-опыт.</p>
+                    </div>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-2"></i>
+                    </div>
+                    <div class="value-text">
+                        <h4>
+                            <span lang="en">Custom Script Development</span>
+                            <span lang="pt">Desenvolvimento de Roteiro Personalizado</span>
+                            <span lang="ru">Разработка Индивидуального Сценария</span>
+                        </h4>
+                        <p lang="en">Our creative team develops a custom script that incorporates your personal story, inside jokes, and special memories into an engaging narrative.</p>
+                        <p lang="pt">Nossa equipe criativa desenvolve um roteiro personalizado que incorpora sua história pessoal, piadas internas e memórias especiais em uma narrativa envolvente.</p>
+                        <p lang="ru">Наша творческая команда разрабатывает индивидуальный сценарий, который включает вашу личную историю, внутренние шутки и особые воспоминания в увлекательное повествование.</p>
+                    </div>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-3"></i>
+                    </div>
+                    <div class="value-text">
+                        <h4>
+                            <span lang="en">Professional Recording</span>
+                            <span lang="pt">Gravação Profissional</span>
+                            <span lang="ru">Профессиональная Запись</span>
+                        </h4>
+                        <p lang="en">Choose between professional voice actors or record your own voice for a more personal touch. We mix in music, sound effects, and ambient sounds to create an immersive audio experience.</p>
+                        <p lang="pt">Escolha entre atores de voz profissionais ou grave sua própria voz para um toque mais pessoal. Misturamos música, efeitos sonoros e sons ambientes para criar uma experiência de áudio imersiva.</p>
+                        <p lang="ru">Выбирайте между профессиональными актерами озвучивания или запишите свой собственный голос для более личного подхода. Мы смешиваем музыку, звуковые эффекты и окружающие звуки, чтобы создать иммерсивный аудио-опыт.</p>
+                    </div>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-4"></i>
+                    </div>
+                    <div class="value-text">
+                        <h4>
+                            <span lang="en">Route Planning</span>
+                            <span lang="pt">Planejamento de Rota</span>
+                            <span lang="ru">Планирование Маршрута</span>
+                        </h4>
+                        <p lang="en">We map out the perfect route that incorporates meaningful locations and practical logistics to ensure a smooth experience on the day.</p>
+                        <p lang="pt">Mapeamos a rota perfeita que incorpora locais significativos e logística prática para garantir uma experiência tranquila no dia.</p>
+                        <p lang="ru">Мы составляем идеальный маршрут, который включает значимые места и практическую логистику, чтобы обеспечить беспрепятственный опыт в день проведения.</p>
+                    </div>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-5"></i>
+                    </div>
+                    <div class="value-text">
+                        <h4>
+                            <span lang="en">App Setup & Testing</span>
+                            <span lang="pt">Configuração e Teste do Aplicativo</span>
+                            <span lang="ru">Настройка и Тестирование Приложения</span>
+                        </h4>
+                        <p lang="en">We load your custom audio tour into our user-friendly app and thoroughly test the experience to ensure everything works perfectly.</p>
+                        <p lang="pt">Carregamos seu tour de áudio personalizado em nosso aplicativo fácil de usar e testamos minuciosamente a experiência para garantir que tudo funcione perfeitamente.</p>
+                        <p lang="ru">Мы загружаем ваш индивидуальный аудио-тур в наше удобное приложение и тщательно тестируем опыт, чтобы убедиться, что все работает идеально.</p>
+                    </div>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-6"></i>
+                    </div>
+                    <div class="value-text">
+                        <h4>
+                            <span lang="en">Experience Day</span>
+                            <span lang="pt">Dia da Experiência</span>
+                            <span lang="ru">День Впечатлений</span>
+                        </h4>
+                        <p lang="en">On the big day, we provide optional behind-the-scenes support to ensure everything goes according to plan, allowing you to focus on enjoying the special moment.</p>
+                        <p lang="pt">No grande dia, fornecemos suporte opcional nos bastidores para garantir que tudo ocorra conforme o planejado, permitindo que você se concentre em aproveitar o momento especial.</p>
+                        <p lang="ru">В важный день мы предоставляем дополнительную закулисную поддержку, чтобы убедиться, что все идет по плану, позволяя вам сосредоточиться на наслаждении особым моментом.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-container" style="margin-top: 50px;">
+                <img src="app_screenshot.png" alt="CCE Tours App">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Ready to Create Your Special Experience?</span>
+                    <span lang="pt">Pronto para Criar Sua Experiência Especial?</span>
+                    <span lang="ru">Готовы Создать Ваш Особый Опыт?</span>
+                </h2>
+                <p>
+                    <span lang="en">Contact us today to discuss your ideas and start planning your custom audio experience.</span>
+                    <span lang="pt">Entre em contato conosco hoje para discutir suas ideias e começar a planejar sua experiência de áudio personalizada.</span>
+                    <span lang="ru">Свяжитесь с нами сегодня, чтобы обсудить ваши идеи и начать планирование вашего индивидуального аудио-опыта.</span>
+                </p>
+            </div>
+            
+            <a href="#" class="cta-button">
+                <span lang="en">Start Planning</span>
+                <span lang="pt">Começar a Planejar</span>
+                <span lang="ru">Начать Планирование</span>
+            </a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <p>info@ccetours.com</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <p>+XX XXX XXX XXX</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <p>
+                        <span lang="en">Lisbon, Portugal</span>
+                        <span lang="pt">Lisboa, Portugal</span>
+                        <span lang="ru">Лиссабон, Португалия</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>
+                <span lang="en">CCE Tours - Immersive Audio Experiences</span>
+                <span lang="pt">CCE Tours - Experiências de Áudio Imersivas</span>
+                <span lang="ru">CCE Tours - Иммерсивные Аудио Экскурсии</span>
+            </p>
+            
+            <div class="footer-links">
+                <a href="index_multilingual.html">
+                    <span lang="en">Home</span>
+                    <span lang="pt">Início</span>
+                    <span lang="ru">Главная</span>
+                </a>
+                <a href="municipalities_multilingual.html">
+                    <span lang="en">Municipalities</span>
+                    <span lang="pt">Municípios</span>
+                    <span lang="ru">Муниципалитеты</span>
+                </a>
+                <a href="companies_multilingual.html">
+                    <span lang="en">Companies</span>
+                    <span lang="pt">Empresas</span>
+                    <span lang="ru">Компании</span>
+                </a>
+                <a href="personal_multilingual.html">
+                    <span lang="en">Personal</span>
+                    <span lang="pt">Pessoal</span>
+                    <span lang="ru">Личное</span>
+                </a>
+            </div>
+            
+            <p class="copyright">
+                <span lang="en">© 2025 CCE Tours. All rights reserved.</span>
+                <span lang="pt">© 2025 CCE Tours. Todos os direitos reservados.</span>
+                <span lang="ru">© 2025 CCE Tours. Все права защищены.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/language-selector.js"></script>
+    <script>
+        // Mobile Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            });
+            
+            document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }));
+            
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Animation on scroll
+            const fadeElements = document.querySelectorAll('.feature-card, .benefit-card');
+            
+            const fadeInOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -100px 0px"
+            };
+            
+            const fadeInObserver = new IntersectionObserver(function(entries, fadeInObserver) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('fade-in');
+                        fadeInObserver.unobserve(entry.target);
+                    }
+                });
+            }, fadeInOptions);
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

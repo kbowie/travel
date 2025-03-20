@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCE Tours - Immersive Audio Experiences</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/language-selector.css">
+    <style>
+        :root {
+            --primary-color: #3a3d7a;
+            --secondary-color: #f2b880;
+            --text-color: #333;
+            --light-color: #f5f5f5;
+            --dark-color: #222;
+            --accent-color: #e67e22;
+            --success-color: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        .presentation-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(58, 61, 122, 0.8), rgba(58, 61, 122, 0.8)), url('https://images.unsplash.com/photo-1473496169904-658ba7c44d8a');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 2.5rem;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature-content {
+            padding: 30px;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .audience-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .audience-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .audience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .audience-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .audience-content {
+            padding: 30px;
+        }
+        
+        .audience-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .audience-content p {
+            margin-bottom: 20px;
+        }
+        
+        .value-list {
+            margin: 30px 0;
+        }
+        
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .value-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .value-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .app-showcase {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .app-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .app-screenshot {
+            max-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            margin: 40px auto;
+        }
+        
+        .app-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .app-feature {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .app-feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .app-feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-section {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            color: rgba(58, 61, 122, 0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .testimonial-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .testimonial-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .contact-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .contact-item {
+            margin: 20px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+        
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                gap: 0;
+                flex-direction: column;
+                background-color: var(--primary-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-item {
+                margin: 16px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .image-container {
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="language-btn active" data-lang="en">EN</button>
+        <button class="language-btn" data-lang="pt">PT</button>
+        <button class="language-btn" data-lang="ru">RU</button>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav class="navbar">
+            <a href="index_multilingual.html" class="nav-logo">CCE Tours</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index_multilingual.html" class="nav-link">
+                        <span lang="en">Home</span>
+                        <span lang="pt">Início</span>
+                        <span lang="ru">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="municipalities_multilingual.html" class="nav-link">
+                        <span lang="en">Municipalities</span>
+                        <span lang="pt">Municípios</span>
+                        <span lang="ru">Муниципалитеты</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="companies_multilingual.html" class="nav-link">
+                        <span lang="en">Companies</span>
+                        <span lang="pt">Empresas</span>
+                        <span lang="ru">Компании</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="personal_multilingual.html" class="nav-link">
+                        <span lang="en">Personal</span>
+                        <span lang="pt">Pessoal</span>
+                        <span lang="ru">Личное</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">
+                        <span lang="en">Contact</span>
+                        <span lang="pt">Contato</span>
+                        <span lang="ru">Контакты</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="presentation-container">
+            <h1>
+                <span lang="en">Immersive Audio Experiences</span>
+                <span lang="pt">Experiências Áudio Imersivas</span>
+                <span lang="ru">Иммерсивные Аудио Экскурсии</span>
+            </h1>
+            <p>
+                <span lang="en">Transform places into stories with location-based audio tours that engage, educate, and inspire.</span>
+                <span lang="pt">Transforme lugares em histórias com tours de áudio baseados em localização que envolvem, educam e inspiram.</span>
+                <span lang="ru">Превратите места в истории с помощью аудиоэкскурсий на основе геолокации, которые вовлекают, обучают и вдохновляют.</span>
+            </p>
+            <div>
+                <a href="#audiences" class="cta-button">
+                    <span lang="en">Explore Solutions</span>
+                    <span lang="pt">Explorar Soluções</span>
+                    <span lang="ru">Изучить Решения</span>
+                </a>
+                <a href="#contact" class="cta-button">
+                    <span lang="en">Contact Us</span>
+                    <span lang="pt">Contate-nos</span>
+                    <span lang="ru">Связаться с Нами</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-about">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">The Power of Audio Storytelling</span>
+                    <span lang="pt">O Poder da Narrativa em Áudio</span>
+                    <span lang="ru">Сила Аудио Повествования</span>
+                </h2>
+                <p>
+                    <span lang="en">We create immersive audio experiences that transform how people connect with places.</span>
+                    <span lang="pt">Criamos experiências de áudio imersivas que transformam a forma como as pessoas se conectam com os lugares.</span>
+                    <span lang="ru">Мы создаем иммерсивные аудио-экскурсии, которые меняют способ взаимодействия людей с местами.</span>
+                </p>
+            </div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <div class="image-container">
+                        <img src="app_screenshot.png" alt="CCE Tours App Screenshot">
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <p lang="en">CCE Tours specializes in creating location-based audio experiences that bring places to life through professional storytelling, sound design, and innovative technology. Our immersive audio tours guide users through physical spaces while delivering engaging narratives that create emotional connections and memorable experiences.</p>
+                    
+                    <p lang="pt">A CCE Tours é especializada na criação de experiências de áudio baseadas em localização que dão vida aos lugares através de narrativas profissionais, design de som e tecnologia inovadora. Nossos tours de áudio imersivos guiam os usuários através de espaços físicos enquanto oferecem narrativas envolventes que criam conexões emocionais e experiências memoráveis.</p>
+                    
+                    <p lang="ru">CCE Tours специализируется на создании аудио-экскурсий на основе геолокации, которые оживляют места с помощью профессионального повествования, звукового дизайна и инновационных технологий. Наши иммерсивные аудио-экскурсии проводят пользователей через физические пространства, предлагая увлекательные истории, которые создают эмоциональные связи и запоминающиеся впечатления.</p>
+                    
+                    <p lang="en">Unlike traditional audio guides, our experiences are fully theatrical productions with professional voice actors, original music, and sound effects that create "movies in your ears" as you explore. The result is a deeply engaging experience that transforms ordinary places into extraordinary stories.</p>
+                    
+                    <p lang="pt">Ao contrário dos guias de áudio tradicionais, nossas experiências são produções totalmente teatrais com atores de voz profissionais, música original e efeitos sonoros que criam "filmes em seus ouvidos" enquanto você explora. O resultado é uma experiência profundamente envolvente que transforma lugares comuns em histórias extraordinárias.</p>
+                    
+                    <p lang="ru">В отличие от традиционных аудиогидов, наши экскурсии представляют собой полноценные театральные постановки с профессиональными актерами озвучивания, оригинальной музыкой и звуковыми эффектами, создающими "фильмы в ваших ушах" во время исследования. Результат - глубоко увлекательный опыт, превращающий обычные места в необыкновенные истории.</p>
+                    
+                    <p lang="en">Our platform is flexible and can be customized for a wide range of applications, from tourism and cultural heritage to corporate storytelling, team building activities, and personal special occasions.</p>
+                    
+                    <p lang="pt">Nossa plataforma é flexível e pode ser personalizada para uma ampla gama de aplicações, desde turismo e patrimônio cultural até narrativas corporativas, atividades de team building e ocasiões especiais pessoais.</p>
+                    
+                    <p lang="ru">Наша платформа гибкая и может быть настроена для широкого спектра применений, от туризма и культурного наследия до корпоративного повествования, командообразующих мероприятий и личных особых случаев.</p>
+                </div>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Location-Based</span>
+                            <span lang="pt">Baseado em Localização</span>
+                            <span lang="ru">На Основе Геолокации</span>
+                        </h3>
+                        <p lang="en">GPS-triggered content delivers the right story at the right place, creating a seamless experience as users explore.</p>
+                        <p lang="pt">Conteúdo ativado por GPS entrega a história certa no lugar certo, criando uma experiência perfeita enquanto os usuários exploram.</p>
+                        <p lang="ru">Контент, активируемый GPS, доставляет нужную историю в нужном месте, создавая целостный опыт во время исследования пользователями.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Professional Production</span>
+                            <span lang="pt">Produção Profissional</span>
+                            <span lang="ru">Профессиональное Производство</span>
+                        </h3>
+                        <p lang="en">Theatrical-quality audio with professional voice actors, original music, and immersive sound design.</p>
+                        <p lang="pt">Áudio de qualidade teatral com atores de voz profissionais, música original e design de som imersivo.</p>
+                        <p lang="ru">Аудио театрального качества с профессиональными актерами озвучивания, оригинальной музыкой и иммерсивным звуковым дизайном.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">User-Friendly</span>
+                            <span lang="pt">Fácil de Usar</span>
+                            <span lang="ru">Удобный Интерфейс</span>
+                        </h3>
+                        <p lang="en">Intuitive mobile app with clear navigation and accessibility features.</p>
+                        <p lang="pt">Aplicativo móvel intuitivo com navegação clara e recursos de acessibilidade.</p>
+                        <p lang="ru">Интуитивно понятное мобильное приложение с четкой навигацией и функциями доступности.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Fully Customizable</span>
+                            <span lang="pt">Totalmente Personalizável</span>
+                            <span lang="ru">Полностью Настраиваемый</span>
+                        </h3>
+                        <p lang="en">White-label solutions that can be branded and tailored to specific needs and audiences.</p>
+                        <p lang="pt">Soluções white-label que podem ser marcadas e adaptadas a necessidades e públicos específicos.</p>
+                        <p lang="ru">Решения white-label, которые можно брендировать и адаптировать к конкретным потребностям и аудиториям.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Section -->
+    <section id="audiences" class="audience-section">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Solutions For Every Need</span>
+                    <span lang="pt">Soluções Para Cada Necessidade</span>
+                    <span lang="ru">Решения Для Любых Потребностей</span>
+                </h2>
+                <p>
+                    <span lang="en">Discover how our immersive audio experiences can be tailored for different audiences.</span>
+                    <span lang="pt">Descubra como nossas experiências de áudio imersivas podem ser adaptadas para diferentes públicos.</span>
+                    <span lang="ru">Узнайте, как наши иммерсивные аудио-экскурсии могут быть адаптированы для различных аудиторий.</span>
+                </p>
+            </div>
+            
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-image" style="background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df')"></div>
+                    <div class="audience-content">
+                        <h3>
+                            <span lang="en">Municipalities</span>
+                            <span lang="pt">Municípios</span>
+                            <span lang="ru">Муниципалитеты</span>
+                        </h3>
+                        <p lang="en">Enhance tourism, showcase cultural heritage, and create engaging citizen experiences.</p>
+                        <p lang="pt">Melhore o turismo, destaque o patrimônio cultural e crie experiências envolventes para os cidadãos.</p>
+                        <p lang="ru">Улучшите туризм, продемонстрируйте культурное наследие и создайте увлекательный опыт для граждан.</p>
+                        <a href="municipalities_multilingual.html" class="cta-button">
+                            <span lang="en">Learn More</span>
+                            <span lang="pt">Saiba Mais</span>
+                            <span lang="ru">Узнать Больше</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="audience-card">
+                    <div class="audience-image" style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72')"></div>
+                    <div class="audience-content">
+                        <h3>
+                            <span lang="en">Companies</span>
+                            <span lang="pt">Empresas</span>
+                            <span lang="ru">Компании</span>
+                        </h3>
+                        <p lang="en">Strengthen brand storytelling, enhance customer experiences, and create team building activities.</p>
+                        <p lang="pt">Fortaleça a narrativa da marca, melhore as experiências dos clientes e crie atividades de team building.</p>
+                        <p lang="ru">Усильте повествование о бренде, улучшите клиентский опыт и создайте мероприятия по командообразованию.</p>
+                        <a href="companies_multilingual.html" class="cta-button">
+                            <span lang="en">Learn More</span>
+                            <span lang="pt">Saiba Mais</span>
+                            <span lang="ru">Узнать Больше</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="audience-card">
+                    <div class="audience-image" style="background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac')"></div>
+                    <div class="audience-content">
+                        <h3>
+                            <span lang="en">Personal</span>
+                            <span lang="pt">Pessoal</span>
+                            <span lang="ru">Личное</span>
+                        </h3>
+                        <p lang="en">Create unforgettable experiences for special occasions, team building, and family adventures.</p>
+                        <p lang="pt">Crie experiências inesquecíveis para ocasiões especiais, team building e aventuras em família.</p>
+                        <p lang="ru">Создайте незабываемые впечатления для особых случаев, командообразования и семейных приключений.</p>
+                        <a href="personal_multilingual.html" class="cta-button">
+                            <span lang="en">Learn More</span>
+                            <span lang="pt">Saiba Mais</span>
+                            <span lang="ru">Узнать Больше</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Showcase Section -->
+    <section class="app-showcase">
+        <div class="app-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">The CCE Tours Experience</span>
+                    <span lang="pt">A Experiência CCE Tours</span>
+                    <span lang="ru">Опыт CCE Tours</span>
+                </h2>
+                <p>
+                    <span lang="en">Our intuitive mobile app delivers immersive audio experiences with powerful features.</span>
+                    <span lang="pt">Nosso aplicativo móvel intuitivo oferece experiências de áudio imersivas com recursos poderosos.</span>
+                    <span lang="ru">Наше интуитивно понятное мобильное приложение предлагает иммерсивные аудио-экскурсии с мощными функциями.</span>
+                </p>
+            </div>
+            
+            <img src="app_screenshot.png" alt="CCE Tours App Screenshot" class="app-screenshot">
+            
+            <div class="app-features">
+                <div class="app-feature">
+                    <div class="app-feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>
+                        <span lang="en">GPS Navigation</span>
+                        <span lang="pt">Navegação GPS</span>
+                        <span lang="ru">GPS Навигация</span>
+                    </h3>
+                    <p lang="en">Automatically triggers content at the right location</p>
+                    <p lang="pt">Ativa automaticamente o conteúdo no local certo</p>
+                    <p lang="ru">Автоматически активирует контент в нужном месте</p>
+                </div>
+                
+                <div class="app-feature">
+                    <div class="app-feature-icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3>
+                        <span lang="en">High-Quality Audio</span>
+                        <span lang="pt">Áudio de Alta Qualidade</span>
+                        <span lang="ru">Высококачественное Аудио</span>
+                    </h3>
+                    <p lang="en">Professional narration with immersive sound design and music.</p>
+                    <p lang="pt">Narração profissional com design de som imersivo e música.</p>
+                    <p lang="ru">Профессиональное повествование с иммерсивным звуковым дизайном и музыкой.</p>
+                </div>
+                
+                <div class="app-feature">
+                    <div class="app-feature-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>
+                        <span lang="en">Rich Content</span>
+                        <span lang="pt">Conteúdo Rico</span>
+                        <span lang="ru">Богатый Контент</span>
+                    </h3>
+                    <p lang="en">Optional images, text, and interactive elements enhance the experience.</p>
+                    <p lang="pt">Imagens opcionais, texto e elementos interativos melhoram a experiência.</p>
+                    <p lang="ru">Дополнительные изображения, текст и интерактивные элементы улучшают впечатления.</p>
+                </div>
+                
+                <div class="app-feature">
+                    <div class="app-feature-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>
+                        <span lang="en">Works Offline</span>
+                        <span lang="pt">Funciona Offline</span>
+                        <span lang="ru">Работает Офлайн</span>
+                    </h3>
+                    <p lang="en">Download tours for use without internet connection.</p>
+                    <p lang="pt">Baixe tours para uso sem conexão com a internet.</p>
+                    <p lang="ru">Загружайте экскурсии для использования без подключения к интернету.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">What Our Clients Say</span>
+                    <span lang="pt">O Que Nossos Clientes Dizem</span>
+                    <span lang="ru">Что Говорят Наши Клиенты</span>
+                </h2>
+                <p>
+                    <span lang="en">Hear from those who have experienced the power of our immersive audio tours.</span>
+                    <span lang="pt">Ouça aqueles que experimentaram o poder de nossos tours de áudio imersivos.</span>
+                    <span lang="ru">Послушайте тех, кто испытал силу наших иммерсивных аудио-экскурсий.</span>
+                </p>
+            </div>
+            
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <p class="testimonial-text" lang="en">The audio tour created for our city has transformed how visitors experience our cultural heritage. The storytelling approach and professional production quality have received overwhelmingly positive feedback, and we've seen a significant increase in visitor engagement.</p>
+                    <p class="testimonial-text" lang="pt">O tour de áudio criado para nossa cidade transformou a forma como os visitantes experimentam nosso patrimônio cultural. A abordagem narrativa e a qualidade de produção profissional receberam feedback extremamente positivo, e vimos um aumento significativo no engajamento dos visitantes.</p>
+                    <p class="testimonial-text" lang="ru">Аудио-экскурсия, созданная для нашего города, изменила то, как посетители воспринимают наше культурное наследие. Подход к повествованию и профессиональное качество производства получили чрезвычайно положительные отзывы, и мы увидели значительное увеличение вовлеченности посетителей.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/45.jpg')"></div>
+                        <div class="testimonial-info">
+                            <h4>Maria S.</h4>
+                            <p>
+                                <span lang="en">Tourism Director, European Municipality</span>
+                                <span lang="pt">Diretora de Turismo, Município Europeu</span>
+                                <span lang="ru">Директор по туризму, Европейский муниципалитет</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text" lang="en">We implemented the audio tour experience in our flagship store to tell our brand story, and the results have exceeded our expectations. Customers spend more time in the store, engage more deeply with our products, and we've seen a measurable increase in sales conversion.</p>
+                    <p class="testimonial-text" lang="pt">Implementamos a experiência de tour de áudio em nossa loja principal para contar a história da nossa marca, e os resultados superaram nossas expectativas. Os clientes passam mais tempo na loja, se envolvem mais profundamente com nossos produtos, e vimos um aumento mensurável na conversão de vendas.</p>
+                    <p class="testimonial-text" lang="ru">Мы внедрили аудио-экскурсию в нашем флагманском магазине, чтобы рассказать историю нашего бренда, и результаты превзошли наши ожидания. Клиенты проводят больше времени в магазине, глубже взаимодействуют с нашими продуктами, и мы увидели измеримое увеличение конверсии продаж.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg')"></div>
+                        <div class="testimonial-info">
+                            <h4>Thomas R.</h4>
+                            <p>
+                                <span lang="en">Marketing Director, Retail Brand</span>
+                                <span lang="pt">Diretor de Marketing, Marca de Varejo</span>
+                                <span lang="ru">Директор по маркетингу, Розничный бренд</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text" lang="en">The proposal experience they created was absolutely perfect. The way they incorporated our personal story into a guided journey through meaningful locations created an unforgettable moment that we'll cherish forever.</p>
+                    <p class="testimonial-text" lang="pt">A experiência de proposta que eles criaram foi absolutamente perfeita. A forma como incorporaram nossa história pessoal em uma jornada guiada por locais significativos criou um momento inesquecível que vamos valorizar para sempre.</p>
+                    <p class="testimonial-text" lang="ru">Созданный ими опыт предложения был абсолютно идеальным. То, как они включили нашу личную историю в путешествие по значимым местам, создало незабываемый момент, который мы будем ценить вечно.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/65.jpg')"></div>
+                        <div class="testimonial-info">
+                            <h4>Jennifer L.</h4>
+                            <p>
+                                <span lang="en">Personal Client</span>
+                                <span lang="pt">Cliente Pessoal</span>
+                                <span lang="ru">Частный Клиент</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Ready to Create Your Audio Experience?</span>
+                    <span lang="pt">Pronto para Criar Sua Experiência de Áudio?</span>
+                    <span lang="ru">Готовы Создать Свою Аудио-Экскурсию?</span>
+                </h2>
+                <p>
+                    <span lang="en">Contact us today to discuss how our immersive audio solutions can work for you.</span>
+                    <span lang="pt">Entre em contato conosco hoje para discutir como nossas soluções de áudio imersivas podem funcionar para você.</span>
+                    <span lang="ru">Свяжитесь с нами сегодня, чтобы обсудить, как наши иммерсивные аудио-решения могут работать для вас.</span>
+                </p>
+            </div>
+            
+            <a href="#" class="cta-button">
+                <span lang="en">Request a Demo</span>
+                <span lang="pt">Solicitar uma Demonstração</span>
+                <span lang="ru">Запросить Демо</span>
+            </a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <p>info@ccetours.com</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <p>+XX XXX XXX XXX</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <p>
+                        <span lang="en">Lisbon, Portugal</span>
+                        <span lang="pt">Lisboa, Portugal</span>
+                        <span lang="ru">Лиссабон, Португалия</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>
+                <span lang="en">CCE Tours - Immersive Audio Experiences</span>
+                <span lang="pt">CCE Tours - Experiências de Áudio Imersivas</span>
+                <span lang="ru">CCE Tours - Иммерсивные Аудио Экскурсии</span>
+            </p>
+            
+            <div class="footer-links">
+                <a href="index_multilingual.html">
+                    <span lang="en">Home</span>
+                    <span lang="pt">Início</span>
+                    <span lang="ru">Главная</span>
+                </a>
+                <a href="municipalities_multilingual.html">
+                    <span lang="en">Municipalities</span>
+                    <span lang="pt">Municípios</span>
+                    <span lang="ru">Муниципалитеты</span>
+                </a>
+                <a href="companies_multilingual.html">
+                    <span lang="en">Companies</span>
+                    <span lang="pt">Empresas</span>
+                    <span lang="ru">Компании</span>
+                </a>
+                <a href="personal_multilingual.html">
+                    <span lang="en">Personal</span>
+                    <span lang="pt">Pessoal</span>
+                    <span lang="ru">Личное</span>
+                </a>
+            </div>
+            
+            <p class="copyright">
+                <span lang="en">© 2025 CCE Tours. All rights reserved.</span>
+                <span lang="pt">© 2025 CCE Tours. Todos os direitos reservados.</span>
+                <span lang="ru">© 2025 CCE Tours. Все права защищены.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/language-selector.js"></script>
+    <script>
+        // Mobile Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            });
+            
+            document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }));
+            
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Animation on scroll
+            const fadeElements = document.querySelectorAll('.feature-card, .audience-card, .testimonial-card');
+            
+            const fadeInOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -100px 0px"
+            };
+            
+            const fadeInObserver = new IntersectionObserver(function(entries, fadeInObserver) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('fade-in');
+                        fadeInObserver.unobserve(entry.target);
+                    }
+                });
+            }, fadeInOptions);
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

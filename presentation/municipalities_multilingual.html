@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCE Tours - For Municipalities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/language-selector.css">
+    <style>
+        :root {
+            --primary-color: #3a3d7a;
+            --secondary-color: #f2b880;
+            --text-color: #333;
+            --light-color: #f5f5f5;
+            --dark-color: #222;
+            --accent-color: #e67e22;
+            --success-color: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        .presentation-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(58, 61, 122, 0.8), rgba(58, 61, 122, 0.8)), url('https://images.unsplash.com/photo-1519741347686-c1e0aadf4611');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 2.5rem;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature-content {
+            padding: 30px;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .value-list {
+            margin: 30px 0;
+        }
+        
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .value-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .value-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 50px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            margin: 20px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .quote-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 50px 0;
+            position: relative;
+        }
+        
+        .quote-box:before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .quote-text {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .image-container {
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .benefit-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .benefit-card p {
+            margin-bottom: 20px;
+        }
+        
+        .benefit-list {
+            list-style: none;
+        }
+        
+        .benefit-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .benefit-list li:before {
+            content: '✓';
+            color: var(--success-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .contact-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .contact-item {
+            margin: 20px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+        
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                gap: 0;
+                flex-direction: column;
+                background-color: var(--primary-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-item {
+                margin: 16px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="language-btn active" data-lang="en">EN</button>
+        <button class="language-btn" data-lang="pt">PT</button>
+        <button class="language-btn" data-lang="ru">RU</button>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav class="navbar">
+            <a href="index_multilingual.html" class="nav-logo">CCE Tours</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index_multilingual.html" class="nav-link">
+                        <span lang="en">Home</span>
+                        <span lang="pt">Início</span>
+                        <span lang="ru">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="municipalities_multilingual.html" class="nav-link">
+                        <span lang="en">Municipalities</span>
+                        <span lang="pt">Municípios</span>
+                        <span lang="ru">Муниципалитеты</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="companies_multilingual.html" class="nav-link">
+                        <span lang="en">Companies</span>
+                        <span lang="pt">Empresas</span>
+                        <span lang="ru">Компании</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="personal_multilingual.html" class="nav-link">
+                        <span lang="en">Personal</span>
+                        <span lang="pt">Pessoal</span>
+                        <span lang="ru">Личное</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">
+                        <span lang="en">Contact</span>
+                        <span lang="pt">Contato</span>
+                        <span lang="ru">Контакты</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="presentation-container">
+            <h1>
+                <span lang="en">Transform Your City's Tourism Experience</span>
+                <span lang="pt">Transforme a Experiência Turística da Sua Cidade</span>
+                <span lang="ru">Преобразите Туристический Опыт Вашего Города</span>
+            </h1>
+            <p>
+                <span lang="en">Immersive audio tours that showcase your unique cultural heritage and create unforgettable visitor experiences.</span>
+                <span lang="pt">Tours de áudio imersivos que destacam seu patrimônio cultural único e criam experiências inesquecíveis para os visitantes.</span>
+                <span lang="ru">Иммерсивные аудио-экскурсии, которые демонстрируют ваше уникальное культурное наследие и создают незабываемые впечатления для посетителей.</span>
+            </p>
+            <a href="#benefits" class="cta-button">
+                <span lang="en">Discover the Benefits</span>
+                <span lang="pt">Descubra os Benefícios</span>
+                <span lang="ru">Откройте Преимущества</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section class="section-challenges">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">The Modern Tourism Challenge</span>
+                    <span lang="pt">O Desafio do Turismo Moderno</span>
+                    <span lang="ru">Вызов Современного Туризма</span>
+                </h2>
+                <p>
+                    <span lang="en">Municipalities face unique challenges in today's rapidly evolving tourism landscape.</span>
+                    <span lang="pt">Os municípios enfrentam desafios únicos no panorama turístico em rápida evolução de hoje.</span>
+                    <span lang="ru">Муниципалитеты сталкиваются с уникальными проблемами в быстро меняющемся туристическом ландшафте.</span>
+                </p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Changing Visitor Expectations</span>
+                            <span lang="pt">Mudança nas Expectativas dos Visitantes</span>
+                            <span lang="ru">Изменение Ожиданий Посетителей</span>
+                        </h3>
+                        <p lang="en">Today's travelers seek authentic, personalized experiences rather than traditional guided tours. They want flexibility and digital solutions that enhance their exploration.</p>
+                        <p lang="pt">Os viajantes de hoje buscam experiências autênticas e personalizadas em vez de tours guiados tradicionais. Eles querem flexibilidade e soluções digitais que melhorem sua exploração.</p>
+                        <p lang="ru">Современные путешественники ищут аутентичные, персонализированные впечатления вместо традиционных экскурсий с гидом. Они хотят гибкости и цифровых решений, которые улучшают их исследование.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Tourism Concentration</span>
+                            <span lang="pt">Concentração Turística</span>
+                            <span lang="ru">Концентрация Туризма</span>
+                        </h3>
+                        <p lang="en">Popular attractions become overcrowded while lesser-known sites remain undiscovered. This creates an imbalanced tourism ecosystem and missed opportunities.</p>
+                        <p lang="pt">As atrações populares ficam superlotadas enquanto locais menos conhecidos permanecem não descobertos. Isso cria um ecossistema turístico desequilibrado e oportunidades perdidas.</p>
+                        <p lang="ru">Популярные достопримечательности становятся переполненными, в то время как менее известные места остаются неоткрытыми. Это создает несбалансированную туристическую экосистему и упущенные возможности.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            <span lang="en">Heritage Preservation</span>
+                            <span lang="pt">Preservação do Patrimônio</span>
+                            <span lang="ru">Сохранение Наследия</span>
+                        </h3>
+                        <p lang="en">Preserving and sharing cultural heritage in engaging ways is increasingly challenging, especially for intangible cultural assets like stories, traditions, and local knowledge.</p>
+                        <p lang="pt">Preservar e compartilhar o patrimônio cultural de maneiras envolventes é cada vez mais desafiador, especialmente para ativos culturais intangíveis como histórias, tradições e conhecimento local.</p>
+                        <p lang="ru">Сохранение и обмен культурным наследием увлекательными способами становится все более сложной задачей, особенно для нематериальных культурных ценностей, таких как истории, традиции и местные знания.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-box">
+                <p class="quote-text">
+                    <span lang="en">The municipalities that will thrive in the future tourism landscape are those that embrace digital innovation while preserving their authentic cultural identity.</span>
+                    <span lang="pt">Os municípios que prosperarão no futuro panorama turístico são aqueles que abraçam a inovação digital enquanto preservam sua autêntica identidade cultural.</span>
+                    <span lang="ru">Муниципалитеты, которые будут процветать в будущем туристическом ландшафте, - это те, которые принимают цифровые инновации, сохраняя при этом свою аутентичную культурную идентичность.</span>
+                </p>
+                <p class="quote-author">
+                    <span lang="en">- Tourism Industry Report 2024</span>
+                    <span lang="pt">- Relatório da Indústria de Turismo 2024</span>
+                    <span lang="ru">- Отчет о туристической индустрии 2024</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section-benefits">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Value for Municipalities</span>
+                    <span lang="pt">Valor para Municípios</span>
+                    <span lang="ru">Ценность для Муниципалитетов</span>
+                </h2>
+                <p>
+                    <span lang="en">Our immersive audio tour solution offers comprehensive benefits for municipal tourism development.</span>
+                    <span lang="pt">Nossa solução de tour de áudio imersivo oferece benefícios abrangentes para o desenvolvimento do turismo municipal.</span>
+                    <span lang="ru">Наше решение иммерсивных аудио-экскурсий предлагает комплексные преимущества для развития муниципального туризма.</span>
+                </p>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">35%</div>
+                    <div class="stat-label">
+                        <span lang="en">Average increase in visitor engagement</span>
+                        <span lang="pt">Aumento médio no engajamento dos visitantes</span>
+                        <span lang="ru">Среднее увеличение вовлеченности посетителей</span>
+                    </div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">42%</div>
+                    <div class="stat-label">
+                        <span lang="en">Increase in local business revenue</span>
+                        <span lang="pt">Aumento na receita de negócios locais</span>
+                        <span lang="ru">Увеличение доходов местного бизнеса</span>
+                    </div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">47%</div>
+                    <div class="stat-label">
+                        <span lang="en">Growth in off-season tourism</span>
+                        <span lang="pt">Crescimento no turismo fora de temporada</span>
+                        <span lang="ru">Рост туризма в межсезонье</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>
+                    <span lang="en">Enhanced Tourism Experience</span>
+                    <span lang="pt">Experiência Turística Aprimorada</span>
+                    <span lang="ru">Улучшенный Туристический Опыт</span>
+                </h3>
+                <p lang="en">Differentiate your tourism offering with high-quality, immersive experiences that attract cultural tourists who stay longer and spend more. Our character-driven storytelling creates memorable experiences that visitors share on social media, extending your reach organically.</p>
+                <p lang="pt">Diferencie sua oferta turística com experiências imersivas de alta qualidade que atraem turistas culturais que ficam mais tempo e gastam mais. Nossa narrativa baseada em personagens cria experiências memoráveis que os visitantes compartilham nas redes sociais, estendendo seu alcance organicamente.</p>
+                <p lang="ru">Выделите свое туристическое предложение с помощью высококачественных иммерсивных впечатлений, которые привлекают культурных туристов, которые остаются дольше и тратят больше. Наше повествование, основанное на персонажах, создает запоминающиеся впечатления, которыми посетители делятся в социальных сетях, органически расширяя ваш охват.</p>
+                <ul class="benefit-list">
+                    <li>
+                        <span lang="en">Differentiated tourism offering</span>
+                        <span lang="pt">Oferta turística diferenciada</span>
+                        <span lang="ru">Дифференцированное туристическое предложение</span>
+                    </li>
+                    <li>
+                        <span lang="en">Attraction of high-value cultural tourists</span>
+                        <span lang="pt">Atração de turistas culturais de alto valor</span>
+                        <span lang="ru">Привлечение культурных туристов высокой ценности</span>
+                    </li>
+                    <li>
+                        <span lang="en">Extended visitor engagement</span>
+                        <span lang="pt">Engajamento prolongado dos visitantes</span>
+                        <span lang="ru">Расширенное взаимодействие с посетителями</span>
+                    </li>
+                    <li>
+                        <span lang="en">Seasonal tourism balancing</span>
+                        <span lang="pt">Equilíbrio do turismo sazonal</span>
+                        <span lang="ru">Балансировка сезонного туризма</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>
+                    <span lang="en">Cultural Heritage Preservation</span>
+                    <span lang="pt">Preservação do Patrimônio Cultural</span>
+                    <span lang="ru">Сохранение Культурного Наследия</span>
+                </h3>
+                <p lang="en">Preserve local stories, traditions, and cultural knowledge in engaging digital format. Audio tours can direct visitors to overlooked historical sites, distributing tourism benefits beyond major attractions and revitalizing interest in forgotten aspects of municipal heritage.</p>
+                <p lang="pt">Preserve histórias locais, tradições e conhecimento cultural em formato digital envolvente. Os tours de áudio podem direcionar os visitantes para locais históricos negligenciados, distribuindo os benefícios do turismo além das principais atrações e revitalizando o interesse em aspectos esquecidos do patrimônio municipal.</p>
+                <p lang="ru">Сохраняйте местные истории, традиции и культурные знания в увлекательном цифровом формате. Аудио-экскурсии могут направлять посетителей к упущенным из виду историческим местам, распределяя преимущества туризма за пределами основных достопримечательностей и возрождая интерес к забытым аспектам муниципального наследия.</p>
+                <ul class="benefit-list">
+                    <li>
+                        <span lang="en">Digital documentation of local history</span>
+                        <span lang="pt">Documentação digital da história local</span>
+                        <span lang="ru">Цифровая документация местной истории</span>
+                    </li>
+                    <li>
+                        <span lang="en">Revitalization of lesser-known sites</span>
+                        <span lang="pt">Revitalização de locais menos conhecidos</span>
+                        <span lang="ru">Возрождение менее известных мест</span>
+                    </li>
+                    <li>
+                        <span lang="en">Intangible heritage preservation</span>
+                        <span lang="pt">Preservação do patrimônio intangível</span>
+                        <span lang="ru">Сохранение нематериального наследия</span>
+                    </li>
+                    <li>
+                        <span lang="en">Multi-generational appeal</span>
+                        <span lang="pt">Apelo multigeracional</span>
+                        <span lang="ru">Привлекательность для разных поколений</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>
+                    <span lang="en">Economic Benefits</span>
+                    <span lang="pt">Benefícios Econômicos</span>
+                    <span lang="ru">Экономические Преимущества</span>
+                </h3>
+                <p lang="en">Generate revenue through tour sales while increasing visitor spending in local businesses. The self-guided nature of audio tours naturally encourages visitors to patronize local cafes, restaurants, and shops along the route, creating economic benefits throughout your municipality.</p>
+                <p lang="pt">Gere receita através da venda de tours enquanto aumenta os gastos dos visitantes em negócios locais. A natureza autoguiada dos tours de áudio naturalmente encoraja os visitantes a frequentar cafés, restaurantes e lojas locais ao longo da rota, criando benefícios econômicos em todo o seu município.</p>
+                <p lang="ru">Генерируйте доход от продажи экскурсий, одновременно увеличивая расходы посетителей в местных предприятиях. Самостоятельный характер аудио-экскурсий естественным образом побуждает посетителей посещать местные кафе, рестораны и магазины по маршруту, создавая экономические выгоды по всему вашему муниципалитету.</p>
+                <ul class="benefit-list">
+                    <li>
+                        <span lang="en">Direct revenue generation</span>
+                        <span lang="pt">Geração direta de receita</span>
+                        <span lang="ru">Прямая генерация дохода</span>
+                    </li>
+                    <li>
+                        <span lang="en">Increased local business support</span>
+                        <span lang="pt">Maior apoio aos negócios locais</span>
+                        <span lang="ru">Увеличение поддержки местного бизнеса</span>
+                    </li>
+                    <li>
+                        <span lang="en">Job creation opportunities</span>
+                        <span lang="pt">Oportunidades de criação de empregos</span>
+                        <span lang="ru">Возможности создания рабочих мест</span>
+                    </li>
+                    <li>
+                        <span lang="en">Reduced infrastructure costs</span>
+                        <span lang="pt">Custos reduzidos de infraestrutura</span>
+                        <span lang="ru">Сниженные затраты на инфраструктуру</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>
+                    <span lang="en">Smart City Integration</span>
+                    <span lang="pt">Integração com Cidade Inteligente</span>
+                    <span lang="ru">Интеграция с Умным Городом</span>
+                </h3>
+                <p lang="en">Collect valuable data on visitor patterns and optimize tourism flows throughout your city. The digital nature of audio tours allows for collection of valuable anonymized data on popular routes, visitor dwell times, and usage patterns to inform future tourism development.</p>
+                <p lang="pt">Colete dados valiosos sobre padrões de visitantes e otimize fluxos turísticos em toda a sua cidade. A natureza digital dos tours de áudio permite a coleta de dados anônimos valiosos sobre rotas populares, tempos de permanência dos visitantes e padrões de uso para informar o desenvolvimento futuro do turismo.</p>
+                <p lang="ru">Собирайте ценные данные о моделях поведения посетителей и оптимизируйте туристические потоки по всему городу. Цифровой характер аудио-экскурсий позволяет собирать ценные анонимизированные данные о популярных маршрутах, времени пребывания посетителей и моделях использования для информирования будущего развития туризма.</p>
+                <ul class="benefit-list">
+                    <li>
+                        <span lang="en">Data-driven tourism management</span>
+                        <span lang="pt">Gestão de turismo baseada em dados</span>
+                        <span lang="ru">Управление туризмом на основе данных</span>
+                    </li>
+                    <li>
+                        <span lang="en">Visitor flow optimization</span>
+                        <span lang="pt">Otimização do fluxo de visitantes</span>
+                        <span lang="ru">Оптимизация потока посетителей</span>
+                    </li>
+                    <li>
+                        <span lang="en">Integration with existing initiatives</span>
+                        <span lang="pt">Integração com iniciativas existentes</span>
+                        <span lang="ru">Интеграция с существующими инициативами</span>
+                    </li>
+                    <li>
+                        <span lang="en">Sustainable tourism support</span>
+                        <span lang="pt">Apoio ao turismo sustentável</span>
+                        <span lang="ru">Поддержка устойчивого туризма</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>
+                    <span lang="en">Municipal Branding</span>
+                    <span lang="pt">Branding Municipal</span>
+                    <span lang="ru">Муниципальный Брендинг</span>
+                </h3>
+                <p lang="en">Craft and control your unique city narrative, enhancing your international profile. A custom audio tour allows municipalities to highlight the city's distinctive character, historical significance, and cultural uniqueness while building resident pride.</p>
+                <p lang="pt">Crie e controle a narrativa única da sua cidade, melhorando seu perfil internacional. Um tour de áudio personalizado permite que os municípios destaquem o caráter distintivo da cidade, a importância histórica e a singularidade cultural, enquanto constroem o orgulho dos residentes.</p>
+                <p lang="ru">Создавайте и контролируйте уникальное повествование о вашем городе, улучшая свой международный профиль. Индивидуальная аудио-экскурсия позволяет муниципалитетам подчеркнуть отличительный характер города, историческое значение и культурную уникальность, одновременно формируя гордость жителей.</p>
+                <ul class="benefit-list">
+                    <li>
+                        <span lang="en">Distinctive city narrative</span>
+                        <span lang="pt">Narrativa distintiva da cidade</span>
+                        <span lang="ru">Отличительное повествование о городе</span>
+                    </li>
+                    <li>
+                        <span lang="en">International visibility</span>
+                        <span lang="pt">Visibilidade internacional</span>
+                        <span lang="ru">Международная видимость</span>
+                    </li>
+                    <li>
+                        <span lang="en">Resident pride and engagement</span>
+                        <span lang="pt">Orgulho e engajamento dos residentes</span>
+                        <span lang="ru">Гордость и вовлеченность жителей</span>
+                    </li>
+                    <li>
+                        <span lang="en">Adaptable messaging</span>
+                        <span lang="pt">Mensagens adaptáveis</span>
+                        <span lang="ru">Адаптируемые сообщения</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Section -->
+    <section class="section-implementation">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Implementation Advantages</span>
+                    <span lang="pt">Vantagens de Implementação</span>
+                    <span lang="ru">Преимущества Внедрения</span>
+                </h2>
+                <p>
+                    <span lang="en">Our solution offers significant operational benefits compared to traditional tourism infrastructure.</span>
+                    <span lang="pt">Nossa solução oferece benefícios operacionais significativos em comparação com a infraestrutura turística tradicional.</span>
+                    <span lang="ru">Наше решение предлагает значительные операционные преимущества по сравнению с традиционной туристической инфраструктурой.</span>
+                </p>
+            </div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <div class="benefit-card">
+                        <h3>
+                            <span lang="en">Low Operational Overhead</span>
+                            <span lang="pt">Baixo Custo Operacional</span>
+                            <span lang="ru">Низкие Операционные Расходы</span>
+                        </h3>
+                        <p lang="en">Once developed, audio tours require minimal ongoing staff support compared to traditional guided tours.</p>
+                        <p lang="pt">Uma vez desenvolvidos, os tours de áudio requerem suporte mínimo contínuo de pessoal em comparação com os tours guiados tradicionais.</p>
+                        <p lang="ru">После разработки аудио-экскурсии требуют минимальной постоянной поддержки персонала по сравнению с традиционными экскурсиями с гидом.</p>
+                        <ul class="benefit-list">
+                            <li>
+                                <span lang="en">Minimal staffing requirements</span>
+                                <span lang="pt">Requisitos mínimos de pessoal</span>
+                                <span lang="ru">Минимальные требования к персоналу</span>
+                            </li>
+                            <li>
+                                <span lang="en">Reduced training needs</span>
+                                <span lang="pt">Necessidades reduzidas de treinamento</span>
+                                <span lang="ru">Сниженные потребности в обучении</span>
+                            </li>
+                            <li>
+                                <span lang="en">Scalable visitor capacity</span>
+                                <span lang="pt">Capacidade escalável de visitantes</span>
+                                <span lang="ru">Масштабируемая вместимость посетителей</span>
+                            </li>
+                            <li>
+                                <span lang="en">Weather-independent operation</span>
+                                <span lang="pt">Operação independente do clima</span>
+                                <span lang="ru">Работа независимо от погоды</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h3>
+                            <span lang="en">Flexible Deployment</span>
+                            <span lang="pt">Implantação Flexível</span>
+                            <span lang="ru">Гибкое Развертывание</span>
+                        </h3>
+                        <p lang="en">Start with a single flagship tour and gradually expand based on success and visitor feedback.</p>
+                        <p lang="pt">Comece com um único tour principal e expanda gradualmente com base no sucesso e feedback dos visitantes.</p>
+                        <p lang="ru">Начните с одной флагманской экскурсии и постепенно расширяйтесь на основе успеха и отзывов посетителей.</p>
+                        <ul class="benefit-list">
+                            <li>
+                                <span lang="en">Phased implementation approach</span>
+                                <span lang="pt">Abordagem de implementação em fases</span>
+                                <span lang="ru">Поэтапный подход к внедрению</span>
+                            </li>
+                            <li>
+                                <span lang="en">Adaptable to budget constraints</span>
+                                <span lang="pt">Adaptável a restrições orçamentárias</span>
+                                <span lang="ru">Адаптируемость к бюджетным ограничениям</span>
+                            </li>
+                            <li>
+                                <span lang="en">Iterative improvement process</span>
+                                <span lang="pt">Processo de melhoria iterativo</span>
+                                <span lang="ru">Итеративный процесс улучшения</span>
+                            </li>
+                            <li>
+                                <span lang="en">Seasonal content updates</span>
+                                <span lang="pt">Atualizações de conteúdo sazonal</span>
+                                <span lang="ru">Сезонные обновления контента</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="benefit-card">
+                        <h3>
+                            <span lang="en">Accessibility & Inclusion</span>
+                            <span lang="pt">Acessibilidade e Inclusão</span>
+                            <span lang="ru">Доступность и Инклюзивность</span>
+                        </h3>
+                        <p lang="en">Audio tours can be easily adapted for multiple languages and accessibility needs, expanding your visitor base.</p>
+                        <p lang="pt">Os tours de áudio podem ser facilmente adaptados para vários idiomas e necessidades de acessibilidade, expandindo sua base de visitantes.</p>
+                        <p lang="ru">Аудио-экскурсии могут быть легко адаптированы для нескольких языков и потребностей в доступности, расширяя вашу базу посетителей.</p>
+                        <ul class="benefit-list">
+                            <li>
+                                <span lang="en">Multilingual support</span>
+                                <span lang="pt">Suporte multilíngue</span>
+                                <span lang="ru">Многоязычная поддержка</span>
+                            </li>
+                            <li>
+                                <span lang="en">Accessibility features</span>
+                                <span lang="pt">Recursos de acessibilidade</span>
+                                <span lang="ru">Функции доступности</span>
+                            </li>
+                            <li>
+                                <span lang="en">Customizable pacing</span>
+                                <span lang="pt">Ritmo personalizável</span>
+                                <span lang="ru">Настраиваемый темп</span>
+                            </li>
+                            <li>
+                                <span lang="en">International visitor appeal</span>
+                                <span lang="pt">Apelo a visitantes internacionais</span>
+                                <span lang="ru">Привлекательность для международных посетителей</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h3>
+                            <span lang="en">Rapid Development</span>
+                            <span lang="pt">Desenvolvimento Rápido</span>
+                            <span lang="ru">Быстрая Разработка</span>
+                        </h3>
+                        <p lang="en">Our streamlined production process allows for efficient creation and deployment of high-quality audio experiences.</p>
+                        <p lang="pt">Nosso processo de produção simplificado permite a criação e implantação eficientes de experiências de áudio de alta qualidade.</p>
+                        <p lang="ru">Наш оптимизированный производственный процесс позволяет эффективно создавать и развертывать высококачественные аудио-впечатления.</p>
+                        <ul class="benefit-list">
+                            <li>
+                                <span lang="en">Efficient production timeline</span>
+                                <span lang="pt">Cronograma de produção eficiente</span>
+                                <span lang="ru">Эффективный график производства</span>
+                            </li>
+                            <li>
+                                <span lang="en">Collaborative development process</span>
+                                <span lang="pt">Processo de desenvolvimento colaborativo</span>
+                                <span lang="ru">Совместный процесс разработки</span>
+                            </li>
+                            <li>
+                                <span lang="en">Existing platform infrastructure</span>
+                                <span lang="pt">Infraestrutura de plataforma existente</span>
+                                <span lang="ru">Существующая инфраструктура платформы</span>
+                            </li>
+                            <li>
+                                <span lang="en">Turnkey implementation</span>
+                                <span lang="pt">Implementação turnkey</span>
+                                <span lang="ru">Готовое внедрение</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="section-case-study">
+        <div class="presentation-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Success Stories</span>
+                    <span lang="pt">Histórias de Sucesso</span>
+                    <span lang="ru">Истории Успеха</span>
+                </h2>
+                <p>
+                    <span lang="en">See how municipalities have transformed their tourism experience with our audio tours.</span>
+                    <span lang="pt">Veja como os municípios transformaram sua experiência turística com nossos tours de áudio.</span>
+                    <span lang="ru">Посмотрите, как муниципалитеты преобразили свой туристический опыт с помощью наших аудио-экскурсий.</span>
+                </p>
+            </div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b" alt="European City">
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <h3>
+                        <span lang="en">Historic European City</span>
+                        <span lang="pt">Cidade Histórica Europeia</span>
+                        <span lang="ru">Исторический Европейский Город</span>
+                    </h3>
+                    <p lang="en">A mid-sized European city with rich medieval history implemented our audio tour solution to revitalize tourism after the pandemic. The result was a 45% increase in visitor engagement, with tourists spending an average of 1.5 more days in the city and generating an additional €2.3 million in local economic impact.</p>
+                    <p lang="pt">Uma cidade europeia de médio porte com rica história medieval implementou nossa solução de tour de áudio para revitalizar o turismo após a pandemia. O resultado foi um aumento de 45% no engajamento dos visitantes, com turistas passando em média 1,5 dias a mais na cidade e gerando um impacto econômico local adicional de €2,3 milhões.</p>
+                    <p lang="ru">Европейский город среднего размера с богатой средневековой историей внедрил наше решение аудио-экскурсий для оживления туризма после пандемии. Результатом стало увеличение вовлеченности посетителей на 45%, при этом туристы проводили в городе в среднем на 1,5 дня больше и создавали дополнительное экономическое воздействие в размере 2,3 миллиона евро.</p>
+                    
+                    <div class="value-list">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="value-text">
+                                <h4>
+                                    <span lang="en">Challenge</span>
+                                    <span lang="pt">Desafio</span>
+                                    <span lang="ru">Вызов</span>
+                                </h4>
+                                <p lang="en">Declining visitor numbers and concentration of tourism at only a few major landmarks.</p>
+                                <p lang="pt">Diminuição do número de visitantes e concentração do turismo em apenas alguns pontos principais.</p>
+                                <p lang="ru">Снижение числа посетителей и концентрация туризма только в нескольких основных достопримечательностях.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="value-text">
+                                <h4>
+                                    <span lang="en">Solution</span>
+                                    <span lang="pt">Solução</span>
+                                    <span lang="ru">Решение</span>
+                                </h4>
+                                <p lang="en">Character-driven audio tour that connected five distinct neighborhoods through a compelling historical narrative.</p>
+                                <p lang="pt">Tour de áudio baseado em personagens que conectou cinco bairros distintos através de uma narrativa histórica envolvente.</p>
+                                <p lang="ru">Аудио-экскурсия на основе персонажей, которая соединила пять различных районов через увлекательное историческое повествование.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="value-text">
+                                <h4>
+                                    <span lang="en">Results</span>
+                                    <span lang="pt">Resultados</span>
+                                    <span lang="ru">Результаты</span>
+                                </h4>
+                                <p lang="en">Increased visitor dwell time, revitalized lesser-known areas, and significant growth in local business revenue.</p>
+                                <p lang="pt">Aumento do tempo de permanência dos visitantes, revitalização de áreas menos conhecidas e crescimento significativo na receita de negócios locais.</p>
+                                <p lang="ru">Увеличение времени пребывания посетителей, оживление менее известных районов и значительный рост доходов местного бизнеса.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="section-title">
+                <h2>
+                    <span lang="en">Ready to Transform Your City's Tourism Experience?</span>
+                    <span lang="pt">Pronto para Transformar a Experiência Turística da Sua Cidade?</span>
+                    <span lang="ru">Готовы Преобразить Туристический Опыт Вашего Города?</span>
+                </h2>
+                <p>
+                    <span lang="en">Contact us today to discuss how our immersive audio solutions can work for your municipality.</span>
+                    <span lang="pt">Entre em contato conosco hoje para discutir como nossas soluções de áudio imersivas podem funcionar para seu município.</span>
+                    <span lang="ru">Свяжитесь с нами сегодня, чтобы обсудить, как наши иммерсивные аудио-решения могут работать для вашего муниципалитета.</span>
+                </p>
+            </div>
+            
+            <a href="#" class="cta-button">
+                <span lang="en">Request a Demo</span>
+                <span lang="pt">Solicitar uma Demonstração</span>
+                <span lang="ru">Запросить Демо</span>
+            </a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <p>info@ccetours.com</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <p>+XX XXX XXX XXX</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <p>
+                        <span lang="en">Lisbon, Portugal</span>
+                        <span lang="pt">Lisboa, Portugal</span>
+                        <span lang="ru">Лиссабон, Португалия</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>
+                <span lang="en">CCE Tours - Immersive Audio Experiences</span>
+                <span lang="pt">CCE Tours - Experiências de Áudio Imersivas</span>
+                <span lang="ru">CCE Tours - Иммерсивные Аудио Экскурсии</span>
+            </p>
+            
+            <div class="footer-links">
+                <a href="index_multilingual.html">
+                    <span lang="en">Home</span>
+                    <span lang="pt">Início</span>
+                    <span lang="ru">Главная</span>
+                </a>
+                <a href="municipalities_multilingual.html">
+                    <span lang="en">Municipalities</span>
+                    <span lang="pt">Municípios</span>
+                    <span lang="ru">Муниципалитеты</span>
+                </a>
+                <a href="companies_multilingual.html">
+                    <span lang="en">Companies</span>
+                    <span lang="pt">Empresas</span>
+                    <span lang="ru">Компании</span>
+                </a>
+                <a href="personal_multilingual.html">
+                    <span lang="en">Personal</span>
+                    <span lang="pt">Pessoal</span>
+                    <span lang="ru">Личное</span>
+                </a>
+            </div>
+            
+            <p class="copyright">
+                <span lang="en">© 2025 CCE Tours. All rights reserved.</span>
+                <span lang="pt">© 2025 CCE Tours. Todos os direitos reservados.</span>
+                <span lang="ru">© 2025 CCE Tours. Все права защищены.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/language-selector.js"></script>
+    <script>
+        // Mobile Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+            
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            });
+            
+            document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }));
+            
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Animation on scroll
+            const fadeElements = document.querySelectorAll('.feature-card, .benefit-card');
+            
+            const fadeInOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -100px 0px"
+            };
+            
+            const fadeInObserver = new IntersectionObserver(function(entries, fadeInObserver) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('fade-in');
+                        fadeInObserver.unobserve(entry.target);
+                    }
+                });
+            }, fadeInOptions);
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
