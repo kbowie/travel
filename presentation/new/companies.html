@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCE Tours - For Companies</title>
+    <style>
+        :root {
+            --primary-color: #2c2a5a;
+            --secondary-color: #f2b84b;
+            --accent-color: #e67e22;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .language-btn {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-btn:hover, .language-btn.active {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            background-image: linear-gradient(rgba(44, 42, 90, 0.9), rgba(44, 42, 90, 0.9)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: #e0a73e;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-light {
+            background-color: white;
+        }
+
+        .section-dark {
+            background-color: #f5f5f5;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .section-title p {
+            color: #777;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 20px auto 0;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .column-content h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .column-content p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .column-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .column-content ul li {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .column-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .quiz-examples {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .quiz-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-card h4 {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .quiz-question {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .quiz-question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .quiz-question ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .quiz-question ul li {
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .quiz-question ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            border: 1px solid var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .process-step {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            width: 30px;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transform: translateY(-50%);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .step-title {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .testimonials {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .testimonial-role {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .cta {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .column-image {
+                order: -1;
+            }
+            
+            .process-step::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .language-selector {
+                position: static;
+                justify-content: center;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .section-title h2 {
+                font-size: 24px;
+            }
+            
+            .column-content h3 {
+                font-size: 22px;
+            }
+            
+            .feature-card h3 {
+                font-size: 20px;
+            }
+            
+            .cta h2 {
+                font-size: 24px;
+            }
+            
+            .cta p {
+                font-size: 16px;
+            }
+        }
+
+        /* Language-specific styles */
+        [lang="en"] .lang-en {
+            display: block;
+        }
+        [lang="en"] .lang-pt, [lang="en"] .lang-ru {
+            display: none;
+        }
+
+        [lang="pt"] .lang-pt {
+            display: block;
+        }
+        [lang="pt"] .lang-en, [lang="pt"] .lang-ru {
+            display: none;
+        }
+
+        [lang="ru"] .lang-ru {
+            display: block;
+        }
+        [lang="ru"] .lang-en, [lang="ru"] .lang-pt {
+            display: none;
+        }
+    </style>
+</head>
+<body lang="en">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">CCE Tours</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="municipalities.html">Municipalities</a></li>
+                        <li><a href="companies.html">Companies</a></li>
+                        <li><a href="personal.html">Personal</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="language-selector">
+                <button class="language-btn active" onclick="changeLanguage('en')">EN</button>
+                <button class="language-btn" onclick="changeLanguage('pt')">PT</button>
+                <button class="language-btn" onclick="changeLanguage('ru')">RU</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="lang-en">
+                <h1>Immersive Audio Tours for Companies</h1>
+                <p>Enhance your brand storytelling, engage customers, and create unique team building experiences</p>
+                <a href="#contact" class="btn">Request a Demo</a>
+            </div>
+            <div class="lang-pt">
+                <h1>Tours de Áudio Imersivos para Empresas</h1>
+                <p>Melhore a narrativa da sua marca, envolva clientes e crie experiências únicas de team building</p>
+                <a href="#contact" class="btn">Solicitar uma Demonstração</a>
+            </div>
+            <div class="lang-ru">
+                <h1>Иммерсивные аудиотуры для компаний</h1>
+                <p>Улучшайте повествование о вашем бренде, вовлекайте клиентов и создавайте уникальные командные мероприятия</p>
+                <a href="#contact" class="btn">Запросить демонстрацию</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light" id="brand">
+        <div class="container">
+            <div class="section-title">
+                <div class="lang-en">
+                    <h2>Brand Storytelling</h2>
+                    <p>Create immersive experiences that showcase your company's history and values</p>
+                </div>
+                <div class="lang-pt">
+                    <h2>Narrativa de Marca</h2>
+                    <p>Crie experiências imersivas que mostram a história e os valores da sua empresa</p>
+                </div>
+                <div class="lang-ru">
+                    <h2>Повествование о бренде</h2>
+                    <p>Создавайте иммерсивные впечатления, которые демонстрируют историю и ценности вашей компании</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div class="column-content">
+                    <div class="lang-en">
+                        <h3>Tell Your Brand's Story</h3>
+                        <p>CCE Tours helps companies create compelling audio experiences that bring their brand story to life. Our immersive format combines professional voice acting, sound design, and storytelling to create emotional connections with your audience.</p>
+                        <p>Brand storytelling tours can be used for:</p>
+                        <ul>
+                            <li>Company headquarters or office tours for visitors and new employees</li>
+                            <li>Factory or production facility tours that showcase craftsmanship</li>
+                            <li>Historical tours of your company's founding locations</li>
+                            <li>Product development journeys that highlight innovation</li>
+                            <li>Corporate museum or exhibition enhancements</li>
+                        </ul>
+                        <p>For Portuguese companies, we can create specialized content that connects your brand to Portugal's rich cultural heritage and business traditions, enhancing your local market presence.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Conte a História da Sua Marca</h3>
+                        <p>A CCE Tours ajuda empresas a criar experiências de áudio envolventes que dão vida à história da sua marca. Nosso formato imersivo combina atuação de voz profissional, design de som e narrativa para criar conexões emocionais com seu público.</p>
+                        <p>Tours de narrativa de marca podem ser usados para:</p>
+                        <ul>
+                            <li>Tours da sede ou escritórios da empresa para visitantes e novos funcionários</li>
+                            <li>Tours de fábricas ou instalações de produção que mostram o artesanato</li>
+                            <li>Tours históricos dos locais de fundação da sua empresa</li>
+                            <li>Jornadas de desenvolvimento de produtos que destacam a inovação</li>
+                            <li>Melhorias em museus corporativos ou exposições</li>
+                        </ul>
+                        <p>Para empresas portuguesas, podemos criar conteúdo especializado que conecta sua marca ao rico patrimônio cultural e tradições empresariais de Portugal, melhorando sua presença no mercado local.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Расскажите историю вашего бренда</h3>
+                        <p>CCE Tours помогает компаниям создавать увлекательные аудиовпечатления, которые оживляют историю вашего бренда. Наш иммерсивный формат сочетает профессиональное озвучивание, звуковой дизайн и повествование для создания эмоциональных связей с вашей аудиторией.</p>
+                        <p>Туры с повествованием о бренде могут использоваться для:</p>
+                        <ul>
+                            <li>Туры по штаб-квартире или офисам компании для посетителей и новых сотрудников</li>
+                            <li>Туры по фабрикам или производственным объектам, демонстрирующие мастерство</li>
+                            <li>Исторические туры по местам основания вашей компании</li>
+                            <li>Путешествия по разработке продуктов, подчеркивающие инновации</li>
+                            <li>Улучшения корпоративных музеев или выставок</li>
+                        </ul>
+                        <p>Для португальских компаний мы можем создать специализированный контент, который связывает ваш бренд с богатым культурным наследием и деловыми традициями Португалии, улучшая ваше присутствие на местном рынке.</p>
+                    </div>
+                </div>
+                <div class="column-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Corporate storytelling">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark" id="customer">
+        <div class="container">
+            <div class="section-title">
+                <div class="lang-en">
+                    <h2>Customer Experience</h2>
+                    <p>Create memorable experiences that engage customers and build loyalty</p>
+                </div>
+                <div class="lang-pt">
+                    <h2>Experiência do Cliente</h2>
+                    <p>Crie experiências memoráveis que envolvem clientes e constroem lealdade</p>
+                </div>
+                <div class="lang-ru">
+                    <h2>Клиентский опыт</h2>
+                    <p>Создавайте запоминающиеся впечатления, которые вовлекают клиентов и формируют лояльность</p>
+                </div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <div class="lang-en">
+                        <h3>Retail Experiences</h3>
+                        <p>Transform retail spaces with guided audio tours that tell the story behind products, highlight craftsmanship, and create immersive shopping experiences that customers remember and share.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Experiências de Varejo</h3>
+                        <p>Transforme espaços de varejo com tours de áudio guiados que contam a história por trás dos produtos, destacam o artesanato e criam experiências de compras imersivas que os clientes lembram e compartilham.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Розничные впечатления</h3>
+                        <p>Преобразуйте розничные пространства с помощью аудиогидов, которые рассказывают историю продуктов, подчеркивают мастерство и создают иммерсивные впечатления от покупок, которые клиенты запоминают и которыми делятся.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍷</div>
+                    <div class="lang-en">
+                        <h3>Product Journeys</h3>
+                        <p>Create audio tours that showcase the journey of your products from concept to creation. Perfect for wineries, distilleries, food producers, and manufacturers with unique production processes.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Jornadas de Produtos</h3>
+                        <p>Crie tours de áudio que mostram a jornada dos seus produtos do conceito à criação. Perfeito para vinícolas, destilarias, produtores de alimentos e fabricantes com processos de produção únicos.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Путешествия продуктов</h3>
+                        <p>Создавайте аудиотуры, которые демонстрируют путь ваших продуктов от концепции до создания. Идеально подходит для виноделен, ликероводочных заводов, производителей продуктов питания и производителей с уникальными производственными процессами.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <div class="lang-en">
+                        <h3>Promotional Campaigns</h3>
+                        <p>Use audio tours as unique promotional tools for product launches, special events, or marketing campaigns. Offer exclusive content that differentiates your brand from competitors.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Campanhas Promocionais</h3>
+                        <p>Use tours de áudio como ferramentas promocionais únicas para lançamentos de produtos, eventos especiais ou campanhas de marketing. Ofereça conteúdo exclusivo que diferencia sua marca dos concorrentes.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Рекламные кампании</h3>
+                        <p>Используйте аудиотуры как уникальные рекламные инструменты для запуска продуктов, специальных мероприятий или маркетинговых кампаний. Предлагайте эксклюзивный контент, который отличает ваш бренд от конкурентов.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light" id="teambuilding">
+        <div class="container">
+            <div class="section-title">
+                <div class="lang-en">
+                    <h2>Team Building Experiences</h2>
+                    <p>Create engaging activities that strengthen team bonds and boost morale</p>
+                </div>
+                <div class="lang-pt">
+                    <h2>Experiências de Team Building</h2>
+                    <p>Crie atividades envolventes que fortalecem os laços da equipe e aumentam o moral</p>
+                </div>
+                <div class="lang-ru">
+                    <h2>Командообразующие мероприятия</h2>
+                    <p>Создавайте увлекательные мероприятия, которые укрепляют командные связи и повышают моральный дух</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div class="column-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Team building activity">
+                </div>
+                <div class="column-content">
+                    <div class="lang-en">
+                        <h3>Interactive Team Adventures</h3>
+                        <p>CCE Tours creates custom team building experiences that combine audio storytelling with interactive challenges. These experiences help teams develop communication, problem-solving, and collaboration skills while having fun.</p>
+                        <p>Our team building tours can be customized for:</p>
+                        <ul>
+                            <li>New team onboarding and integration</li>
+                            <li>Department retreats and off-sites</li>
+                            <li>Company milestones and celebrations</li>
+                            <li>Leadership development programs</li>
+                            <li>Cross-functional team collaboration</li>
+                        </ul>
+                        <p>For companies in Portugal, we can design team building experiences that incorporate local culture, history, and landmarks, creating meaningful connections to your operating environment.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Aventuras Interativas em Equipe</h3>
+                        <p>A CCE Tours cria experiências de team building personalizadas que combinam narrativa de áudio com desafios interativos. Essas experiências ajudam as equipes a desenvolver habilidades de comunicação, resolução de problemas e colaboração enquanto se divertem.</p>
+                        <p>Nossos tours de team building podem ser personalizados para:</p>
+                        <ul>
+                            <li>Integração de novas equipes</li>
+                            <li>Retiros e eventos externos de departamentos</li>
+                            <li>Marcos e celebrações da empresa</li>
+                            <li>Programas de desenvolvimento de liderança</li>
+                            <li>Colaboração entre equipes multifuncionais</li>
+                        </ul>
+                        <p>Para empresas em Portugal, podemos projetar experiências de team building que incorporam a cultura local, história e pontos de referência, criando conexões significativas com seu ambiente operacional.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Интерактивные командные приключения</h3>
+                        <p>CCE Tours создает индивидуальные командообразующие мероприятия, которые сочетают аудиоповествование с интерактивными испытаниями. Эти впечатления помогают командам развивать навыки коммуникации, решения проблем и сотрудничества, получая при этом удовольствие.</p>
+                        <p>Наши командообразующие туры могут быть настроены для:</p>
+                        <ul>
+                            <li>Адаптация и интеграция новых команд</li>
+                            <li>Выездные мероприятия отделов</li>
+                            <li>Важные события и празднования компании</li>
+                            <li>Программы развития лидерства</li>
+                            <li>Сотрудничество между кросс-функциональными командами</li>
+                        </ul>
+                        <p>Для компаний в Португалии мы можем разработать командообразующие мероприятия, которые включают местную культуру, историю и достопримечательности, создавая значимые связи с вашей операционной средой.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark" id="quiz">
+        <div class="container">
+            <div class="section-title">
+                <div class="lang-en">
+                    <h2>Quiz-Based Team Building</h2>
+                    <p>Engage your team with interactive knowledge quizzes integrated into audio tours</p>
+                </div>
+                <div class="lang-pt">
+                    <h2>Team Building Baseado em Quiz</h2>
+                    <p>Envolva sua equipe com quizzes de conhecimento interativos integrados em tours de áudio</p>
+                </div>
+                <div class="lang-ru">
+                    <h2>Командообразование на основе викторин</h2>
+                    <p>Вовлекайте вашу команду с помощью интерактивных викторин, интегрированных в аудиотуры</p>
+                </div>
+            </div>
+            <div class="column-content" style="max-width: 800px; margin: 0 auto;">
+                <div class="lang-en">
+                    <p>Our quiz-based team building experiences combine immersive audio tours with interactive knowledge challenges. Teams explore locations while answering questions that test their knowledge, observation skills, and ability to work together.</p>
+                    <p>Quizzes can be customized to focus on your company's specific goals, whether that's improving product knowledge, understanding company history, or building relationships between team members.</p>
+                </div>
+                <div class="lang-pt">
+                    <p>Nossas experiências de team building baseadas em quiz combinam tours de áudio imersivos com desafios interativos de conhecimento. As equipes exploram locais enquanto respondem a perguntas que testam seu conhecimento, habilidades de observação e capacidade de trabalhar juntos.</p>
+                    <p>Os quizzes podem ser personalizados para focar nos objetivos específicos da sua empresa, seja melhorar o conhecimento do produto, entender a história da empresa ou construir relacionamentos entre os membros da equipe.</p>
+                </div>
+                <div class="lang-ru">
+                    <p>Наши командообразующие мероприятия на основе викторин сочетают иммерсивные аудиотуры с интерактивными испытаниями знаний. Команды исследуют локации, отвечая на вопросы, которые проверяют их знания, навыки наблюдения и способность работать вместе.</p>
+                    <p>Викторины могут быть настроены для фокусировки на конкретных целях вашей компании, будь то улучшение знаний о продукте, понимание истории компании или построение отношений между членами команды.</p>
+                </div>
+            </div>
+            <div class="quiz-examples">
+                <div class="quiz-card">
+                    <div class="lang-en">
+                        <h4>Company Knowledge Quiz</h4>
+                        <div class="quiz-question">
+                            <p>When was our company founded?</p>
+                            <ul>
+                                <li>1985</li>
+                                <li>1992</li>
+                                <li>2001</li>
+                                <li>2008</li>
+                            </ul>
+                        </div>
+                        <div class="quiz-question">
+                            <p>What was our first product called?</p>
+                            <ul>
+                                <li>Navigator</li>
+                                <li>Pathfinder</li>
+                                <li>Explorer</li>
+                                <li>Voyager</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lang-pt">
+                        <h4>Quiz de Conhecimento da Empresa</h4>
+                        <div class="quiz-question">
+                            <p>Quando nossa empresa foi fundada?</p>
+                            <ul>
+                                <li>1985</li>
+                                <li>1992</li>
+                                <li>2001</li>
+                                <li>2008</li>
+                            </ul>
+                        </div>
+                        <div class="quiz-question">
+                            <p>Como se chamava nosso primeiro produto?</p>
+                            <ul>
+                                <li>Navigator</li>
+                                <li>Pathfinder</li>
+                                <li>Explorer</li>
+                                <li>Voyager</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lang-ru">
+                        <h4>Викторина о знании компании</h4>
+                        <div class="quiz-question">
+                            <p>Когда была основана наша компания?</p>
+                            <ul>
+                                <li>1985</li>
+                                <li>1992</li>
+                                <li>2001</li>
+                                <li>2008</li>
+                            </ul>
+                        </div>
+                        <div class="quiz-question">
+                            <p>Как назывался наш первый продукт?</p>
+                            <ul>
+                                <li>Navigator</li>
+                                <li>Pathfinder</li>
+                                <li>Explorer</li>
+                                <li>Voyager</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-card">
+                    <div class="lang-en">
+                        <h4>Team Member Trivia</h4>
+                        <div class="quiz-question">
+                            <p>Which team member has climbed Mount Kilimanjaro?</p>
+                            <ul>
+                                <li>Ana</li>
+                                <li>João</li>
+                                <li>Maria</li>
+                                <li>Pedro</li>
+                            </ul>
+                        </div>
+                        <div class="quiz-question">
+                            <p>Who has worked in the most different departments?</p>
+                            <ul>
+                                <li>Sofia</li>
+                                <li>Miguel</li>
+                                <li>Luísa</li>
+                                <li>Carlos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lang-pt">
+                        <h4>Curiosidades sobre Membros da Equipe</h4>
+                        <div class="quiz-question">
+                            <p>Qual membro da equipe escalou o Monte Kilimanjaro?</p>
+                            <ul>
+                                <li>Ana</li>
+                                <li>João</li>
+                                <li>Maria</li>
+                                <li>Pedro</li>
+                            </ul>
+                        </div>
+                        <div class="quiz-question">
+                            <p>Quem trabalhou em mais departamentos diferentes?</p>
+                            <ul>
+                                <li>Sofia</li>
+                                <li>Miguel</li>
+                                <li>Luísa</li>
+                                <li>Carlos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lang-ru">
+                        <h4>Викторина о членах команды</h4>
+                        <div class="quiz-question">
+                            <p>Кто из членов команды поднимался на гору Килиманджаро?</p>
+                            <ul>
+                                <li>Ана</li>
+                                <li>Жоао</li>
+                                <li>Мария</li>
+                                <li>Педро</li>
+                            </ul>
+                        </div>
+                        <div class="quiz-question">
+                            <p>Кто работал в наибольшем количестве разных отделов?</p>
+                            <ul>
+                                <li>София</li>
+                                <li>Мигель</li>
+                                <li>Луиза</li>
+                                <li>Карлос</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-card">
+                    <div class="lang-en">
+                        <h4>Location-Based Challenges</h4>
+                        <div class="quiz-question">
+                            <p>What year is inscribed on the building's cornerstone?</p>
+                            <ul>
+                                <li>1892</li>
+                                <li>1905</li>
+                                <li>1918</li>
+                                <li>1923</li>
+                            </ul>
+                        </div>
+                        <div class="quiz-question">
+                            <p>How many columns are on the front facade?</p>
+                            <ul>
+                                <li>4</li>
+                                <li>6</li>
+                                <li>8</li>
+                                <li>10</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lang-pt">
+                        <h4>Desafios Baseados em Localização</h4>
+                        <div class="quiz-question">
+                            <p>Que ano está inscrito na pedra fundamental do edifício?</p>
+                            <ul>
+                                <li>1892</li>
+                                <li>1905</li>
+                                <li>1918</li>
+                                <li>1923</li>
+                            </ul>
+                        </div>
+                        <div class="quiz-question">
+                            <p>Quantas colunas existem na fachada frontal?</p>
+                            <ul>
+                                <li>4</li>
+                                <li>6</li>
+                                <li>8</li>
+                                <li>10</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lang-ru">
+                        <h4>Испытания на основе локации</h4>
+                        <div class="quiz-question">
+                            <p>Какой год выгравирован на краеугольном камне здания?</p>
+                            <ul>
+                                <li>1892</li>
+                                <li>1905</li>
+                                <li>1918</li>
+                                <li>1923</li>
+                            </ul>
+                        </div>
+                        <div class="quiz-question">
+                            <p>Сколько колонн на фасаде здания?</p>
+                            <ul>
+                                <li>4</li>
+                                <li>6</li>
+                                <li>8</li>
+                                <li>10</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-content" style="max-width: 800px; margin: 40px auto 0;">
+                <div class="lang-en">
+                    <h3>Benefits of Quiz-Based Team Building</h3>
+                    <ul>
+                        <li><strong>Knowledge Retention:</strong> Employees retain information better when it's presented in an interactive, gamified format</li>
+                        <li><strong>Team Bonding:</strong> Shared challenges create stronger connections between team members</li>
+                        <li><strong>Healthy Competition:</strong> Teams compete in a fun, low-pressure environment</li>
+                        <li><strong>Problem Solving:</strong> Collaborative quiz solving builds critical thinking skills</li>
+                        <li><strong>Cultural Integration:</strong> Perfect for multinational teams to learn about local culture and history</li>
+                    </ul>
+                </div>
+                <div class="lang-pt">
+                    <h3>Benefícios do Team Building Baseado em Quiz</h3>
+                    <ul>
+                        <li><strong>Retenção de Conhecimento:</strong> Os funcionários retêm informações melhor quando apresentadas em formato interativo e gamificado</li>
+                        <li><strong>Vínculo de Equipe:</strong> Desafios compartilhados criam conexões mais fortes entre os membros da equipe</li>
+                        <li><strong>Competição Saudável:</strong> As equipes competem em um ambiente divertido e de baixa pressão</li>
+                        <li><strong>Resolução de Problemas:</strong> A resolução colaborativa de quizzes desenvolve habilidades de pensamento crítico</li>
+                        <li><strong>Integração Cultural:</strong> Perfeito para equipes multinacionais aprenderem sobre cultura e história local</li>
+                    </ul>
+                </div>
+                <div class="lang-ru">
+                    <h3>Преимущества командообразования на основе викторин</h3>
+                    <ul>
+                        <li><strong>Сохранение знаний:</strong> Сотрудники лучше запоминают информацию, когда она представлена в интерактивном, игровом формате</li>
+                        <li><strong>Командное сплочение:</strong> Общие испытания создают более прочные связи между членами команды</li>
+                        <li><strong>Здоровая конкуренция:</strong> Команды соревнуются в веселой среде с низким давлением</li>
+                        <li><strong>Решение проблем:</strong> Совместное решение викторин развивает навыки критического мышления</li>
+                        <li><strong>Культурная интеграция:</strong> Идеально подходит для многонациональных команд, чтобы узнать о местной культуре и истории</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light" id="implementation">
+        <div class="container">
+            <div class="section-title">
+                <div class="lang-en">
+                    <h2>Implementation Process</h2>
+                    <p>How we create and launch your custom audio experiences</p>
+                </div>
+                <div class="lang-pt">
+                    <h2>Processo de Implementação</h2>
+                    <p>Como criamos e lançamos suas experiências de áudio personalizadas</p>
+                </div>
+                <div class="lang-ru">
+                    <h2>Процесс внедрения</h2>
+                    <p>Как мы создаем и запускаем ваши индивидуальные аудиовпечатления</p>
+                </div>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="lang-en">
+                        <div class="step-title">Consultation</div>
+                        <p>We meet with your team to understand your goals, brand values, and target audience.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="step-title">Consulta</div>
+                        <p>Nos reunimos com sua equipe para entender seus objetivos, valores da marca e público-alvo.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="step-title">Консультация</div>
+                        <p>Мы встречаемся с вашей командой, чтобы понять ваши цели, ценности бренда и целевую аудиторию.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="lang-en">
+                        <div class="step-title">Content Planning</div>
+                        <p>We develop a content strategy that aligns with your brand and creates engaging experiences.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="step-title">Planejamento de Conteúdo</div>
+                        <p>Desenvolvemos uma estratégia de conteúdo alinhada com sua marca e que cria experiências envolventes.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="step-title">Планирование контента</div>
+                        <p>Мы разрабатываем стратегию контента, которая соответствует вашему бренду и создает увлекательные впечатления.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="lang-en">
+                        <div class="step-title">Script Development</div>
+                        <p>Professional writers create engaging scripts that tell your brand's story in a compelling way.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="step-title">Desenvolvimento de Roteiro</div>
+                        <p>Escritores profissionais criam roteiros envolventes que contam a história da sua marca de maneira convincente.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="step-title">Разработка сценария</div>
+                        <p>Профессиональные писатели создают увлекательные сценарии, которые рассказывают историю вашего бренда убедительным образом.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="lang-en">
+                        <div class="step-title">Production</div>
+                        <p>Voice actors record the content, and our sound designers add music and effects to create an immersive experience.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="step-title">Produção</div>
+                        <p>Atores de voz gravam o conteúdo, e nossos designers de som adicionam música e efeitos para criar uma experiência imersiva.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="step-title">Производство</div>
+                        <p>Актеры озвучивания записывают контент, а наши звукорежиссеры добавляют музыку и эффекты для создания иммерсивного впечатления.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="lang-en">
+                        <div class="step-title">Testing</div>
+                        <p>We conduct thorough testing with your team and target audience to refine the experience.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="step-title">Testes</div>
+                        <p>Realizamos testes completos com sua equipe e público-alvo para refinar a experiência.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="step-title">Тестирование</div>
+                        <p>Мы проводим тщательное тестирование с вашей командой и целевой аудиторией для улучшения впечатлений.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="lang-en">
+                        <div class="step-title">Launch</div>
+                        <p>We help you integrate the audio experiences into your marketing strategy and provide ongoing support.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="step-title">Lançamento</div>
+                        <p>Ajudamos você a integrar as experiências de áudio em sua estratégia de marketing e fornecemos suporte contínuo.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="step-title">Запуск</div>
+                        <p>Мы помогаем вам интегрировать аудиовпечатления в вашу маркетинговую стратегию и обеспечиваем постоянную поддержку.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <div class="lang-en">
+                    <h2>Success Stories</h2>
+                    <p>Hear from companies who have implemented CCE Tours</p>
+                </div>
+                <div class="lang-pt">
+                    <h2>Histórias de Sucesso</h2>
+                    <p>Ouça empresas que implementaram os CCE Tours</p>
+                </div>
+                <div class="lang-ru">
+                    <h2>Истории успеха</h2>
+                    <p>Отзывы компаний, внедривших CCE Tours</p>
+                </div>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide">
+                    <div class="lang-en">
+                        <p class="testimonial-text">"The team building experience created by CCE Tours transformed our annual retreat. The interactive audio tour combined with quiz challenges helped our team learn about our company's history while building stronger connections. We saw a measurable improvement in team cohesion and communication."</p>
+                        <p class="testimonial-author">Maria Silva</p>
+                        <p class="testimonial-role">HR Director, Sonae</p>
+                    </div>
+                    <div class="lang-pt">
+                        <p class="testimonial-text">"A experiência de team building criada pela CCE Tours transformou nosso retiro anual. O tour de áudio interativo combinado com desafios de quiz ajudou nossa equipe a aprender sobre a história da nossa empresa enquanto construía conexões mais fortes. Vimos uma melhoria mensurável na coesão e comunicação da equipe."</p>
+                        <p class="testimonial-author">Maria Silva</p>
+                        <p class="testimonial-role">Diretora de RH, Sonae</p>
+                    </div>
+                    <div class="lang-ru">
+                        <p class="testimonial-text">"Командообразующее мероприятие, созданное CCE Tours, преобразило наш ежегодный выезд. Интерактивный аудиотур в сочетании с викторинами помог нашей команде узнать об истории нашей компании, одновременно укрепляя связи. Мы увидели измеримое улучшение в сплоченности и коммуникации команды."</p>
+                        <p class="testimonial-author">Мария Сильва</p>
+                        <p class="testimonial-role">Директор по персоналу, Sonae</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="lang-en">
+                <h2>Ready to Transform Your Company's Experiences?</h2>
+                <p>Contact us today to discuss how CCE Tours can create immersive audio experiences for your brand, customers, or team.</p>
+                <a href="mailto:info@ccetours.com" class="btn">Request a Demo</a>
+            </div>
+            <div class="lang-pt">
+                <h2>Pronto para Transformar as Experiências da Sua Empresa?</h2>
+                <p>Entre em contato hoje para discutir como os CCE Tours podem criar experiências de áudio imersivas para sua marca, clientes ou equipe.</p>
+                <a href="mailto:info@ccetours.com" class="btn">Solicitar uma Demonstração</a>
+            </div>
+            <div class="lang-ru">
+                <h2>Готовы преобразить впечатления вашей компании?</h2>
+                <p>Свяжитесь с нами сегодня, чтобы обсудить, как CCE Tours может создать иммерсивные аудиовпечатления для вашего бренда, клиентов или команды.</p>
+                <a href="mailto:info@ccetours.com" class="btn">Запросить демонстрацию</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="lang-en">
+                        <h3>About CCE Tours</h3>
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Sobre CCE Tours</h3>
+                        <ul>
+                            <li><a href="#">Nossa História</a></li>
+                            <li><a href="#">Equipe</a></li>
+                            <li><a href="#">Carreiras</a></li>
+                            <li><a href="#">Imprensa</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>О CCE Tours</h3>
+                        <ul>
+                            <li><a href="#">Наша история</a></li>
+                            <li><a href="#">Команда</a></li>
+                            <li><a href="#">Карьера</a></li>
+                            <li><a href="#">Пресса</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="lang-en">
+                        <h3>Solutions</h3>
+                        <ul>
+                            <li><a href="municipalities.html">For Municipalities</a></li>
+                            <li><a href="companies.html">For Companies</a></li>
+                            <li><a href="personal.html">For Personal Use</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Soluções</h3>
+                        <ul>
+                            <li><a href="municipalities.html">Para Municípios</a></li>
+                            <li><a href="companies.html">Para Empresas</a></li>
+                            <li><a href="personal.html">Para Uso Pessoal</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Решения</h3>
+                        <ul>
+                            <li><a href="municipalities.html">Для муниципалитетов</a></li>
+                            <li><a href="companies.html">Для компаний</a></li>
+                            <li><a href="personal.html">Для личного использования</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="lang-en">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Recursos</h3>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Estudos de Caso</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Suporte</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Ресурсы</h3>
+                        <ul>
+                            <li><a href="#">Блог</a></li>
+                            <li><a href="#">Кейсы</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Поддержка</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="lang-en">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><a href="mailto:info@ccetours.com">info@ccetours.com</a></li>
+                            <li><a href="tel:+351912345678">+351 912 345 678</a></li>
+                            <li><a href="#">Lisbon, Portugal</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Contato</h3>
+                        <ul>
+                            <li><a href="mailto:info@ccetours.com">info@ccetours.com</a></li>
+                            <li><a href="tel:+351912345678">+351 912 345 678</a></li>
+                            <li><a href="#">Lisboa, Portugal</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Контакты</h3>
+                        <ul>
+                            <li><a href="mailto:info@ccetours.com">info@ccetours.com</a></li>
+                            <li><a href="tel:+351912345678">+351 912 345 678</a></li>
+                            <li><a href="#">Лиссабон, Португалия</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="lang-en">
+                    <p class="copyright">&copy; 2025 CCE Tours. All rights reserved.</p>
+                </div>
+                <div class="lang-pt">
+                    <p class="copyright">&copy; 2025 CCE Tours. Todos os direitos reservados.</p>
+                </div>
+                <div class="lang-ru">
+                    <p class="copyright">&copy; 2025 CCE Tours. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function changeLanguage(lang) {
+            document.body.setAttribute('lang', lang);
+            
+            // Update active class on language buttons
+            const buttons = document.querySelectorAll('.language-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+                if (button.textContent === lang.toUpperCase()) {
+                    button.classList.add('active');
+                }
+            });
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        // Check for saved language preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            if (savedLanguage) {
+                changeLanguage(savedLanguage);
+            }
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCE Tours - For Municipalities</title>
+    <style>
+        :root {
+            --primary-color: #2c2a5a;
+            --secondary-color: #f2b84b;
+            --accent-color: #e67e22;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .language-btn {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-btn:hover, .language-btn.active {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            background-image: linear-gradient(rgba(44, 42, 90, 0.9), rgba(44, 42, 90, 0.9)), url('https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: #e0a73e;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-light {
+            background-color: white;
+        }
+
+        .section-dark {
+            background-color: #f5f5f5;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .section-title p {
+            color: #777;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 20px auto 0;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .column-content h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .column-content p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .column-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .column-content ul li {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .column-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .process-step {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            width: 30px;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transform: translateY(-50%);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .step-title {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .testimonials {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .testimonial-role {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .cta {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .column-image {
+                order: -1;
+            }
+            
+            .process-step::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .language-selector {
+                position: static;
+                justify-content: center;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .section-title h2 {
+                font-size: 24px;
+            }
+            
+            .column-content h3 {
+                font-size: 22px;
+            }
+            
+            .feature-card h3 {
+                font-size: 20px;
+            }
+            
+            .stat-number {
+                font-size: 36px;
+            }
+            
+            .cta h2 {
+                font-size: 24px;
+            }
+            
+            .cta p {
+                font-size: 16px;
+            }
+        }
+
+        /* Language-specific styles */
+        [lang="en"] .lang-en {
+            display: block;
+        }
+        [lang="en"] .lang-pt, [lang="en"] .lang-ru {
+            display: none;
+        }
+
+        [lang="pt"] .lang-pt {
+            display: block;
+        }
+        [lang="pt"] .lang-en, [lang="pt"] .lang-ru {
+            display: none;
+        }
+
+        [lang="ru"] .lang-ru {
+            display: block;
+        }
+        [lang="ru"] .lang-en, [lang="ru"] .lang-pt {
+            display: none;
+        }
+    </style>
+</head>
+<body lang="en">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">CCE Tours</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="municipalities.html">Municipalities</a></li>
+                        <li><a href="companies.html">Companies</a></li>
+                        <li><a href="personal.html">Personal</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="language-selector">
+                <button class="language-btn active" onclick="changeLanguage('en')">EN</button>
+                <button class="language-btn" onclick="changeLanguage('pt')">PT</button>
+                <button class="language-btn" onclick="changeLanguage('ru')">RU</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="lang-en">
+                <h1>Immersive Audio Tours for Municipalities</h1>
+                <p>Enhance tourism, preserve cultural heritage, and engage your community with innovative audio experiences</p>
+                <a href="#contact" class="btn">Request a Demo</a>
+            </div>
+            <div class="lang-pt">
+                <h1>Tours de Áudio Imersivos para Municípios</h1>
+                <p>Melhore o turismo, preserve o patrimônio cultural e envolva sua comunidade com experiências de áudio inovadoras</p>
+                <a href="#contact" class="btn">Solicitar uma Demonstração</a>
+            </div>
+            <div class="lang-ru">
+                <h1>Иммерсивные аудиотуры для муниципалитетов</h1>
+                <p>Улучшайте туризм, сохраняйте культурное наследие и вовлекайте сообщество с помощью инновационных аудиовпечатлений</p>
+                <a href="#contact" class="btn">Запросить демонстрацию</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light" id="tourism">
+        <div class="container">
+            <div class="section-title">
+                <div class="lang-en">
+                    <h2>Tourism Enhancement</h2>
+                    <p>Attract more visitors and increase tourism revenue</p>
+                </div>
+                <div class="lang-pt">
+                    <h2>Melhoria do Turismo</h2>
+                    <p>Atraia mais visitantes e aumente a receita do turismo</p>
+                </div>
+                <div class="lang-ru">
+                    <h2>Улучшение туризма</h2>
+                    <p>Привлекайте больше посетителей и увеличивайте доходы от туризма</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div class="column-content">
+                    <div class="lang-en">
+                        <h3>Increase Tourist Flow and Revenue</h3>
+                        <p>CCE Tours' immersive audio experiences attract more visitors to your municipality, extending their stay and increasing spending at local businesses. Our unique storytelling approach creates memorable experiences that tourists share with others, generating organic marketing for your destination.</p>
+                        <ul>
+                            <li>Attract specific tourist demographics with targeted content</li>
+                            <li>Extend average tourist stays by 1-2 days</li>
+                            <li>Increase visitor spending at local businesses</li>
+                            <li>Generate positive reviews and social media sharing</li>
+                            <li>Create year-round tourism opportunities</li>
+                        </ul>
+                        <p>In Portugal, municipalities using immersive audio tours have seen an average 15% increase in tourism engagement and 12% growth in visitor spending.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Aumente o Fluxo Turístico e a Receita</h3>
+                        <p>As experiências de áudio imersivas da CCE Tours atraem mais visitantes para o seu município, prolongando a estadia e aumentando os gastos em negócios locais. Nossa abordagem única de narrativa cria experiências memoráveis que os turistas compartilham com outros, gerando marketing orgânico para seu destino.</p>
+                        <ul>
+                            <li>Atraia demografias turísticas específicas com conteúdo direcionado</li>
+                            <li>Prolongue estadias turísticas médias em 1-2 dias</li>
+                            <li>Aumente os gastos dos visitantes em negócios locais</li>
+                            <li>Gere avaliações positivas e compartilhamento em redes sociais</li>
+                            <li>Crie oportunidades de turismo durante todo o ano</li>
+                        </ul>
+                        <p>Em Portugal, municípios que utilizam tours de áudio imersivos viram um aumento médio de 15% no engajamento turístico e crescimento de 12% nos gastos dos visitantes.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Увеличение туристического потока и доходов</h3>
+                        <p>Иммерсивные аудиовпечатления CCE Tours привлекают больше посетителей в ваш муниципалитет, продлевают их пребывание и увеличивают расходы в местных предприятиях. Наш уникальный подход к повествованию создает запоминающиеся впечатления, которыми туристы делятся с другими, генерируя органический маркетинг для вашего направления.</p>
+                        <ul>
+                            <li>Привлекайте определенные туристические демографические группы с помощью целевого контента</li>
+                            <li>Продлевайте среднее пребывание туристов на 1-2 дня</li>
+                            <li>Увеличивайте расходы посетителей в местных предприятиях</li>
+                            <li>Генерируйте положительные отзывы и обмен в социальных сетях</li>
+                            <li>Создавайте возможности для круглогодичного туризма</li>
+                        </ul>
+                        <p>В Португалии муниципалитеты, использующие иммерсивные аудиотуры, наблюдали в среднем 15% рост вовлеченности туристов и 12% рост расходов посетителей.</p>
+                    </div>
+                </div>
+                <div class="column-image">
+                    <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tourists exploring city">
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">+15%</div>
+                    <div class="lang-en">
+                        <div class="stat-label">Tourism Engagement</div>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="stat-label">Engajamento Turístico</div>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="stat-label">Вовлеченность туристов</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+12%</div>
+                    <div class="lang-en">
+                        <div class="stat-label">Visitor Spending</div>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="stat-label">Gastos dos Visitantes</div>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="stat-label">Расходы посетителей</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+1.5</div>
+                    <div class="lang-en">
+                        <div class="stat-label">Days Added to Stay</div>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="stat-label">Dias Adicionados à Estadia</div>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="stat-label">Дней добавлено к пребыванию</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">68%</div>
+                    <div class="lang-en">
+                        <div class="stat-label">Social Media Sharing</div>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="stat-label">Compartilhamento em Redes Sociais</div>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="stat-label">Обмен в социальных сетях</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark" id="heritage">
+        <div class="container">
+            <div class="section-title">
+                <div class="lang-en">
+                    <h2>Cultural Heritage Promotion</h2>
+                    <p>Preserve and share your city's unique history and culture</p>
+                </div>
+                <div class="lang-pt">
+                    <h2>Promoção do Patrimônio Cultural</h2>
+                    <p>Preserve e compartilhe a história e cultura únicas da sua cidade</p>
+                </div>
+                <div class="lang-ru">
+                    <h2>Продвижение культурного наследия</h2>
+                    <p>Сохраняйте и делитесь уникальной историей и культурой вашего города</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div class="column-image">
+                    <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Historic architecture in Portugal">
+                </div>
+                <div class="column-content">
+                    <div class="lang-en">
+                        <h3>Highlight Your Cultural Treasures</h3>
+                        <p>CCE Tours helps municipalities preserve and promote their cultural heritage through engaging storytelling. Our immersive audio experiences bring history to life, making it accessible and interesting for visitors of all ages.</p>
+                        <p>Tours can be customized to focus on specific themes that highlight your municipality's unique identity:</p>
+                        <ul>
+                            <li>Historical events and significant periods</li>
+                            <li>Local artists, writers, and cultural figures</li>
+                            <li>Architectural styles and urban development</li>
+                            <li>Traditional crafts and industries</li>
+                            <li>Local legends and folklore</li>
+                            <li>Sustainable development initiatives</li>
+                        </ul>
+                        <p>For Portuguese municipalities, we can create specialized content highlighting Manueline architecture, maritime history, Fado music traditions, and other unique cultural elements that set your city apart.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Destaque Seus Tesouros Culturais</h3>
+                        <p>A CCE Tours ajuda municípios a preservar e promover seu patrimônio cultural através de narrativas envolventes. Nossas experiências de áudio imersivas dão vida à história, tornando-a acessível e interessante para visitantes de todas as idades.</p>
+                        <p>Os tours podem ser personalizados para focar em temas específicos que destacam a identidade única do seu município:</p>
+                        <ul>
+                            <li>Eventos históricos e períodos significativos</li>
+                            <li>Artistas locais, escritores e figuras culturais</li>
+                            <li>Estilos arquitetônicos e desenvolvimento urbano</li>
+                            <li>Artesanato e indústrias tradicionais</li>
+                            <li>Lendas locais e folclore</li>
+                            <li>Iniciativas de desenvolvimento sustentável</li>
+                        </ul>
+                        <p>Para municípios portugueses, podemos criar conteúdo especializado destacando a arquitetura Manuelina, história marítima, tradições do Fado e outros elementos culturais únicos que diferenciam sua cidade.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Выделите ваши культурные сокровища</h3>
+                        <p>CCE Tours помогает муниципалитетам сохранять и продвигать их культурное наследие через увлекательное повествование. Наши иммерсивные аудиовпечатления оживляют историю, делая ее доступной и интересной для посетителей всех возрастов.</p>
+                        <p>Туры могут быть настроены для фокусировки на конкретных темах, которые подчеркивают уникальную идентичность вашего муниципалитета:</p>
+                        <ul>
+                            <li>Исторические события и значимые периоды</li>
+                            <li>Местные художники, писатели и культурные деятели</li>
+                            <li>Архитектурные стили и городское развитие</li>
+                            <li>Традиционные ремесла и промышленность</li>
+                            <li>Местные легенды и фольклор</li>
+                            <li>Инициативы устойчивого развития</li>
+                        </ul>
+                        <p>Для португальских муниципалитетов мы можем создать специализированный контент, подчеркивающий архитектуру мануэлино, морскую историю, традиции фаду и другие уникальные культурные элементы, которые выделяют ваш город.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light" id="community">
+        <div class="container">
+            <div class="section-title">
+                <div class="lang-en">
+                    <h2>Community Engagement</h2>
+                    <p>Involve local residents and build civic pride</p>
+                </div>
+                <div class="lang-pt">
+                    <h2>Envolvimento Comunitário</h2>
+                    <p>Envolva residentes locais e construa orgulho cívico</p>
+                </div>
+                <div class="lang-ru">
+                    <h2>Вовлечение сообщества</h2>
+                    <p>Вовлекайте местных жителей и создавайте гражданскую гордость</p>
+                </div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏫</div>
+                    <div class="lang-en">
+                        <h3>Educational Programs</h3>
+                        <p>Create specialized tours for local schools that align with curriculum requirements. Students can learn about their city's history, architecture, and culture in an engaging, interactive way.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Programas Educacionais</h3>
+                        <p>Crie tours especializados para escolas locais que se alinhem com os requisitos curriculares. Os estudantes podem aprender sobre a história, arquitetura e cultura da cidade de forma envolvente e interativa.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Образовательные программы</h3>
+                        <p>Создавайте специализированные туры для местных школ, которые соответствуют требованиям учебной программы. Студенты могут изучать историю, архитектуру и культуру своего города увлекательным, интерактивным способом.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎭</div>
+                    <div class="lang-en">
+                        <h3>Cultural Events</h3>
+                        <p>Integrate audio tours with local festivals and cultural events. Create special themed tours that complement exhibitions, performances, and celebrations throughout the year.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Eventos Culturais</h3>
+                        <p>Integre tours de áudio com festivais locais e eventos culturais. Crie tours temáticos especiais que complementem exposições, apresentações e celebrações ao longo do ano.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Культурные мероприятия</h3>
+                        <p>Интегрируйте аудиотуры с местными фестивалями и культурными мероприятиями. Создавайте специальные тематические туры, которые дополняют выставки, представления и праздники в течение года.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <div class="lang-en">
+                        <h3>Local Storytelling</h3>
+                        <p>Involve community members in creating content by collecting local stories, memories, and perspectives. This creates authentic experiences and strengthens residents' connection to their heritage.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Narrativas Locais</h3>
+                        <p>Envolva membros da comunidade na criação de conteúdo, coletando histórias locais, memórias e perspectivas. Isso cria experiências autênticas e fortalece a conexão dos residentes com seu patrimônio.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Местное повествование</h3>
+                        <p>Вовлекайте членов сообщества в создание контента, собирая местные истории, воспоминания и перспективы. Это создает аутентичные впечатления и укрепляет связь жителей с их наследием.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark" id="economic">
+        <div class="container">
+            <div class="section-title">
+                <div class="lang-en">
+                    <h2>Economic Benefits</h2>
+                    <p>Generate revenue and support local businesses</p>
+                </div>
+                <div class="lang-pt">
+                    <h2>Benefícios Econômicos</h2>
+                    <p>Gere receita e apoie negócios locais</p>
+                </div>
+                <div class="lang-ru">
+                    <h2>Экономические выгоды</h2>
+                    <p>Генерируйте доход и поддерживайте местный бизнес</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div class="column-content">
+                    <div class="lang-en">
+                        <h3>Revenue Generation Models</h3>
+                        <p>CCE Tours offers flexible monetization options that can generate sustainable revenue for municipalities:</p>
+                        <ul>
+                            <li><strong>Revenue Sharing:</strong> Earn a percentage of each tour sold in your municipality</li>
+                            <li><strong>Brand Licensing:</strong> License your city's brand and official approval for tours</li>
+                            <li><strong>Bundled Tickets:</strong> Include audio tours with museum passes or city cards</li>
+                            <li><strong>Sponsored Content:</strong> Incorporate local businesses into tours with promotional opportunities</li>
+                        </ul>
+                        <p>Beyond direct revenue, audio tours drive economic activity throughout your municipality:</p>
+                        <ul>
+                            <li>Increased spending at restaurants, cafes, and shops along tour routes</li>
+                            <li>Extended hotel stays as visitors spend more time exploring</li>
+                            <li>Support for local artisans and businesses featured in tours</li>
+                            <li>Job creation in tourism, content creation, and technology sectors</li>
+                        </ul>
+                        <p>For Portuguese municipalities, we can develop specialized economic models that align with local tourism strategies and funding mechanisms.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Modelos de Geração de Receita</h3>
+                        <p>A CCE Tours oferece opções flexíveis de monetização que podem gerar receita sustentável para municípios:</p>
+                        <ul>
+                            <li><strong>Compartilhamento de Receita:</strong> Ganhe uma porcentagem de cada tour vendido em seu município</li>
+                            <li><strong>Licenciamento de Marca:</strong> Licencie a marca da sua cidade e aprovação oficial para tours</li>
+                            <li><strong>Ingressos Combinados:</strong> Inclua tours de áudio com passes de museus ou cartões da cidade</li>
+                            <li><strong>Conteúdo Patrocinado:</strong> Incorpore negócios locais nos tours com oportunidades promocionais</li>
+                        </ul>
+                        <p>Além da receita direta, os tours de áudio impulsionam a atividade econômica em todo o seu município:</p>
+                        <ul>
+                            <li>Aumento de gastos em restaurantes, cafés e lojas ao longo das rotas dos tours</li>
+                            <li>Estadias prolongadas em hotéis à medida que os visitantes passam mais tempo explorando</li>
+                            <li>Apoio a artesãos locais e negócios apresentados nos tours</li>
+                            <li>Criação de empregos nos setores de turismo, criação de conteúdo e tecnologia</li>
+                        </ul>
+                        <p>Para municípios portugueses, podemos desenvolver modelos econômicos especializados que se alinham com estratégias de turismo locais e mecanismos de financiamento.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Модели генерации дохода</h3>
+                        <p>CCE Tours предлагает гибкие варианты монетизации, которые могут генерировать устойчивый доход для муниципалитетов:</p>
+                        <ul>
+                            <li><strong>Разделение доходов:</strong> Получайте процент от каждого проданного тура в вашем муниципалитете</li>
+                            <li><strong>Лицензирование бренда:</strong> Лицензируйте бренд вашего города и официальное одобрение для туров</li>
+                            <li><strong>Комбинированные билеты:</strong> Включайте аудиотуры с музейными абонементами или городскими картами</li>
+                            <li><strong>Спонсорский контент:</strong> Включайте местные предприятия в туры с рекламными возможностями</li>
+                        </ul>
+                        <p>Помимо прямого дохода, аудиотуры стимулируют экономическую активность по всему вашему муниципалитету:</p>
+                        <ul>
+                            <li>Увеличение расходов в ресторанах, кафе и магазинах вдоль маршрутов туров</li>
+                            <li>Продление пребывания в отелях, поскольку посетители проводят больше времени, исследуя город</li>
+                            <li>Поддержка местных ремесленников и предприятий, представленных в турах</li>
+                            <li>Создание рабочих мест в секторах туризма, создания контента и технологий</li>
+                        </ul>
+                        <p>Для португальских муниципалитетов мы можем разработать специализированные экономические модели, которые соответствуют местным туристическим стратегиям и механизмам финансирования.</p>
+                    </div>
+                </div>
+                <div class="column-image">
+                    <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Local business in Portugal">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light" id="implementation">
+        <div class="container">
+            <div class="section-title">
+                <div class="lang-en">
+                    <h2>Implementation Process</h2>
+                    <p>How we create and launch your custom audio tours</p>
+                </div>
+                <div class="lang-pt">
+                    <h2>Processo de Implementação</h2>
+                    <p>Como criamos e lançamos seus tours de áudio personalizados</p>
+                </div>
+                <div class="lang-ru">
+                    <h2>Процесс внедрения</h2>
+                    <p>Как мы создаем и запускаем ваши индивидуальные аудиотуры</p>
+                </div>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="lang-en">
+                        <div class="step-title">Consultation</div>
+                        <p>We meet with your team to understand your goals, target audiences, and unique cultural assets.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="step-title">Consulta</div>
+                        <p>Nos reunimos com sua equipe para entender seus objetivos, públicos-alvo e ativos culturais únicos.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="step-title">Консультация</div>
+                        <p>Мы встречаемся с вашей командой, чтобы понять ваши цели, целевую аудиторию и уникальные культурные активы.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="lang-en">
+                        <div class="step-title">Research</div>
+                        <p>Our team conducts thorough research on your municipality's history, culture, and points of interest.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="step-title">Pesquisa</div>
+                        <p>Nossa equipe realiza pesquisas completas sobre a história, cultura e pontos de interesse do seu município.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="step-title">Исследование</div>
+                        <p>Наша команда проводит тщательное исследование истории, культуры и достопримечательностей вашего муниципалитета.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="lang-en">
+                        <div class="step-title">Content Creation</div>
+                        <p>Professional writers develop engaging scripts, which are reviewed by your team and local experts.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="step-title">Criação de Conteúdo</div>
+                        <p>Escritores profissionais desenvolvem roteiros envolventes, que são revisados por sua equipe e especialistas locais.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="step-title">Создание контента</div>
+                        <p>Профессиональные писатели разрабатывают увлекательные сценарии, которые рецензируются вашей командой и местными экспертами.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="lang-en">
+                        <div class="step-title">Production</div>
+                        <p>Professional voice actors record the content, and our sound designers add music and effects.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="step-title">Produção</div>
+                        <p>Atores de voz profissionais gravam o conteúdo, e nossos designers de som adicionam música e efeitos.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="step-title">Производство</div>
+                        <p>Профессиональные актеры озвучивания записывают контент, а наши звукорежиссеры добавляют музыку и эффекты.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="lang-en">
+                        <div class="step-title">Testing</div>
+                        <p>We conduct thorough testing with local residents and visitors to refine the experience.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="step-title">Testes</div>
+                        <p>Realizamos testes completos com residentes locais e visitantes para refinar a experiência.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="step-title">Тестирование</div>
+                        <p>Мы проводим тщательное тестирование с местными жителями и посетителями для улучшения впечатлений.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="lang-en">
+                        <div class="step-title">Launch</div>
+                        <p>We help you promote the tours through marketing materials, integration with your tourism platforms, and launch events.</p>
+                    </div>
+                    <div class="lang-pt">
+                        <div class="step-title">Lançamento</div>
+                        <p>Ajudamos você a promover os tours através de materiais de marketing, integração com suas plataformas de turismo e eventos de lançamento.</p>
+                    </div>
+                    <div class="lang-ru">
+                        <div class="step-title">Запуск</div>
+                        <p>Мы помогаем вам продвигать туры через маркетинговые материалы, интеграцию с вашими туристическими платформами и мероприятия по запуску.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <div class="lang-en">
+                    <h2>Success Stories</h2>
+                    <p>Hear from municipalities who have implemented CCE Tours</p>
+                </div>
+                <div class="lang-pt">
+                    <h2>Histórias de Sucesso</h2>
+                    <p>Ouça municípios que implementaram os CCE Tours</p>
+                </div>
+                <div class="lang-ru">
+                    <h2>Истории успеха</h2>
+                    <p>Отзывы муниципалитетов, внедривших CCE Tours</p>
+                </div>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide">
+                    <div class="lang-en">
+                        <p class="testimonial-text">"The CCE Tours have transformed how visitors experience our city. The immersive storytelling and professional production quality have received overwhelmingly positive feedback, and we've seen a 15% increase in tourism engagement."</p>
+                        <p class="testimonial-author">Carlos Moedas</p>
+                        <p class="testimonial-role">Mayor of Lisbon</p>
+                    </div>
+                    <div class="lang-pt">
+                        <p class="testimonial-text">"Os CCE Tours transformaram a forma como os visitantes experimentam nossa cidade. A narrativa imersiva e a qualidade de produção profissional receberam feedback extremamente positivo, e vimos um aumento de 15% no engajamento turístico."</p>
+                        <p class="testimonial-author">Carlos Moedas</p>
+                        <p class="testimonial-role">Presidente da Câmara de Lisboa</p>
+                    </div>
+                    <div class="lang-ru">
+                        <p class="testimonial-text">"CCE Tours преобразили то, как посетители воспринимают наш город. Иммерсивное повествование и профессиональное качество продукции получили чрезвычайно положительные отзывы, и мы наблюдаем 15% рост вовлеченности туристов."</p>
+                        <p class="testimonial-author">Карлос Моэдаш</p>
+                        <p class="testimonial-role">Мэр Лиссабона</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="lang-en">
+                <h2>Ready to Transform Your Municipality's Tourism Experience?</h2>
+                <p>Contact us today to discuss how CCE Tours can create immersive audio experiences for your city.</p>
+                <a href="mailto:info@ccetours.com" class="btn">Request a Demo</a>
+            </div>
+            <div class="lang-pt">
+                <h2>Pronto para Transformar a Experiência Turística do Seu Município?</h2>
+                <p>Entre em contato hoje para discutir como os CCE Tours podem criar experiências de áudio imersivas para sua cidade.</p>
+                <a href="mailto:info@ccetours.com" class="btn">Solicitar uma Demonstração</a>
+            </div>
+            <div class="lang-ru">
+                <h2>Готовы преобразить туристический опыт вашего муниципалитета?</h2>
+                <p>Свяжитесь с нами сегодня, чтобы обсудить, как CCE Tours может создать иммерсивные аудиовпечатления для вашего города.</p>
+                <a href="mailto:info@ccetours.com" class="btn">Запросить демонстрацию</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="lang-en">
+                        <h3>About CCE Tours</h3>
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Sobre CCE Tours</h3>
+                        <ul>
+                            <li><a href="#">Nossa História</a></li>
+                            <li><a href="#">Equipe</a></li>
+                            <li><a href="#">Carreiras</a></li>
+                            <li><a href="#">Imprensa</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>О CCE Tours</h3>
+                        <ul>
+                            <li><a href="#">Наша история</a></li>
+                            <li><a href="#">Команда</a></li>
+                            <li><a href="#">Карьера</a></li>
+                            <li><a href="#">Пресса</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="lang-en">
+                        <h3>Solutions</h3>
+                        <ul>
+                            <li><a href="municipalities.html">For Municipalities</a></li>
+                            <li><a href="companies.html">For Companies</a></li>
+                            <li><a href="personal.html">For Personal Use</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Soluções</h3>
+                        <ul>
+                            <li><a href="municipalities.html">Para Municípios</a></li>
+                            <li><a href="companies.html">Para Empresas</a></li>
+                            <li><a href="personal.html">Para Uso Pessoal</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Решения</h3>
+                        <ul>
+                            <li><a href="municipalities.html">Для муниципалитетов</a></li>
+                            <li><a href="companies.html">Для компаний</a></li>
+                            <li><a href="personal.html">Для личного использования</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="lang-en">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Recursos</h3>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Estudos de Caso</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Suporte</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Ресурсы</h3>
+                        <ul>
+                            <li><a href="#">Блог</a></li>
+                            <li><a href="#">Кейсы</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Поддержка</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="lang-en">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><a href="mailto:info@ccetours.com">info@ccetours.com</a></li>
+                            <li><a href="tel:+351912345678">+351 912 345 678</a></li>
+                            <li><a href="#">Lisbon, Portugal</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-pt">
+                        <h3>Contato</h3>
+                        <ul>
+                            <li><a href="mailto:info@ccetours.com">info@ccetours.com</a></li>
+                            <li><a href="tel:+351912345678">+351 912 345 678</a></li>
+                            <li><a href="#">Lisboa, Portugal</a></li>
+                        </ul>
+                    </div>
+                    <div class="lang-ru">
+                        <h3>Контакты</h3>
+                        <ul>
+                            <li><a href="mailto:info@ccetours.com">info@ccetours.com</a></li>
+                            <li><a href="tel:+351912345678">+351 912 345 678</a></li>
+                            <li><a href="#">Лиссабон, Португалия</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="lang-en">
+                    <p class="copyright">&copy; 2025 CCE Tours. All rights reserved.</p>
+                </div>
+                <div class="lang-pt">
+                    <p class="copyright">&copy; 2025 CCE Tours. Todos os direitos reservados.</p>
+                </div>
+                <div class="lang-ru">
+                    <p class="copyright">&copy; 2025 CCE Tours. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function changeLanguage(lang) {
+            document.body.setAttribute('lang', lang);
+            
+            // Update active class on language buttons
+            const buttons = document.querySelectorAll('.language-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+                if (button.textContent === lang.toUpperCase()) {
+                    button.classList.add('active');
+                }
+            });
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        // Check for saved language preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            if (savedLanguage) {
+                changeLanguage(savedLanguage);
+            }
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
