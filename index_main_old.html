@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="theme-color" content="#2E305E">
+	
+	<link rel="shortcut icon" href="./favicon.ico" />
+	
+	<title>CCE | Cultural Connoisseurs Experience</title>
+
+	<link rel="stylesheet" href="https://use.typekit.net/scc6wwx.css">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	
+	<link rel="stylesheet" href="assets/vendors/liquid-icon/liquid-icon.min.css" />
+	<link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="assets/css/theme-vendors.min.css" />
+	<link rel="stylesheet" href="assets/css/theme.min.css" />
+	<link rel="stylesheet" href="assets/css/themes/seo.css" />
+	
+	<meta property="og:description" content="Embark on a journey through time with The Grand Monarch's Tales, an exclusive collection of immersive audio tours that bring history to life. Each tour offers a unique blend of royal storytelling, cultural insights, and architectural wonders, designed to transport you to Lisbon's golden age" />
+
+
+<script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
+<script>
+    // Version: 2.0
+    window.Brevo = window.Brevo || [];
+    Brevo.push([
+        "init",
+        {
+        client_key: "vrhc658y2xgzk3ofaxsblxb8"
+        }
+    ]);
+</script>
+
+	<!-- Head Libs -->
+	<script async src="assets/vendors/modernizr.min.js"></script>
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3H3C9MFB0P"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-3H3C9MFB0P');
+	</script>
+
+	<script type="text/javascript">
+		var CookieBanner = (function() {
+    return {
+        'cookieDuration': 90,                           // Number of days before the cookie expires, and the banner reappears
+        'cookieName': 'cookieConsent',                  // Name of our cookie
+        'cookieAcceptedValue': 'analytics_accepted',    // Value of cookie if user accepts
+        'cookieDeniedValue': 'analytics_denied',
+        'privacy_policy_url': 'https://ccetours.com/terms.html',       // Link to your privacy policy
+        'consentCallBack': (function () {               // Is called on every page-load if user accepts cookies
+            console.error("You must assign a call back function to CookieBanner.consentCallBack")
+        }),
+        '_createDiv': function(html) {
+            var bodytag = document.getElementsByTagName('body')[0];
+            var div = document.createElement('div');
+            div.setAttribute('id','cookie-law');
+            div.innerHTML = html;
+
+            bodytag.insertBefore(div,bodytag.firstChild); // Adds the Cookie Law Banner just after the opening <body> tag
+
+            document.getElementsByTagName('body')[0].className+='cookiebanner'; //Adds a class to the <body> tag when the banner is visible
+
+        },
+
+        '_createCookie': function(name, value, days) {
+            var expires;
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime()+(days*24*60*60*1000));
+                expires = "; expires="+date.toGMTString();
+            }
+            else {
+                expires = "";
+            }
+            document.cookie = name+"="+value+expires+"; path=/";
+        },
+
+        '_cookieExists': function(name) {
+            return document.cookie.indexOf(name + "=") !== -1;
+        },
+
+        '_triggerCallBackIfUserAccepted': function () {
+            if (CookieBanner.hasUserAccepted()) {
+                CookieBanner.consentCallBack()
+            }
+        },
+
+        'hasUserAccepted': function() {
+            return document.cookie.indexOf(CookieBanner.cookieAcceptedValue) !== -1;
+        },
+
+        '_eraseCookie': function(name) {
+            CookieBanner._createCookie(name,"",-1);
+        },
+
+        'createAcceptCookie': function() {
+            CookieBanner._createCookie(CookieBanner.cookieName, CookieBanner.cookieAcceptedValue, CookieBanner.cookieDuration);
+        },
+
+        'createDenyCookie': function() {
+            CookieBanner._createCookie(CookieBanner.cookieName, CookieBanner.cookieDeniedValue, CookieBanner.cookieDuration);
+        },
+
+        'closeBanner': function() {
+            var element = document.getElementById('cookie-law');
+            element.parentNode.removeChild(element);
+        },
+
+        'accept': function() {
+            CookieBanner.createAcceptCookie();
+            CookieBanner.closeBanner();
+            CookieBanner._triggerCallBackIfUserAccepted()
+        },
+
+        'deny': function() {
+            CookieBanner.createDenyCookie();
+            CookieBanner.closeBanner();
+        },
+
+        'showIfCookieMissing': function(html) {
+            if(CookieBanner._cookieExists(CookieBanner.cookieName) === false){
+                CookieBanner._createDiv(html);
+            }
+            CookieBanner._triggerCallBackIfUserAccepted()
+        }
+    }
+
+})();
+
+window.onload = function(){
+    var html = '<div class="row">' +
+        '<div class="col-lg-9">' +
+        'I would like to use Google Analytics to know how many people visit my site. <b>If you agree, your IP address will be anonymized.</b> ' +
+        'You can read the legal details in my site\'s ' +
+        '<a href="' + CookieBanner.privacy_policy_url + '">Privacy Policy</a>. ' +
+        'By clicking "Accept", you agree to my use of cookies for the purpose of analytics.' +
+        '</div>'
+
+    html += '<div class="col-lg-9">'
+    html += '<div class="btn btn-lg btn-block btn-primary" style="max-width:150px;" id="btn_accept" onclick="CookieBanner.accept();"><span>Accept</span></div>';
+    html += '<div class="btn btn-lg btn-block btn-default" style="max-width:150px;" id="btn_deny" onclick="CookieBanner.deny();"><span>Deny</span></div>';
+    html += '</div></div>' // col-lg-3, row
+    CookieBanner.consentCallBack = (function () {
+        // Google Analytics
+        console.log("Loading Google Analytics, because you have accepted it's use.");
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'G-3H3C9MFB0P', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+
+    })
+    CookieBanner.showIfCookieMissing(html);
+}
+	</script>
+
+<script>
+	// Get modal elements
+	const modal = document.getElementById("contactModal");
+	const openModalBtn = document.getElementById("openModal");
+	const closeModalBtn = document.querySelector(".close");
+
+	// Open the modal
+	openModalBtn.addEventListener("click", () => {
+		modal.style.display = "block";
+	});
+
+	// Close the modal
+	closeModalBtn.addEventListener("click", () => {
+		modal.style.display = "none";
+	});
+
+	// Close modal when clicking outside the content
+	window.addEventListener("click", (event) => {
+		if (event.target === modal) {
+			modal.style.display = "none";
+		}
+	});
+</script>
+
+
+	<style>
+
+.modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            width: 50%;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 90%;
+            }
+        }
+
+	.iconbox-color-pippin .iconbox-icon-container {
+		color: #ffffff;
+		background-color: #2D2F61;
+	}
+
+	.accordion-content {
+		color: #2D2F61;
+	}
+
+	.accordion-title {
+		font-family: 'europa', sans-serif;
+	}
+
+	body {
+		color: #2D2F61;
+	}
+
+	#cookie-law {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0px 2%;
+    background-color: #ccc;
+    z-index: 999;
+	opacity: 0.85;
+}
+
+	#cookie-law > div > div {
+		margin: 1em;
+		font-size: 12px;
+		line-height: 1.4;
+	}
+	</style>
+
+	
+</head>
+<body data-mobile-nav-trigger-alignment="right" data-mobile-nav-align="left" data-mobile-nav-style="modern" data-mobile-nav-shceme="gray" data-mobile-header-scheme="gray" data-mobile-nav-breakpoint="1199">
+	
+	<div id="contactModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<!-- Brevo Contact Form iframe -->
+			<iframe width="540" height="305" src="https://sibforms.com/serve/MUIFAGeLwxsZpiABybyrLp5vK4hmvQrpOtl31N-6uULzpMiLXUkcdcyGakajP0a4GLa-dCC4bS3887FiFMSpHEoBWd-bQ19GTUDuYux3zlCQtCY7CIHGwRD4-m3PfvvdTtw3UTlRb38-Rs70uqo3B7lmygC5UEbrmOwepGZo20Lxx64bjPYrc5Kxz39WS6hSEAz-9exJWCfsI53L" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+		</div>
+	</div>
+
+	<div id="wrap">
+		
+		<header class="main-header main-header-overlay">
+			
+			<div class="mainbar-wrap">
+				<div class="megamenu-hover-bg"></div><!-- /.megamenu-hover-bg -->
+				<div class="container-fluid mainbar-container">
+					<div class="mainbar">
+						<div class="row mainbar-row align-items-lg-stretch px-4 justify-content-between">
+							
+							<div class="col-auto">
+								<div class="navbar-header">
+									<a class="navbar-brand" href="index.html" rel="home">
+										<span class="navbar-brand-inner">
+											<img class="logo-dark" style="width: 90%;" src="./logo.png" alt="CCE | Cultural Connoisseurs Experience">
+											<img class="logo-sticky" style="width: 90%;" src="./logo.png" alt="CCE | Cultural Connoisseurs Experience">
+											<img class="mobile-logo-default" style="width: 90%;" src="./logo.png" alt="CCE | Cultural Connoisseurs Experience">
+											<img class="logo-default" style="width: 50%;" src="./logo.png" alt="CCE | Cultural Connoisseurs Experience">
+										</span>
+									</a>
+
+									<button type="button" class="navbar-toggle collapsed nav-trigger style-mobile" data-toggle="collapse" data-target="#main-header-collapse" aria-expanded="false" data-changeclassnames='{ "html": "mobile-nav-activated overflow-hidden" }'>
+										<span class="sr-only">Toggle navigation</span>
+										<span class="bars" style="color: #fff;">
+											<span class="bar" style="color: #fff;"></span>
+											<span class="bar" style="color: #fff;"></span>
+											<span class="bar" style="color: #fff;"></span>
+										</span>
+									</button>
+								</div><!-- /.navbar-header -->
+							</div><!-- /.col -->
+							
+							<div class="col-auto">
+
+								
+								
+								<div class="collapse navbar-collapse" id="main-header-collapse">
+
+									
+									<ul id="primary-nav" class="main-nav nav align-items-lg-stretch justify-content-lg-start" data-submenu-options='{ "toggleType":"fade", "handler":"mouse-in-out" }' data-localscroll="true">
+										
+										<li>
+											<a href="https://ccetours.com/terms.html">
+												<span class="link-icon"></span>
+												<span class="link-txt">
+													<span class="link-ext"></span>
+													<span class="txt">
+														Terms & Conditions
+														<span class="submenu-expander">
+															<i class="fa fa-angle-down"></i>
+														</span>
+													</span>
+												</span>
+											</a>
+										</li>
+										<li>
+											<a href="#contact-us">
+												<span class="link-icon"></span>
+												<span class="link-txt">
+													<span class="link-ext"></span>
+													<span class="txt">
+														Contact Us
+														<span class="submenu-expander">
+															<i class="fa fa-angle-down"></i>
+														</span>
+													</span>
+												</span>
+											</a>
+										</li>
+										
+										<!--<li>
+											<a href="#services">
+												<span class="link-icon"></span>
+												<span class="link-txt">
+													<span class="link-ext"></span>
+													<span class="txt">
+														Services
+														<span class="submenu-expander">
+															<i class="fa fa-angle-down"></i>
+														</span>
+													</span>
+												</span>
+											</a>
+										</li>
+										<li>
+											<a href="#works">
+												<span class="link-icon"></span>
+												<span class="link-txt">
+													<span class="link-ext"></span>
+													<span class="txt">
+														Works
+														<span class="submenu-expander">
+															<i class="fa fa-angle-down"></i>
+														</span>
+													</span>
+												</span>
+											</a>
+										</li>
+										<li>
+											<a href="#pricing">
+												<span class="link-icon"></span>
+												<span class="link-txt">
+													<span class="link-ext"></span>
+													<span class="txt">
+														Pricing
+														<span class="submenu-expander">
+															<i class="fa fa-angle-down"></i>
+														</span>
+													</span>
+												</span>
+											</a>
+										</li>
+									
+									</ul> /#primary-nav  -->
+								
+								</div><!-- /#main-header-collapse -->
+								
+							</div><!-- /.col -->
+
+							
+						
+							<!--<div class="col text-right">
+							
+
+								<div class="header-module">
+									<a href="#" id="openModal" class="btn btn-default text-uppercase btn-sm circle btn-bordered border-thin px-2">
+										<span>
+											<span class="btn-txt">Contact Us</span>
+										</span>
+									</a>
+								</div>
+								
+							</div>-->
+						
+						</div><!-- /.mainbar-row -->
+					</div><!-- /.mainbar -->
+				</div><!-- /.mainbar-container -->
+			</div><!-- /.mainbar-wrap -->
+			
+		</header><!-- /.main-header -->
+	
+		<main id="content" class="content">
+			
+			<section class="vc_row bg-no-repeat fullheight d-flex align-items-center py-5" style="background-image: url(./assets/bg-75.svg); background-position: 170% 110%;">
+
+			
+				<!-- Video for mobile only -->
+				<div class="video-container">
+					<!-- Mobile Video -->
+					<div class="mobile-video-container d-block d-md-none">
+					  <video id="mobile-bg-video" poster="./assets/site_jose.jpg" autoplay loop muted playsinline class="mobile-bg-video" style="min-width: 650px; width: 100%;">
+						<source src="./assets/site_jose.mp4" type="video/mp4">
+					  </video>
+					</div>
+				  
+					<!-- Desktop Video -->
+					<div class="desktop-video-container d-none d-md-block">
+					  <video id="desktop-bg-video" poster="./assets/jose_desk.jpg" autoplay loop muted playsinline class="desktop-bg-video" style="width: 100%;">
+						<source src="./assets/jose_video_desktop.mp4" type="video/mp4">
+					  </video>
+					</div>
+				  </div>
+			  
+				<div class="lqd-particles-bg-wrap">
+				  <div class="ld-particles-container">
+					<div class="ld-particles-inner" id="particles-1559739661542-e9d04c39-a9eb" data-particles="true" data-particles-options='{"particles":{"number":{"value":4}, "color":{"value":["#2D2F61", "#2D2F61", "#2C152D"]}, "shape":{"type":["circle"]}, "opacity":{"random":true, "anim":{"enable":true, "opacity_min":0.80000000000000004, "speed":1, "sync":true}}, "size":{"value":5, "random":true, "anim":{"enable":true, "size_min":52}}, "move":{"enable":true,"direction":"none", "speed":1, "random":true, "out_mode":"out"}}, "interactivity":[]}'></div><!-- /.ld-particles-inner -->
+				  </div><!-- /.ld-particles-container -->
+				</div><!-- /.lqd-particles-bg-wrap -->
+			  
+				<div class="container" style="width: 90%;">
+				  <div class="row d-flex flex-wrap align-items-center">
+			  
+					<div class="lqd-column col-lg-5 col-md-6">
+			  
+					  <div class="ld-fancy-heading mask-text text-uppercase">
+						<h6 class=" font-size-20 ltr-sp-01" data-split-text="true" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview", "animationTarget":".split-inner", "duration":"1600", "delay":100, "easing":"easeOutQuint", "direction":"forward", "initValues":{"translateY":60}, "animations":{"translateY":0}}' data-split-options='{"type":"lines"}'>
+						  <span class="ld-fh-txt" style="color: #fff !important; font-weight: bold;">CCE</span>
+						</h6>
+					  </div><!-- /.ld-fancy-heading -->
+			  
+					  <div class="ld-fancy-heading mask-text">
+						<h2 style="background-color: rgba(45, 47, 97, 0.4); padding: 10px; border-radius: 5px;" data-fittext="true" data-fittext-options='{"compressor":0.55,"maxFontSize":"60", "minFontSize":"38"}' data-split-text="true" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview", "animationTarget":".split-inner", "duration":"1600", "startDelay":"200", "delay":"160", "easing":"easeOutQuint", "direction":"forward", "initValues":{"translateY":150}, "animations":{"translateY":0}}' data-split-options='{"type":"lines"}'>
+						  <span class="ld-fh-txt font-size-38" style="color: #fff !important; line-height: 1.2;">An exclusive audio tour – a walk with a ghost king as your guide!</span>
+						</h2>
+					  </div>
+					  
+			  
+					  <!--<div class="ld-fancy-heading mask-text mb-4">
+						<p class="font-size-18 lh-165" data-split-text="true" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview","animationTarget":".split-inner","duration":"1600","startDelay":"650","delay":"160","easing":"easeOutQuint","direction":"forward","initValues":{"translateY":60},"animations":{"translateY":0}}' data-split-options='{"type":"lines"}'>
+						  <span class="ld-fh-txt" style="color: #ffffff; font-weight: bold;">
+							Discover a mystery thematic tours through the city of Lisbon!
+						  </span>
+						</p>
+					  </div>
+					  /.ld-fancy-heading -->
+			  
+					  
+
+					  <div class="row" style="margin-top: 20px;">
+						<div class="lqd-column col-md-12" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview", "animationTarget":"all-childs", "duration":"1600", "startDelay":"1300", "delay":"160", "easing":"easeOutQuint", "direction":"forward", "initValues":{"translateY":40, "opacity":0}, "animations":{"translateY":0, "opacity":1}}'>
+			  
+						  <a href="https://app.ccetours.com/" class="btn btn-solid text-uppercase btn-md circle btn-bordered border-thin btn-gradient px-2">
+							<span>
+							  <span class="btn-gradient-bg"></span>
+							  <span class="btn-txt">Try For Free</span>
+							  <span class="btn-gradient-bg btn-gradient-bg-hover"></span>
+							  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="btn-gradient-border" width="100%" height="100%">
+								<defs>
+								  <linearGradient id="svg-border-1" x1="0%" y1="0%" x2="100%" y2="0%">
+									<stop offset="0%"></stop>
+									<stop offset="100%"></stop>
+								  </linearGradient>
+								</defs>
+								<rect x="0.5" y="0.5" rx="29.5" ry="29.5" width="100%" height="100%" stroke="url(#svg-border-1)"></rect>
+							  </svg>
+							</span>
+						  </a>
+
+
+						  <a href="#about" class="btn btn-solid text-uppercase btn-md circle btn-bordered border-thin ">
+							<span>
+							  <span class="btn-gradient-bg"></span>
+							  <span class="btn-txt">Know more →</span>
+							  <span class="btn-gradient-bg btn-gradient-bg-hover"></span>
+							  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="btn-gradient-border" width="100%" height="100%">
+								<defs>
+								  <linearGradient id="svg-border-1" x1="0%" y1="0%" x2="100%" y2="0%">
+									<stop offset="0%"></stop>
+									<stop offset="100%"></stop>
+								  </linearGradient>
+								</defs>
+								<rect x="0.5" y="0.5" rx="29.5" ry="29.5" width="100%" height="100%" stroke="url(#svg-border-1)"></rect>
+							  </svg>
+							</span>
+						  </a>
+						</div><!-- /.lqd-column col-md-12 -->
+					  </div><!-- /.row -->
+			  
+					</div><!-- /.lqd-column col-lg-5 col-md-6 -->
+			  
+					<div class="lqd-column col-lg-7 col-md-6 visible-md visible-lg">
+			  
+					  <div class="liquid-img-group-container lqd-parallax-images-7" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview", "animationTarget":".liquid-img-group-single", "duration":"1600", "startDelay":"1150", "delay":"200", "easing":"easeOutQuint", "direction":"forward", "initValues":{"translateX":40, "translateY":191, "rotateZ":7, "opacity":0}, "animations":{"translateX":0, "translateY":0, "rotateZ":0, "opacity":1}}'>
+						<div class="liquid-img-group-inner">
+			  
+						  <div class="liquid-img-group-single">
+							<div class="liquid-img-group-img-container">
+							  <div class="liquid-img-container-inner" data-parallax="true" data-parallax-from='{"translateY":2}' data-parallax-to='{"translateY":120}' data-parallax-options='{"overflowHidden":false,"easing":"linear"}'>
+								<!--<figure>
+								  <img src="./assets/demo/misc/phone-1.png" alt="Mobile Phone" />
+								</figure>-->
+							  </div><!-- /.liquid-img-container-inner -->
+							</div><!-- /.liquid-img-group-img-container -->
+						  </div><!-- /.liquid-img-group-single -->
+			  
+						  <div class="liquid-img-group-single">
+							<div class="liquid-img-group-img-container">
+							  <div class="liquid-img-container-inner" data-parallax="true" data-parallax-from='{"translateY":30}' data-parallax-to='{"translateY":70}' data-parallax-options='{"overflowHidden":false,"easing":"linear"}'>
+								<!--<figure>
+								  <img src="./assets/demo/misc/laptop-1.png" alt="Laptop" />
+								</figure>-->
+							  </div><!-- /.liquid-img-container-inner -->
+							</div><!-- /.liquid-img-group-img-container -->
+						  </div><!-- /.liquid-img-group-single -->
+			  
+						</div><!-- /.liquid-img-group-inner -->
+					  </div><!-- /.liquid-img-group-container -->
+			  
+					</div><!-- /.lqd-column col-lg-7 col-md-6 -->
+			  
+				  </div><!-- /.row -->
+				</div><!-- /.container -->
+				
+			  </section>
+			  
+			  <style>
+				/* Shared styles for video containers */
+				.video-container {
+				  position: absolute;
+				  top: 0;
+				  left: 0;
+				  width: 100%;
+				  height: 100%;
+				  z-index: -1;
+				}
+			  
+				.mobile-video-container,
+				.desktop-video-container {
+				  width: 100%;
+				  height: 100%;
+				  object-fit: cover;
+				}
+			  
+				/* Mobile-specific styles */
+				@media (max-width: 991px) {
+				  .desktop-video-container {
+					display: none; /* Hide desktop video on mobile */
+				  }
+				}
+			  
+				/* Desktop-specific styles */
+				@media (min-width: 992px) {
+				  .mobile-video-container {
+					display: none; /* Hide mobile video on desktop */
+				  }
+				}
+			  </style>
+			  
+			
+			  <section class="vc_row">
+				<div class="container">
+					<div class="row">
+
+						<div  class="carousel-container carousel-shadow-active carousel-nav-left carousel-nav-md carousel-dots-style1">
+							<div class="carousel-items row" data-lqd-flickity='{"wrapAround": true}'>
+
+								<div class="lqd-column w-20 text-center px-2">
+									<figure>
+										
+									</figure>
+								</div><!-- /.lqd-column w-20 text-center px-2 -->
+
+								
+
+							</div><!-- /.carousel-items -->
+						</div><!-- /.carousel-container -->
+
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</section><!-- /.vc_row -->
+
+			<section id="about" class="vc_row bg-no-repeat pb-100" style="background-image: url(./assets/demo/bg/bg-76.svg); background-position: -90% 80%;">
+				<div class="container">
+
+					<div
+					class="row"
+					data-custom-animations="true"
+					data-ca-options='{"triggerHandler":"inview", "animationTarget":"all-childs", "duration":"1600", "delay":"160", "easing":"easeOutQuint", "initValues":{"translateY": 100, "opacity":0}, "animations":{"translateY": 0, "opacity":1}}'>
+
+					<style>
+						@media (max-width: 991px) {
+							#mystic-tour-section {
+								display: block !important;
+							}
+						}
+					</style>
+
+					<div class="lqd-column col-md-12" style="display: none;" id="mystic-tour-section">
+
+						<header class="fancy-title">
+							<h6 style="color: #fff; font-weight: bold;" class="text-uppercase">Experience </h6>
+							<h2 style="color: #fff; font-weight: bold;"><strong>Lisbon</strong> Through Royal Eyes</h2>
+						</header>
+					
+					</div><!-- /.lqd-column col-md-12 -->
+					
+
+						<div class="lqd-column col-md-12">
+
+							<div style="background-color: #2D2F61;" class="iconbox text-left iconbox-xl iconbox-icon-image iconbox-shadow border-radius-5 px-5 pt-40 pb-55 mr-md-4">
+								<div class="iconbox-icon-wrap">
+									<span class="iconbox-icon-container mb-35">
+										
+										<img src="./assets/icon_praca.png" width="80">
+										  
+									</span>
+								</div><!-- /.iconbox-icon-wrap -->
+								<div class="contents">
+									<h3 style="color: #fff;">Walk with Greatness: Royal Tales of Lisboa</h3>
+									<p><span style="color: #fff; font-size: 18px;line-height: 30px">
+										Welcome, brave adventurers, bold in your thirst for knowledge and discovery!
+									</span></p>
+									<br>
+
+									<div class="audio-player">
+										<button id="playPauseBtn">
+											<svg id="playIcon" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<polygon points="6,5 18,12 6,19" fill="#E5B87F"/>
+											</svg>
+											<svg id="pauseIcon" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+												<rect x="6" y="5" width="4" height="14" fill="#E5B87F"/>
+												<rect x="14" y="5" width="4" height="14" fill="#E5B87F"/>
+											</svg>
+										</button>
+									
+										<span id="currentTime">0:00</span>
+										<input type="range" id="progressBar" value="0" step="0.1" min="0" max="100">
+										<span id="totalDuration">3:16</span>
+									
+										<audio id="audio">
+											<source src="https://ccetours.com/lisbon_excursion_intro.mp3" type="audio/mpeg">
+											Your browser does not support the audio element.
+										</audio>
+									</div>
+									
+									<style>
+										.audio-player {
+											display: flex;
+											align-items: center;
+											gap: 10px;
+											color: white;
+											font-family: Arial, sans-serif;
+											font-size: 14px;
+										}
+									
+										button {
+											background: none;
+											border: none;
+											cursor: pointer;
+											padding: 0;
+										}
+									
+										input[type="range"] {
+											width: 100%;
+											-webkit-appearance: none;
+											height: 4px;
+											background: #E5B87F;
+											border-radius: 2px;
+											cursor: pointer;
+										}
+									
+										input[type="range"]::-webkit-slider-thumb {
+											-webkit-appearance: none;
+											width: 12px;
+											height: 12px;
+											background: #E5B87F;
+											border-radius: 50%;
+										}
+									</style>
+									
+									<script>
+										const playPauseBtn = document.getElementById('playPauseBtn');
+										const audio = document.getElementById('audio');
+										const playIcon = document.getElementById('playIcon');
+										const pauseIcon = document.getElementById('pauseIcon');
+										const progressBar = document.getElementById('progressBar');
+										const currentTimeEl = document.getElementById('currentTime');
+										const totalDurationEl = document.getElementById('totalDuration');
+									
+										function formatTime(seconds) {
+											const minutes = Math.floor(seconds / 60);
+											const secs = Math.floor(seconds % 60);
+											return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+										}
+									
+										playPauseBtn.addEventListener('click', () => {
+											if (audio.paused) {
+												audio.play();
+												playIcon.style.display = 'none';
+												pauseIcon.style.display = 'inline';
+											} else {
+												audio.pause();
+												playIcon.style.display = 'inline';
+												pauseIcon.style.display = 'none';
+											}
+										});
+									
+										audio.addEventListener('loadedmetadata', () => {
+											totalDurationEl.textContent = formatTime(audio.duration);
+										});
+									
+										audio.addEventListener('timeupdate', () => {
+											progressBar.value = (audio.currentTime / audio.duration) * 100;
+											currentTimeEl.textContent = formatTime(audio.currentTime);
+										});
+									
+										progressBar.addEventListener('input', () => {
+											audio.currentTime = (progressBar.value / 100) * audio.duration;
+										});
+									</script>
+									
+									
+									
+									
+
+									<p><span style="color: #fff; font-size: 18px;line-height: 30px"><br>
+										
+Welcome, brave adventurers, bold in your thirst for knowledge and discovery! Step onto this shore where Lisbon becomes more than a city—it's an open-air theater. 
+<br><br>Every street whispers secrets, every building holds a story, and you are the hero of this journey. Led by the ghost of a king, this immersive audio tour transforms a two-hour walk into an unforgettable experience, blending history and art with voices of actors, music, and atmospheric sounds. 
+<br><br>Let the past come alive as dreams set sail and every moment breathes history.
+									</span></p>
+
+
+								</div><!-- /.contants -->
+							</div><!-- /.iconbox -->
+
+						</div><!-- /.lqd-column col-md-4 -->
+
+						
+
+					</div><!-- /.row -->
+
+					<div class="lqd-space visible-lg visible-md" style="height: 200px;"></div>
+
+					<div class="row d-flex flex-wrap align-items-center">
+		
+						<div class="lqd-column col-md-6">
+		
+							<div
+							class="liquid-img-group-container lqd-parallax-images-8"
+							data-custom-animations="true"
+							data-ca-options='{"triggerHandler":"inview", "animationTarget":".liquid-img-group-single", "duration":"1600", "delay":"160", "easing":"easeOutQuint", "direction":"backward", "initValues":{"translateX":-85, "opacity":0}, "animations":{"translateX":0, "opacity":1}}'>
+								<div class="liquid-img-group-inner">
+
+									<div
+									class="liquid-img-group-single"
+									data-shadow-style="4"
+									data-roundness="8"
+									data-inview="true"
+									data-animate-shadow="true">
+										<div class="liquid-img-group-img-container">
+											<div
+											class="liquid-img-container-inner"
+											data-parallax="true"
+											data-parallax-from='{"translateY":78}'
+											data-parallax-to='{"translateY":-78}'
+											data-parallax-options='{"overflowHidden":false, "easing":"linear"}'>
+												<figure class="w-90">
+													<img src="./assets/luis.jpg" alt="Lisbon tour with Luís" />
+												</figure>
+											</div><!-- /.liquid-img-container-inner -->
+										</div><!-- /.liquid-img-group-img-container -->
+									</div><!-- /.liquid-img-group-single -->
+									
+									<div
+										class="liquid-img-group-single"
+										data-shadow-style="4"
+										data-roundness="8" data-inview="true" data-animate-shadow="true">
+										<div class="liquid-img-group-img-container">
+											<div class="liquid-img-group-content content-floated-mid">
+												
+											</div><!-- /.liquid-img-group-content -->
+											<div
+											class="liquid-img-container-inner"
+											data-parallax="true"
+											data-parallax-from='{"translateY":107}'
+											data-parallax-to='{"translateY":-134}'
+											data-parallax-options='{"overflowHidden":false,"easing":"linear"}'>
+												<figure>
+													<img src="./assets/jose.jpg" alt="Lisbon tour with José" />
+												</figure>
+											</div><!-- /.liquid-img-container-inner -->
+										</div><!-- /.liquid-img-group-img-container -->
+									</div><!-- /.liquid-img-group-single -->
+
+								</div><!-- /.liquid-img-group-inner -->
+							</div><!-- /.liquid-img-group-container -->
+		
+						</div><!-- /.lqd-column col-md-6 -->
+
+						<div
+						data-custom-animations="true"
+						data-ca-options='{"triggerHandler":"inview", "animationTarget":"all-childs", "duration":"1600", "delay":"160", "easing":"easeOutQuint", "direction":"forward", "initValues":{"translateY":30, "opacity":0}, "animations":{"translateY":0, "opacity":1}}'
+						class="lqd-column col-md-5 col-md-offset-1">
+
+							<header class="fancy-title mb-50">
+								<h6 class="text-uppercase">What is in the tour</h6>
+								<h2 class="lh-1 mb-0" data-fittext="true" data-fittext-options='{"compressor":0.65, "maxFontSize":"72", "minFontSize":"48"}'><strong>Time</strong> travel</h2>
+								<h2 class="lh-1 mb-0" data-fittext="true" data-fittext-options='{"compressor":0.65, "maxFontSize":"72", "minFontSize":"48"}'><strong>Mystic</strong> tour</h2>
+							</header>
+
+							<p class="font-size-30 lh-105"><i>Route Overview</i></p>
+
+							<p class="font-size-18 lh-30 mb-55">
+								<span style="color: #2E305E;">
+									Each detail of the tour is crafted with a love for history, respect for your time, and a sincere desire to bring you joy. 
+									<br><br>It's more than just a sightseeing tour—it's an opportunity to feel the city's modern rhythm, uncover its secrets, and touch its soul. 
+									<br><br>Every aspect is thoughtfully designed with a passion for history, travel, and most importantly, your comfort and time. 
+									<br><br>This is not just a tour—it's a chance to hear the city's voice, connect with its soul, and discover the secrets it keeps.</span>							
+							</p>
+
+						</div>
+		
+					</div><!-- /.row -->
+
+				</div><!-- /.container -->
+			</section><!-- /.vc_row -->
+			
+
+			<section class="vc_row">
+				<div class="container">
+					<div class="row">
+
+						<div class="lqd-column col-md-7">
+
+							<div class="lqd-parallax-images-3">
+
+								<div class="liquid-img-group-container">
+
+									<div class="liquid-img-group-inner">
+										
+										<div class="liquid-img-group-single" data-parallax-to='{ "translateY": -50 }'>
+											<div class="liquid-img-group-img-container">
+												<div class="liquid-img-container-inner" data-parallax="true" data-parallax-options='{ "overflowHidden": false, "easing": "linear" }' data-parallax-from='{ "translateY": 160 }' data-parallax-to='{ "translateY": -50 }'>
+													<figure>
+														<img width="90%" src="./image_app_cce_phone.png" alt="CCE app">
+													</figure>
+												</div><!-- /.liquid-img-group-inner -->
+											</div><!-- /.liquid-img-group-content -->
+										</div><!-- /.liquid-img-group-single -->
+										
+										<div class="liquid-img-group-single">
+											<div class="liquid-img-group-img-container">
+												<div class="liquid-img-container-inner" data-parallax="true" data-parallax-options='{ "overflowHidden": false, "easing": "linear" }' data-parallax-from='{ "translateY": 185 }' data-parallax-to='{ "translateY": -110 }'>
+													<figure>
+														<img src="./image_app_cce_phone_map.png" alt="CCE app">
+													</figure>
+												</div><!-- /.liquid-img-group-inner -->
+											</div><!-- /.liquid-img-group-content -->
+										</div><!-- /.liquid-img-group-single -->
+										
+										<div class="liquid-img-group-single w-75" data-shadow-style="3" data-roundness="8">
+											<div class="liquid-img-group-img-container">
+												<div class="liquid-img-container-inner" data-parallax="true" data-parallax-options='{ "overflowHidden": false, "easing": "linear" }' data-parallax-from='{"translateX":60, "translateY":400, "scaleX":0.5, "scaleY":0.5}' data-parallax-to='{"translateX":160, "translateY":300, "scaleX":1.25, "scaleY":1.25}'>
+													<figure>
+														<img src="./popup.png" alt="Screenshot">
+													</figure>
+												</div><!-- /.liquid-img-group-inner -->
+											</div><!-- /.liquid-img-group-content -->
+										</div><!-- /.liquid-img-group-single -->
+										
+									</div><!-- /.liquid-img-group-inner -->
+									
+								</div><!-- /.liquid-img-group-container -->
+							
+							</div><!-- /.lqd-parallax-images-3 -->
+
+						</div><!-- /.col-md-7 hidden-sm-hidden-xs -->
+
+						<div class="lqd-column col-md-5" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview","animationTarget":"all-childs","duration":"1200","delay":"120","easing":"easeOutQuint","direction":"forward","initValues":{"translateX":-37,"opacity":0},"animations":{"translateX":0,"opacity":1}}'>
+    
+						
+							<header class="fancy-title fancy-title-underlined pr-md-2 pb-6">
+								<h2 class="pr-md-7 mr-md-6 mb-30">Time Travel Through History</h2>
+								<p>Experience Lisbon like never before with our immersive audio tour. Step through a portal in time where the 18th century meets the present day in an extraordinary journey through the city's most fascinating stories.</p>
+							</header>
+						
+							<!-- Art of Storytelling Section -->
+							<div class="iconbox text-left iconbox-icon-shadow iconbox-circle iconbox-sm iconbox-color-pippin mt-5">
+								<div class="iconbox-icon-wrap">
+									<span class="iconbox-icon-container">
+										<i class="icon-basic_magic_mouse"></i>
+									</span>
+								</div>
+							</div>
+							<h5>Art of Storytelling</h5>
+							<p class="mb-5">A unique audio tour format featuring professional voice actors, sound effects, and a carefully crafted script. Experience a 2-hour journey at your own pace, with the flexibility to split it across multiple days.</p>
+						
+							<!-- Charismatic Characters Section -->
+							<div class="iconbox text-left iconbox-icon-shadow iconbox-circle iconbox-sm iconbox-color-pippin">
+								<div class="iconbox-icon-wrap">
+									<span class="iconbox-icon-container">
+										<i class="icon-basic_elaboration_message_happy"></i>
+									</span>
+								</div>
+							</div>
+							<h5>Charismatic Characters</h5>
+							<p class="mb-5">Meet your extraordinary companions: the ghost of King José I, master of epic tales and witty remarks, and his charismatic friend Mark. Their unlikely friendship begins at Rossio Square, where your journey also starts.</p>
+
+							<a href="https://app.ccetours.com/" target="_blank" class="btn btn-solid circle font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2">
+								<span>
+									<span class="btn-txt">Open the Tour</span>
+									<span class="btn-icon">
+										<i class="fa fa-angle-right"></i>
+									</span>
+								</span>
+							</a>
+
+						</div>
+
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</section>
+
+
+			<section class="vc_row pt-130 pb-100">
+				<div class="container">
+					<div class="row d-flex flex-wrap align-items-center">
+						<div class="lqd-column col-md-6 mb-5 mb-md-0">
+							<h2 class="pr-md-7 mb-4 mt-0 font-weight-bold">Discover Lisbon with the Ghost King - Interactive Audio Experience</h2>
+							<p class="mb-40">Embark on a unique journey through Lisbon's storied streets guided by a most unusual companion - the Ghost King himself. This immersive audio experience combines theatrical storytelling, historical insights, and local culture into one unforgettable adventure across 42 carefully curated locations.</p>
+			
+							<a href="https://app.ccetours.com/" target="_blank" class="btn btn-solid circle font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2">
+								<span>
+									<span class="btn-txt">Start Your Journey</span>
+									<span class="btn-icon">
+										<i class="fa fa-angle-right"></i>
+									</span>
+								</span>
+							</a>
+						</div>
+			
+						<div class="lqd-column col-md-6">
+							<div class="accordion accordion-md accordion-active-has-fill accordion-title-round accordion-titles-gray" id="accordion-10" role="tablist">
+								
+								<div class="accordion-item panel mb-3 active">
+									<div class="accordion-heading" role="tab" id="accordion-10-heading-1">
+										<h4 class="accordion-title">
+											<a data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-panel-1" aria-expanded="true" aria-controls="accordion-10-panel-1">
+												What makes this tour special?
+												<span class="accordion-expander">
+													<i class="fa fa-angle-up"></i>
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="accordion-10-panel-1" class="accordion-collapse collapse in" role="tabpanel" aria-labelledby="accordion-10-heading-1">
+										<div class="accordion-content pt-30">
+											<p>This isn't just a regular audio guide - it's an immersive theatrical experience featuring professional voice actors, carefully crafted sound effects, and an engaging storyline. The Ghost King, your spectral guide, brings history to life while mixing in humor, spooky moments, and insider knowledge about modern Portuguese life.</p>
+										</div>
+									</div>
+								</div>
+			
+								<div class="accordion-item panel mb-3">
+									<div class="accordion-heading" role="tab" id="accordion-10-heading-2">
+										<h4 class="accordion-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-2" aria-expanded="false" aria-controls="accordion-10-collapse-2">
+												How does the tour work?
+												<span class="accordion-expander">
+													<i class="fa fa-angle-up"></i>
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="accordion-10-collapse-2" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-2">
+										<div class="accordion-content pt-30">
+											<p>Simply arrive at the starting point, open the app, put on your headphones, and step into a different dimension. You'll have access to a real-time interactive map, but don't worry - the Ghost King will guide you through every turn and stop. The audio is perfectly synchronized with the route, creating a seamless experience.</p>
+										</div>
+									</div>
+								</div>
+			
+								<div class="accordion-item panel mb-3">
+									<div class="accordion-heading" role="tab" id="accordion-10-heading-3">
+										<h4 class="accordion-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-3" aria-expanded="false" aria-controls="accordion-10-collapse-3">
+												How flexible is the tour?
+												<span class="accordion-expander">
+													<i class="fa fa-angle-up"></i>
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="accordion-10-collapse-3" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-3">
+										<div class="accordion-content pt-30">
+											<p>Entirely at your pace! You can pause anytime for photos, refreshments, or rest; split the tour across multiple days; take detours as you wish; and stop for recommended wine tastings and local dishes. The tour is designed to help you reach Lisbon's highest points while avoiding steep climbs, making it comfortable even in this city of seven hills.</p>
+										</div>
+									</div>
+								</div>
+			
+								<div class="accordion-item panel mb-3">
+									<div class="accordion-heading" role="tab" id="accordion-10-heading-4">
+										<h4 class="accordion-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-4" aria-expanded="false" aria-controls="accordion-10-collapse-4">
+												What kind of content can I expect?
+												<span class="accordion-expander">
+													<i class="fa fa-angle-up"></i>
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="accordion-10-collapse-4" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-4">
+										<div class="accordion-content pt-30">
+											<p>The tour combines historical storytelling through an engaging audio performance, lesser-known facts about famous landmarks, hidden gems off the typical tourist path, local cultural insights and contemporary Portuguese life, culinary and wine recommendations, and occasional jokes and spooky moments from your ghostly guide.</p>
+										</div>
+									</div>
+								</div>
+			
+								<div class="accordion-item panel mb-3">
+									<div class="accordion-heading" role="tab" id="accordion-10-heading-5">
+										<h4 class="accordion-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-5" aria-expanded="false" aria-controls="accordion-10-collapse-5">
+												How immersive is the experience?
+												<span class="accordion-expander">
+													<i class="fa fa-angle-up"></i>
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="accordion-10-collapse-5" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-5">
+										<div class="accordion-content pt-30">
+											<p>Thanks to professional voice acting, masterful sound design, and a dynamic script, you'll feel like you're walking through living history. The streets of Lisbon become your theater, where past meets present in an engaging performance.</p>
+										</div>
+									</div>
+								</div>
+			
+								<div class="accordion-item panel mb-3">
+									<div class="accordion-heading" role="tab" id="accordion-10-heading-6">
+										<h4 class="accordion-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-6" aria-expanded="false" aria-controls="accordion-10-collapse-6">
+												Who is this tour suitable for?
+												<span class="accordion-expander">
+													<i class="fa fa-angle-up"></i>
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="accordion-10-collapse-6" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-6">
+										<div class="accordion-content pt-30">
+											<p>This tour is recommended for visitors aged 16+ due to historical content, wine tasting references, and some mildly spooky elements. It's perfect for history enthusiasts who prefer entertainment over dry facts, culture lovers seeking authentic local insights, photography enthusiasts looking for unique perspectives, food and wine aficionados interested in local recommendations, and anyone wanting to explore Lisbon beyond the typical tourist experience.</p>
+										</div>
+									</div>
+								</div>
+			
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			
+			<section id="services" class="vc_row pt-90 pb-90 bg-no-repeat" style="background-image: url(./assets/bg-77.svg); background-position: 500% 0%;">
+				<div class="container">
+
+					<div class="row d-flex flex-wrap align-items-center">
+
+						<div
+						class="lqd-column col-md-5 mb-30"
+						data-custom-animations="true"
+						data-ca-options='{"triggerHandler":"inview", "animationTarget":"all-childs", "duration":"1600", "delay":"160", "easing":"easeOutQuint", "direction":"forward", "initValues":{"translateY":30, "opacity":0}, "animations":{"translateY":0, "opacity":1}}'>
+							
+							<header class="fancy-title pr-md-4">
+								<h6 class="text-uppercase">On your phone</h6>
+								<h2><strong>PREMIUM</strong> DIGITAL EXPERIENCE</h2>
+							</header>
+
+							<p class="font-size-18 lh-15 mb-55">
+								Control your own experience on your phone
+							</p>
+
+							
+
+							<div class="liquid-img-container-inner will-change">
+								<figure>
+									<img src="./screen.jpg" style="border-radius: 10px;" alt="Screen">
+								</figure>
+							</div>
+
+
+							
+
+						</div><!-- /.lqd-column col-md-5 -->
+
+						<div
+						class="lqd-column col-md-3 col-md-offset-1"
+						>
+
+							<div
+							class="lqd-column-inner"
+							data-parallax="true"
+							data-parallax-from='{"translateY":-30}'
+							data-parallax-to='{"translateY":120}'
+							data-parallax-options='{"duration":"2000", "easing":"linear", "reverse":true, "triggerHook":"onEnter", "overflowHidden": false}'>
+
+								<div class="iconbox text-left iconbox-round iconbox-lg iconbox-filled iconbox-filled iconbox-filled-hover iconbox-icon-image iconbox-shadow pt-50 pb-40">
+									<div class="iconbox-icon-wrap">
+										<span class="iconbox-icon-container mb-35">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42.375" height="45.188" viewBox="0 0 42.375 45.188">
+												<defs>
+													<filter id="filter-seo-icon-4" x="0.813" y="0" width="42.375" height="45.188" filterUnits="userSpaceOnUse">
+														<feImage preserveAspectRatio="none" x="0.8125" y="0" width="42.375" height="45.188" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDIuMzc1IiBoZWlnaHQ9IjQ1LjE4OCIgdmlld0JveD0iMCAwIDQyLjM3NSA0NS4xODgiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6IHVybCgjbGluZWFyLWdyYWRpZW50KTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB5MT0iMjIuNTk0IiB4Mj0iNDIuMzc1IiB5Mj0iMjIuNTk0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZlNTA2YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmYzZhMmEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjQyLjM3NSIgaGVpZ2h0PSI0NS4xODgiLz4KPC9zdmc+Cg==" />
+														<feComposite result="composite" operator="in" in2="SourceGraphic" />
+														<feBlend result="blend" in2="SourceGraphic" />
+													</filter>
+												</defs>
+												<path filter="" d="
+												m7.53 5.33-.54-.81c-.49.33-.94.7-1.35 1.12l.68.69h.01c.38-.39.78-.72 1.2-1ZM4.14 13.57l-.97.19c.11.58.28 1.14.51 1.69l.89-.37c-.19-.48-.34-.98-.43-1.51ZM5.32 7.54l-.8-.53c-.31.46-.58.95-.81 1.48-.01.02-.02.05-.03.07l.89.36c.2-.49.45-.94.75-1.38ZM4 11.97l.02-.47c0-.11 0-.23.03-.34.01-.25.04-.49.08-.72l-.96-.19C3.05 10.82 3 11.4 3 12h1v-.03ZM4.52 17c.32.5.7.95 1.11 1.37l.69-.69a7.56 7.56 0 0 1-1-1.21l-.8.53ZM8.92 4.57c.48-.19.98-.34 1.51-.43l-.19-.97c-.58.11-1.14.29-1.69.52l.37.88ZM20.83 10.25c-.11-.58-.29-1.15-.52-1.69-.01-.02-.02-.05-.03-.07-.23-.53-.5-1.03-.8-1.49A9.1 9.1 0 0 0 17 4.52c-.46-.3-.96-.57-1.49-.8-.02-.01-.05-.02-.07-.03-.54-.23-1.11-.41-1.69-.52A9.19 9.19 0 0 0 12 3v1.02h.5c.37.01.72.05 1.06.12.53.09 1.03.24 1.51.43.49.2.95.45 1.39.76.43.28.83.62 1.21 1s.72.78 1 1.21c.31.44.56.89.76 1.38.19.49.34.99.43 1.52.07.34.11.69.12 1.06v1c-.01.37-.05.72-.12 1.07-.09.53-.24 1.03-.43 1.51-.2.49-.45.95-.76 1.39-.28.42-.61.82-1 1.2-.38.39-.78.73-1.21 1.01l-.01.01c-.43.3-.89.55-1.38.74-.35.14-.71.25-1.08.33-.14.05-.28.08-.43.11-.09.02-.19.03-.29.04l-.23.03c-.34.05-.69.07-1.05.07-.36 0-.69-.02-1.03-.07a7.22 7.22 0 0 1-.49-.07.355.355 0 0 0-.1-.02c-.51-.09-.99-.24-1.45-.42-.16-.06-.3-.16-.46-.24l1.31-.5-.36-.93-2.04.78-.82.31 1.1 2.85.93-.35-.48-1.25c.13.06.25.14.38.19.02.01.05.02.07.03.55.23 1.11.4 1.69.51.57.12 1.16.17 1.76.17.6 0 1.18-.05 1.75-.17.58-.1 1.15-.28 1.69-.5 0 0 .05-.03.07-.04a8.41 8.41 0 0 0 1.48-.8c.5-.33.95-.71 1.37-1.12a9.1 9.1 0 0 0 1.12-1.36c.3-.46.57-.96.8-1.49.01-.03.02-.05.03-.08.23-.54.41-1.1.52-1.68a9.19 9.19 0 0 0 0-3.51Z
+												" transform="scale(2.3, 2.3)  translate(-2, -2)" fill="#2D2F61" />
+											</svg>
+										</span>
+									</div><!-- /.iconbox-icon-wrap -->
+									<div class="contents">
+										<h3>Duration</h3>
+										<p class="font-size-16 lh-165">Audio tour is designed for 2 hours</p>
+									</div><!-- /.contents -->
+								</div><!-- /.iconbox -->
+	
+								<div class="iconbox text-left iconbox-round iconbox-lg iconbox-filled iconbox-filled iconbox-filled-hover iconbox-icon-image iconbox-shadow pt-50 pb-40">
+									<div class="iconbox-icon-wrap">
+										<span class="iconbox-icon-container mb-35">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="42.375" viewBox="0 0 48 42.375">
+												<defs>
+													<filter id="filter-seo-icon-6" x="0" y="0.813" width="48" height="42.375" filterUnits="userSpaceOnUse">
+														<feImage preserveAspectRatio="none" x="0" y="0.8125" width="48" height="42.375" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDgiIGhlaWdodD0iNDIuMzc1IiB2aWV3Qm94PSIwIDAgNDggNDIuMzc1Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudCk7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeTE9IjIxLjE4OCIgeDI9IjQ4IiB5Mj0iMjEuMTg4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZlNTA2YyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmYzZhMmEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQyLjM3NSIvPgo8L3N2Zz4K" />
+														<feComposite result="composite" operator="in" in2="SourceGraphic" />
+														<feBlend result="blend" in2="SourceGraphic" />
+													</filter>
+												</defs>
+												<path filter="" 
+												d="
+												M9 20.5a3.372 3.372 0 0 1-2.475-1.025A3.372 3.372 0 0 1 5.5 17V8.475a3.399 3.399 0 0 1-1.438-.988A2.238 2.238 0 0 1 3.5 6c0-.7.242-1.292.725-1.775C4.708 3.742 5.3 3.5 6 3.5s1.292.242 1.775.725C8.258 4.708 8.5 5.3 8.5 6c0 .55-.187 1.046-.562 1.487a3.399 3.399 0 0 1-1.438.988V17c0 .683.246 1.27.738 1.762A2.403 2.403 0 0 0 9 19.5c.683 0 1.27-.246 1.762-.738A2.403 2.403 0 0 0 11.5 17V7c0-.967.342-1.792 1.025-2.475A3.372 3.372 0 0 1 15 3.5c.967 0 1.792.342 2.475 1.025A3.372 3.372 0 0 1 18.5 7v8.525a3.403 3.403 0 0 1 1.438.987c.375.442.562.938.562 1.488 0 .7-.242 1.292-.725 1.775-.483.483-1.075.725-1.775.725s-1.292-.242-1.775-.725C15.742 19.292 15.5 18.7 15.5 18c0-.55.187-1.05.562-1.5.375-.45.855-.775 1.438-.975V7c0-.683-.246-1.271-.737-1.763A2.408 2.408 0 0 0 15 4.5c-.683 0-1.27.246-1.762.737A2.406 2.406 0 0 0 12.5 7v10c0 .967-.342 1.792-1.025 2.475A3.372 3.372 0 0 1 9 20.5Zm-3-13c.417 0 .77-.146 1.062-.438.292-.291.438-.645.438-1.062 0-.417-.146-.77-.438-1.062A1.444 1.444 0 0 0 6 4.5c-.417 0-.77.146-1.062.438A1.444 1.444 0 0 0 4.5 6c0 .417.146.77.438 1.062.291.292.645.438 1.062.438Zm12 12c.417 0 .77-.146 1.062-.438.292-.291.438-.645.438-1.062 0-.417-.146-.77-.438-1.062A1.444 1.444 0 0 0 18 16.5c-.417 0-.77.146-1.062.438A1.444 1.444 0 0 0 16.5 18c0 .417.146.77.438 1.062.291.292.645.438 1.062.438Z
+												" transform="scale(2.3, 2.3) translate(-2, -2)" fill="#2D2F61" />
+											</svg>
+										</span>
+									</div><!-- /.iconbox-icon-wrap -->
+									<div class="contents">
+										<h3>Route</h3>
+										<p class="font-size-16 lh-165">Route lenth of historical mystic tour is 5 km</p>
+									</div><!-- /.contents -->
+								</div><!-- /.iconbox -->
+								
+							</div><!-- /.lqd-column-inner -->
+
+						</div><!-- /.lqd-column col-md-3 -->
+
+						<div class="lqd-column col-md-3">
+
+							<div
+							class="lqd-column-inner"
+							data-parallax="true"
+							data-parallax-from='{"translateY":50}'
+							data-parallax-to='{"translateY":-130}'
+							data-parallax-options='{"duration":"2000", "easing":"linear", "reverse":true, "triggerHook":"onEnter", "overflowHidden": false}'>
+
+								<div class="iconbox text-left iconbox-round iconbox-lg iconbox-filled iconbox-filled iconbox-filled-hover iconbox-icon-image iconbox-shadow pt-50 pb-40">
+									<div class="iconbox-icon-wrap">
+										<span class="iconbox-icon-container mb-35">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31.219" height="48" viewBox="0 0 31.219 48">
+												<defs>
+													<filter id="filter-seo-icon-5" x="0.344" y="0" width="31.219" height="48" filterUnits="userSpaceOnUse">
+														<feImage preserveAspectRatio="none" x="0.34375" y="0" width="31.219" height="48" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzEuMjE5IiBoZWlnaHQ9IjQ4IiB2aWV3Qm94PSIwIDAgMzEuMjE5IDQ4Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudCk7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeTE9IjI0IiB4Mj0iMzEuMjE5IiB5Mj0iMjQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmU1MDZjIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZjNmEyYSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMzEuMjE5IiBoZWlnaHQ9IjQ4Ii8+Cjwvc3ZnPgo=" />
+														<feComposite result="composite" operator="in" in2="SourceGraphic" />
+														<feBlend result="blend" in2="SourceGraphic" />
+													</filter>
+												</defs>
+												<path filter="" d="
+												M21 15.535v2c0 .4-.1.8-.4 1.1-.3.3-.7.4-1.1.4H19v-6c0-1-.2-1.9-.5-2.7 0-.1-.1-.2-.1-.3.1.9.1 2.3-1 1.5-1.1-.8-2-3.6-2-3.6-1 1.3-5.5 2.1-7.6 2.5-.8.1-1.5-.2-2-.7-.1.2-.2.3-.2.5-.4.9-.6 1.8-.6 2.7v6h-.5c-.4 0-.8-.2-1.1-.4-.3-.3-.4-.6-.4-1v-2c0-.3.1-.5.3-.8.2-.2.4-.5.7-.6v-1.3c0-1.1.3-2.1.7-3 .1-.3.3-.6.5-.9-.1-.2-.1-.4-.1-.6v-.7c0-1.2 2-1.6 2.8-1.7.1 0 .1-.1 0-.1-1.3-.4-1.6-1.1-1.6-1.1s2-2 7.4.6c.1.1.2.1.4.2 0 0 .1 0 .1-.1-.1-.2-.2-.5.1-.6.3-.2.5.4.6.6 0 .1.1.1.2 0 .3-.3.9-1 .7-.3-.2.6-.4.7-.5.8.5.2.9.5 1.3.8l.7.7c.7.7 1.3 1.5 1.7 2.5.4.9.7 2 .7 3v1.3c.3.2.5.4.7.6.5.1.6.4.6.7Z
+												" transform="scale(2, 2) translate(-2, -2)" fill="#2D2F61"/>
+											</svg>
+										</span>
+									</div><!-- /.iconbox-icon-wrap -->
+									<div class="contents">
+										<h3>Full control</h3>
+										<p class="font-size-16 lh-165">Tour is designed to do in your own rythm</p>
+									</div><!-- /.contents -->
+								</div><!-- /.iconbox -->
+
+								<div class="iconbox text-left iconbox-round iconbox-lg iconbox-filled iconbox-filled iconbox-filled-hover iconbox-icon-image iconbox-shadow pt-50 pb-40">
+									<div class="iconbox-icon-wrap">
+										<span class="iconbox-icon-container mb-35">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="36.75" viewBox="0 0 48 36.75">
+												<defs>
+													<filter id="filter-seo-icon-7" x="0" y="0.625" width="48" height="36.75" filterUnits="userSpaceOnUse">
+														<feImage preserveAspectRatio="none" x="0" y="0.625" width="48" height="36.75" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDgiIGhlaWdodD0iMzYuNzUiIHZpZXdCb3g9IjAgMCA0OCAzNi43NSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogdXJsKCNsaW5lYXItZ3JhZGllbnQpOwogICAgICB9CiAgICA8L3N0eWxlPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJsaW5lYXItZ3JhZGllbnQiIHkxPSIxOC4zNzUiIHgyPSI0OCIgeTI9IjE4LjM3NSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZTUwNmMiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmM2YTJhIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCBjbGFzcz0iY2xzLTEiIHdpZHRoPSI0OCIgaGVpZ2h0PSIzNi43NSIvPgo8L3N2Zz4K" />
+														<feComposite result="composite" operator="in" in2="SourceGraphic" />
+														<feBlend result="blend" in2="SourceGraphic" />
+													</filter>
+												</defs>
+												<path filter="" d="
+												m17.7 14.475-.725-.725c.267-.217.483-.475.65-.775.167-.3.25-.625.25-.975s-.083-.675-.25-.975a2.645 2.645 0 0 0-.65-.775l.725-.725c.35.333.633.708.85 1.125.217.417.325.867.325 1.35 0 .483-.108.933-.325 1.35a4.26 4.26 0 0 1-.85 1.125Zm2.15 2.125-.725-.7a5.362 5.362 0 0 0 1.187-1.787c.275-.675.413-1.38.413-2.113 0-.733-.138-1.438-.413-2.113A5.362 5.362 0 0 0 19.125 8.1l.725-.7c.6.6 1.063 1.3 1.388 2.1.325.8.487 1.633.487 2.5s-.162 1.7-.487 2.5c-.325.8-.788 1.5-1.388 2.1ZM7.625 22c-.45 0-.833-.158-1.15-.475A1.566 1.566 0 0 1 6 20.375V3.625c0-.45.158-.833.475-1.15.317-.317.7-.475 1.15-.475h8.75c.45 0 .833.158 1.15.475.317.317.475.7.475 1.15v3.3h-1V5.5H7v13h10v-1.425h1v3.3c0 .45-.158.833-.475 1.15-.317.317-.7.475-1.15.475h-8.75ZM7 19.5v.875c0 .167.063.312.188.437s.27.188.437.188h8.75a.597.597 0 0 0 .437-.188.597.597 0 0 0 .188-.437V19.5H7Zm0-15h10v-.875a.597.597 0 0 0-.188-.437.597.597 0 0 0-.437-.188h-8.75a.597.597 0 0 0-.437.188.597.597 0 0 0-.188.437V4.5Zm0 15V21v-1.5Z
+												" transform="scale(2, 2) translate(-2, -2)"  fill="#2D2F61" />
+											</svg>
+										</span>
+									</div><!-- /.iconbox-icon-wrap -->
+									<div class="contents">
+										<h3>Personal tour on your smartphone</h3>
+										<p class="font-size-16 lh-165">Audio tour on your smartphone</p>
+									</div><!-- /.contents -->
+								</div><!-- /.iconbox -->
+
+							</div><!-- /.lqd-column-inner -->
+
+						</div><!-- /.lqd-column col-md-3 -->
+
+					</div><!-- /.row -->
+
+					<br><br>
+					<a href="https://app.ccetours.com/" target="_blank" class="btn btn-solid circle font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2">
+						<span>
+							<span class="btn-txt">Start Your Journey</span>
+							<span class="btn-icon">
+								<i class="fa fa-angle-right"></i>
+							</span>
+						</span>
+					</a>
+
+
+				</div><!-- /.container -->
+			</section><!-- /.vc_row pt-90 pb-90 -->
+
+			
+			<section class="vc_row pt-150 pb-75">
+				<div class="container">
+					<div class="row d-flex flex-wrap align-items-center mb-5" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview","animationTarget":".split-inner","duration":700,"startDelay":"180","delay":100,"easing":"easeOutQuint","direction":"forward","initValues":{"translateY":50,"opacity":0},"animations":{"translateY":0,"opacity":1}}'>
+
+						<div class="lqd-column col-lg-5">
+							<header class="fancy-title mb-40">
+								<h6 class="font-size-13 text-uppercase ltr-sp-05">Gossip to Your Heart's Content!</h6>
+								<h2 class="mt-4 pr-lg-6" data-split-text="true" data-split-options='{"type": "lines"}'>This project was designed to help visitors discover Lisbon and enjoy their time.</h2>
+							</header>
+						</div><!-- /.col-lg-5 -->
+
+						<div class="lqd-column col-lg-7">
+							<p>This project was designed to help visitors discover Lisbon and enjoy their time. The foundation was a meticulously planned real tour that a team of professionals transformed into an immersive theatrical experience.</p>
+							<p>With humor and authenticity, the resurrected King José will share spicy tales about the lives of aristocrats and commoners. You'll become an active participant in this theatrical presentation - a medieval fairy tale in your headphones. The tour features excellent voice acting by professional actors, musical accompaniment, and special effects.</p>
+							<p>Thanks to the tour's flexible format, you remain completely mobile. Feel free to pause for a leisurely lunch at any restaurant that catches your eye along the carefully planned route, or take memorable photos of unique locations. Our performance is designed for individual use - you won't depend on anyone else and can follow your own preferences and tastes.</p>
+							<p>Explore the city at your own pace, both educational and fun!</p>
+						</div><!-- /.col-lg-7 -->
+					</div><!-- /.row -->
+
+					<div class="row">
+						<div class="lqd-column col-md-12">
+							<h3>Detailed Route Description</h3>
+							<p>The Color of Lisbon is Blue!</p>
+							<p>We begin our walk in a square where the restless souls of beautiful women executed for witchcraft still wander. You'll learn who protects Lisbon and who granted Brazil its independence.</p>
+							<p>José will show you the finest examples of architectural style born in Portugal during the Age of Discovery - beautiful facades adorned with stone lacework that will transport you centuries back in time.</p>
+							<p>Our ghost guide will reveal the secret of a popular Portuguese dessert still hidden from prying eyes by monks today. He'll show you an remarkable spot that perfectly illustrates the Arab world's influence on local culture.</p>
+							<p>Over a glass of cherry liqueur, he'll tell you about modern Lisbon residents' lives and traditions. You'll visit a mysterious church with pink marble walls bearing traces of an incredibly destructive fire - an unforgettable sight.</p>
+							<p>You'll learn about the mysterious queen who was placed on the throne after death, whose lifeless hand subjects kissed in reverence.</p>
+							<p>Add some heroic battles illustrated on blue azulejo panels, a walk through medieval streets in one of the city's oldest districts, a pinch of local legends, detailed descriptions of local dishes, and guidance on which wines to order in our taverns.</p>
+							<p>Have you heard about fado? Did you know that Portuguese fado was originally sung by the homeless, bandits, and women of questionable reputation? Would you like to listen?</p>
+							<p>During our walk, we'll climb to the castle's base, visit the best viewpoints, taste local delicacies, receive recommendations about which souvenirs to buy as gifts, and learn what the "black rooster" in the souvenir shop means.</p>
+							<p>We'll end our walk at one of Europe's most beautiful squares. José will bid you farewell on the banks of the Tagus River. While one could talk endlessly about Lisbon and Portugal, José has selected the most intriguing and interesting moments to share during this two-hour walk.</p>
+						</div><!-- /.col-md-12 -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</section>
+
+			<section class="vc_row pt-95 pb-80 mt-80 bg-cover" id="buy" style="background-image: url(./bg-catch-app.jpg);" data-parallax="true" data-parallax-options='{"parallaxBG": true}'>
+				<div class="container">
+					<div class="row">
+	
+						<div class="lqd-column col-md-8">
+	
+							<div class="ld-fancy-heading mask-text">
+								<h2
+									class="text-white"
+									data-fittext="true"
+									data-fittext-options='{"compressor":0.55, "maxFontSize": 45, "minFontSize":35 }'
+									data-split-text="true"
+									data-custom-animations="true"
+									data-ca-options='{"triggerHandler":"inview","animationTarget":".split-inner","duration":700,"delay":100,"easing":"easeOutQuint","direction":"forward","initValues":{"translateY":84,"rotateZ":10},"animations":{"translateY":0,"rotateZ":0}}'
+									data-split-options='{"type":"lines"}'>
+									<span class="ld-fh-txt">
+										Forget the usual routes!<br />
+										<span style="font-size: 16px;">Let Lisbon whisper its secrets just to you. Awaken the explorer, the romantic, and the actor within!</span>
+									</span>
+								</h2>
+							</div><!-- /.ld-fancy-heading -->
+	
+						</div><!-- /.col-md-8 -->
+	
+						<div class="lqd-column col-md-3 col-md-offset-1 text-center">
+							
+							<a href="https://app.ccetours.com/" style="border: 1px solid #fff;" target="_blank" class="btn btn-solid circle font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2">
+								<span>
+									<span class="btn-txt">Begin Your Journey</span>
+									<span class="btn-icon">
+										<i class="fa fa-angle-right"></i>
+									</span>
+								</span>
+							</a>
+	
+							<div class="ld-fancy-heading mt-3">
+								<p
+									class="text-white opacity-07"
+									data-split-text="true"
+									data-custom-animations="true"
+									data-ca-options='{"triggerHandler":"inview","animationTarget":".split-inner","duration":700,"delay":100,"easing":"easeOutQuint","direction":"forward","initValues":{"scale":1},"animations":{"scale":1}}' data-split-options='{"type":"lines"}'>
+									<span class="ld-fh-txt">Open Tour App</span>
+								</p>
+							</div><!-- /.ld-fancy-heading -->
+	
+						</div><!-- /.col-md-3 -->
+	
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</section>
+			
+			<section class="vc_row pt-100 pb-100">
+				<div class="container">
+					<div class="row">
+
+						<div class="lqd-column col-md-6">
+
+							<div class="iconbox iconbox-side iconbox-circle iconbox-sm iconbox-icon-linked iconbox-heading-xs mb-50">
+								<div class="iconbox-icon-wrap">
+									<span class="iconbox-icon-container">
+										<span class="iconbox-icon-hover-bg bg-dark"></span>
+										<i class="icon-num-1"></i>
+									</span>
+								</div><!-- /.iconbox-icon-wrap -->
+								<div class="contents">
+									<h3 class="font-weight-semibold">IMMERSIVE JOURNEY</h3>
+									<p>Forget the boundaries between reality and art—step into an experience that will stay with you forever. Let Lisbon tell its story just for you.</p>
+								</div><!-- /.contents -->
+							</div><!-- /.iconbox -->
+
+							<div class="iconbox iconbox-side iconbox-circle iconbox-sm iconbox-icon-linked iconbox-heading-xs mb-50">
+								<div class="iconbox-icon-wrap">
+									<span class="iconbox-icon-container">
+										<span class="iconbox-icon-hover-bg bg-dark"></span>
+										<i class="icon-num-2"></i>
+									</span>
+								</div><!-- /.iconbox-icon-wrap -->
+								<div class="contents">
+									<h3 class="font-weight-semibold">STEP INTO HISTORY
+									</h3>
+									<p>Ready to take a walk where every step is a new scene in a grand historical play?
+
+									</p>
+								</div><!-- /.contents -->
+							</div><!-- /.iconbox -->
+
+							<div class="iconbox iconbox-side iconbox-circle iconbox-sm iconbox-icon-linked iconbox-heading-xs mb-50">
+								<div class="iconbox-icon-wrap">
+									<span class="iconbox-icon-container">
+										<span class="iconbox-icon-hover-bg bg-dark"></span>
+										<i class="icon-num-3"></i>
+									</span>
+								</div><!-- /.iconbox-icon-wrap -->
+								<div class="contents">
+									<h3 class="font-weight-semibold">LIVING THEATER
+									</h3>
+									<p>Let Lisbon guide you through the stages of its eternal performance.
+
+									</p>
+								</div><!-- /.contents -->
+							</div><!-- /.iconbox -->
+
+						</div><!-- /.lqd-column col-md-6 -->
+						
+						<div class="lqd-column col-md-6 text-md-right">
+
+							<figure>
+								<img src="./image_alfama.jpg" style="border-radius: 10px;" alt="CCE tour">
+							</figure>
+
+						</div><!-- /.lqd-column col-md-6 -->
+
+					</div><!-- /.row -->
+<br><br>
+					<a href="https://app.ccetours.com/" target="_blank" class="btn btn-solid circle font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2">
+						<span>
+							<span class="btn-txt">Start Your Journey</span>
+							<span class="btn-icon">
+								<i class="fa fa-angle-right"></i>
+							</span>
+						</span>
+					</a>
+					
+
+					<div class="lqd-space visible-lg visible-md- mb-200"></div>
+
+					<div id="works" class="row" style="margin-top: 80px;">
+
+						<div class="lqd-column col-md-12">
+
+							<div class="liquid-portfolio-list">
+
+								<div class="row d-flex flex-wrap align-items-end mb-40">
+									<div class="col-md-6">
+										<header class="fancy-title mb-0">
+											<h6 class="text-uppercase">Spots</h6>
+											<h2><strong>From the</strong> tour</h2>
+										</header>
+									</div><!-- /.col-md-6 -->
+								</div><!-- /.row -->
+
+								<div
+								class="row liquid-portfolio-list-row"
+								data-liquid-masonry="true"
+								data-masonry-options='{ "filtersID": "#seo-pf-grid" }'
+								data-custom-animations="true"
+								data-ca-options='{"triggerHandler":"inview","animationTarget":".ld-pf-item","animateTargetsWhenVisible":"true","duration":"1600","delay":"160","easing":"easeOutQuint","initValues":{"translateY":65,"opacity":0},"animations":{"translateY":0,"opacity":1}}'>
+
+									<div class="col-md-4 col-sm-6 col-xs-12 masonry-item branding digital-design grid-hover-overlay">
+										<article class="ld-pf-item ld-pf-dark pf-bg-shadow pf-details-visible pf-details-boxed pf-details-pull-right pf-details-pull-up-half title-size-24 pf-details-h-str pf-details-v-end post-2021 liquid-portfolio type-liquid-portfolio status-publish format-gallery has-post-thumbnail hentry post_format-post-format-gallery liquid-portfolio-category-branding liquid-portfolio-category-digital-design liquid-portfolio-category-grid-hover-overlay">
+											<div class="ld-pf-inner">
+												<div class="ld-pf-image">
+													<figure data-responsive-bg="true" data-parallax="true" data-parallax-options='{ "parallaxBG": true }'>
+														<img src="./assets/photos/photo_1.jpg" alt="Oblivision" />
+													</figure>
+												</div><!-- /.ld-pf-image -->
+												<div class="ld-pf-details py-3">
+													<div class="ld-pf-bg" style="background-color: #fff;" data-custom-animations="true"
+														data-ca-options='{ "triggerHandler": "mouseenter", "triggerTarget": ".ld-pf-item", "triggerRelation": "closest", "offTriggerHandler": "mouseleave", "animationTarget": "this", "easing": "easeInOutCirc", "duration": 850, "offDuration": 700, "initValues": { "translateY": 0 }, "animations": { "translateY": -70 } }'>
+													</div>
+													<div class="ld-pf-details-inner" data-custom-animations="true"
+														data-ca-options='{ "triggerHandler": "mouseenter", "triggerTarget": ".ld-pf-item", "triggerRelation": "closest", "offTriggerHandler": "mouseleave", "animationTarget": ".split-inner", "easing": "easeOutQuint", "duration": 850, "offDuration": 750, "startDelay": 280, "offDelay": 280, "delay": 60, "initValues": { "translateY": 0 }, "animations": { "translateY": -70 } }'>
+														<p data-split-text="true" data-split-options='{ "type": "lines" }'>Commerce square</p>
+													</div>
+												</div>
+												<a href="#" class="liquid-overlay-link"></a>
+											</div><!-- /.ld-pf-inner -->
+										</article>
+									</div><!-- /.col-md-4 -->
+
+									<div class="col-md-4 col-sm-6 col-xs-12 masonry-item branding custom-print grid-hover-overlay">
+										<article class="ld-pf-item ld-pf-dark pf-bg-shadow pf-details-visible pf-details-boxed pf-details-pull-right pf-details-pull-up-half title-size-24 pf-details-h-str pf-details-v-end post-2021 liquid-portfolio type-liquid-portfolio status-publish format-gallery has-post-thumbnail hentry post_format-post-format-gallery liquid-portfolio-category-branding liquid-portfolio-category-digital-design liquid-portfolio-category-grid-hover-overlay">
+											<div class="ld-pf-inner">
+												<div class="ld-pf-image">
+													<figure data-responsive-bg="true" data-parallax="true" data-parallax-options='{ "parallaxBG": true }'>
+														<img src="./assets/photos/photo_2.jpg" alt="Lisbon Cathedral" />
+													</figure>
+												</div><!-- /.ld-pf-image -->
+												<div class="ld-pf-details py-3">
+													<div class="ld-pf-bg" style="background-color: #fff;" data-custom-animations="true"
+														data-ca-options='{ "triggerHandler": "mouseenter", "triggerTarget": ".ld-pf-item", "triggerRelation": "closest", "offTriggerHandler": "mouseleave", "animationTarget": "this", "easing": "easeInOutCirc", "duration": 850, "offDuration": 700, "initValues": { "translateY": 0 }, "animations": { "translateY": -70 } }'>
+													</div>
+													<div class="ld-pf-details-inner" data-custom-animations="true"
+														data-ca-options='{ "triggerHandler": "mouseenter", "triggerTarget": ".ld-pf-item", "triggerRelation": "closest", "offTriggerHandler": "mouseleave", "animationTarget": ".split-inner", "easing": "easeOutQuint", "duration": 850, "offDuration": 750, "startDelay": 280, "offDelay": 280, "delay": 60, "initValues": { "translateY": 0 }, "animations": { "translateY": -70 } }'>
+														<!--<h3 class="ld-pf-title h4" data-split-text="true" data-split-options='{ "type": "lines" }'>Lisbon Cathedral</h3>-->
+														<p data-split-text="true" data-split-options='{ "type": "lines" }'>Lisbon Cathedral</p>
+													</div>
+												</div>
+												<a href="#" class="liquid-overlay-link"></a>
+											</div><!-- /.ld-pf-inner -->
+										</article>
+									</div><!-- /.col-md-4 -->
+
+									<div class="col-md-4 col-sm-6 col-xs-12 masonry-item ecommerce grid-hover-overlay">
+										<article class="ld-pf-item ld-pf-dark pf-bg-shadow pf-details-visible pf-details-boxed pf-details-pull-right pf-details-pull-up-half title-size-24 pf-details-h-str pf-details-v-end post-2021 liquid-portfolio type-liquid-portfolio status-publish format-gallery has-post-thumbnail hentry post_format-post-format-gallery liquid-portfolio-category-branding liquid-portfolio-category-digital-design liquid-portfolio-category-grid-hover-overlay">
+											<div class="ld-pf-inner">
+												<div class="ld-pf-image">
+													<figure data-responsive-bg="true" data-parallax="true" data-parallax-options='{ "parallaxBG": true }'>
+														<img src="./assets/photos/photo_3.jpg" alt="Oblivision" />
+													</figure>
+												</div><!-- /.ld-pf-image -->
+												<div class="ld-pf-details py-3">
+													<div class="ld-pf-bg" style="background-color: #fff;" data-custom-animations="true"
+														data-ca-options='{ "triggerHandler": "mouseenter", "triggerTarget": ".ld-pf-item", "triggerRelation": "closest", "offTriggerHandler": "mouseleave", "animationTarget": "this", "easing": "easeInOutCirc", "duration": 850, "offDuration": 700, "initValues": { "translateY": 0 }, "animations": { "translateY": -70 } }'>
+													</div>
+													<div class="ld-pf-details-inner" data-custom-animations="true"
+														data-ca-options='{ "triggerHandler": "mouseenter", "triggerTarget": ".ld-pf-item", "triggerRelation": "closest", "offTriggerHandler": "mouseleave", "animationTarget": ".split-inner", "easing": "easeOutQuint", "duration": 850, "offDuration": 750, "startDelay": 280, "offDelay": 280, "delay": 60, "initValues": { "translateY": 0 }, "animations": { "translateY": -70 } }'>
+														<p data-split-text="true" data-split-options='{ "type": "lines" }'>Alfama</p>
+													</div>
+												</div>
+												<a href="#" class="liquid-overlay-link"></a>
+											</div><!-- /.ld-pf-inner -->
+										</article>
+									</div><!-- /.col-md-4 -->
+
+									
+									
+								</div><!-- /.row -->
+
+							</div><!-- /.liquid-portfolio-list -->
+
+						</div><!-- /.lqd-column col-md-12 -->
+
+					</div><!-- /.row -->
+
+					
+				</div><!-- /.container -->
+			</section>
+
+			<section class="vc_row pt-100 pb-100" id="testimonials">
+				<div class="container">
+					<div class="row">
+	
+						<div class="lqd-column col-lg-4 col-md-12" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview","animationTarget":"all-childs","duration":1200,"delay":160,"initValues":{"translateY":50,"opacity":0},"animations":{"translateY":0,"opacity":1}}'>
+	
+							<header class="fancy-title mb-130">
+	
+								<h6 class="text-uppercase">Feedback</h6>
+								<h2 class="mt-4 mb-4">What our tourists said</h2>
+								<p>We are honored to have such a diverse group of travelers who have embarked on this unforgettable journey with us. Here's what they had to say:
+
+								</p>
+	
+							</header><!-- /.fancy-title -->
+	
+						</div><!-- /.col-lg-4 col-md-12 -->
+	
+						<div class="lqd-column col-lg-7 col-lg-offset-1 col-xs-12 mb-7 mb-md-0">
+	
+							<div class="carousel-container carousel-vertical-3d">
+	
+								<div class="carousel-items">
+		
+									
+									<div class="carousel-item is-active">
+										<div class="testimonial testimonial-whole-filled testimonial-whole-shadowed text-left testimonial-details-sm testimonial-avatar-sm">
+											<div class="testimonial-quote">
+												<blockquote>
+													<p class="font-size-16 lh-185"><b>✯ Amazing experience!</b><br>"This was unlike any tour I've ever taken! The storytelling, the music, the atmosphere—it truly felt like stepping into another world. Highly recommend!"</p>
+												</blockquote>
+											</div>
+											<div class="testimonial-details">
+												<figure class="avatar ">
+													<img src="./assets/demo/testimonials/testi-3.png" alt="Emily R., USA">
+												</figure>
+												<div class="testimonial-info">
+													<h5>Emily R., USA</h5>
+												</div>
+												<time datetime="2025-01-29" class="text-uppercase">Now</time>
+											</div>
+										</div>
+									</div>
+									
+									<div class="carousel-item">
+										<div class="testimonial testimonial-whole-filled testimonial-whole-shadowed text-left testimonial-details-sm testimonial-avatar-sm">
+											<div class="testimonial-quote">
+												<blockquote>
+													<p class="font-size-16 lh-185"><b>🎭 A theatrical adventure</b><br>"The ghost of the king was such a charming and witty guide! The mix of history, humor, and immersive sound design made this walk through Lisbon absolutely magical."</p>
+												</blockquote>
+											</div>
+											<div class="testimonial-details">
+												<figure class="avatar ">
+													<img src="./assets/demo/testimonials/testi-2.png" alt="Carlos M., Spain">
+												</figure>
+												<div class="testimonial-info">
+													<h5>Carlos M., Spain</h5>
+												</div>
+												<time datetime="2025-01-29" class="text-uppercase">Now</time>
+											</div>
+										</div>
+									</div>
+									
+									<div class="carousel-item">
+										<div class="testimonial testimonial-whole-filled testimonial-whole-shadowed text-left testimonial-details-sm testimonial-avatar-sm">
+											<div class="testimonial-quote">
+												<blockquote>
+													<p class="font-size-16 lh-185"><b>📝 History comes alive</b><br>"I usually find historical tours a bit dry, but this was different. The way the past was brought to life with voices and effects was incredible. I felt like I was part of the story!"</p>
+												</blockquote>
+											</div>
+											<div class="testimonial-details">
+												<figure class="avatar ">
+													<img src="./assets/demo/testimonials/testi-2.png" alt="Sophie L., France">
+												</figure>
+												<div class="testimonial-info">
+													<h5>Sophie L., France</h5>
+												</div>
+												<time datetime="2025-01-29" class="text-uppercase">Now</time>
+											</div>
+										</div>
+									</div>
+									
+									<div class="carousel-item">
+										<div class="testimonial testimonial-whole-filled testimonial-whole-shadowed text-left testimonial-details-sm testimonial-avatar-sm">
+											<div class="testimonial-quote">
+												<blockquote>
+													<p class="font-size-16 lh-185"><b>🎧 Perfect for solo travelers</b><br>"Exploring Lisbon at my own pace while listening to such a beautifully crafted audio experience was a dream. I could pause, take photos, and even stop for a glass of wine—just as the ghost suggested!"</p>
+												</blockquote>
+											</div>
+											<div class="testimonial-details">
+												<figure class="avatar ">
+													<img src="./assets/demo/testimonials/testi-4.png" alt="Liam K., UK">
+												</figure>
+												<div class="testimonial-info">
+													<h5>Liam K., UK</h5>
+												</div>
+												<time datetime="2025-01-29" class="text-uppercase">Now</time>
+											</div>
+										</div>
+									</div>
+									
+									<div class="carousel-item">
+										<div class="testimonial testimonial-whole-filled testimonial-whole-shadowed text-left testimonial-details-sm testimonial-avatar-sm">
+											<div class="testimonial-quote">
+												<blockquote>
+													<p class="font-size-16 lh-185"><b>🌍 A must-do in Lisbon</b><br>"If you want to experience the city in a unique way, this tour is a must. It's fun, engaging, and full of surprises. I'll be recommending it to all my friends!"</p>
+												</blockquote>
+											</div>
+											<div class="testimonial-details">
+												<figure class="avatar ">
+													<img src="./assets/demo/testimonials/testi-5.png" alt="Anna S., Germany">
+												</figure>
+												<div class="testimonial-info">
+													<h5>Anna S., Germany</h5>
+												</div>
+												<time datetime="2025-01-29" class="text-uppercase">Now</time>
+											</div>
+										</div>
+									</div>
+	
+								</div><!-- /.carousel-items -->
+	
+							</div><!-- /.carousel-container -->
+	
+						</div><!-- /.col-lg-7 col-lg-offset-1 -->
+	
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</section>
+
+
+
+			
+
+			<section id="pricing" class="vc_row bg-cover pt-60 pb-100" style="background-image: url(./assets/bg-79.svg); background-position: center top;">
+				<div class="container">
+
+					<div class="row">
+
+						<div class="lqd-column col-md-12">
+
+							<header class="fancy-title text-center mb-90">
+								<h6 class="text-uppercase">Audio tour</h6>
+								<h2><strong>ROYAL EXPERIENCE PACKAGE</strong> </h2>
+							</header>
+
+						</div><!-- /.lqd-column col-md-12 -->
+
+					</div><!-- /.row -->
+
+					<div class="row mx-md-0">
+
+
+						<div class="lqd-column col-md-12 px-md-0">
+
+							<div class="pricing-table pricing-table-agency featured">
+								<span class="pricing-table-featured-label font-weight-bold text-uppercase ltr-sp-25"><span>Prices</span></span>
+								<div class="pricing-table-header">
+									<figure class="mb-7 loaded">
+										<img src="./assets/audio_guide.svg" style="width: 200px; height: auto;" alt="Audio guide prices" />
+									</figure>
+									<h5>Tour price</h5>
+									<p class="pricing"><sup>€</sup>24.99</p>
+								</div><!-- /.pricing-table-header -->
+								<div class="pricing-table-body">
+									<ul>
+										<li>Premium audio narration</li>
+										<li>Historical reference materials</li>
+										<li>Curated photography locations</li>
+										<li>Exclusive historical insights</li>
+										<li>Flexible scheduling</li>
+									</ul>
+								</div><!-- /.pricing-table-body -->
+								<div class="pricing-table-footer">
+									<a href="https://app.ccetours.com/" class="btn btn-default text-uppercase btn-sm circle btn-solid border-thin font-size-14 font-weight-bold ltr-sp-05 px-2">
+										<span>
+											<span class="btn-txt">Get started now</span>
+										</span>
+									</a>
+								</div><!-- /.pricing-table-footer -->
+							</div><!-- /.pricing-table -->
+
+						</div><!-- /.lqd-column col-md-4 px-md-0 -->
+
+
+					</div><!-- /.row mx-md-0 -->
+
+					<div class="lqd-space visible-lg visible-md" style="height: 100px;"></div>
+
+					
+
+				</div><!-- /.container -->
+			</section><!-- /.vc_row pt-50 pb-100 -->
+
+			<section class="vc_row pb-100" id="contact-us">
+				<div class="container">
+					<div class="row">
+						<div class="lqd-column col-md-12 px-4 pt-45 pb-30 bg-white box-shadow-1">
+							<div class="row d-flex flex-wrap align-items-center">
+								<div class="lqd-column col-md-6 col-md-offset-1">
+									<header class="fancy-title">
+										<h2>Drop us a line</h2>
+										<p>We are here to answer any question you may have</p>
+									</header>
+								</div>
+							</div>
+							<div class="row">
+								<div class="lqd-column col-md-10 col-md-offset-1">
+									<div class="contact-form">
+										<form id="contactForm">
+											<div class="row d-flex flex-wrap">
+												<div class="lqd-column col-md-6 mb-20">
+													<input class="lh-20 mb-25" type="text" id="name" name="name" placeholder="First Name" required>
+													<input class="lh-20 mb-25" type="email" id="email" name="email" placeholder="Your email address" required>
+												</div>
+												<div class="lqd-column col-md-6 mb-20">
+													<textarea id="message" name="message" cols="10" style="line-height: 1.9;" rows="3" placeholder="Message" required></textarea>
+												</div>
+												<div class="lqd-column col-md-6">
+													<p><em>We all know how important your information is. They are always safe with us.</em></p>
+												</div>
+												<div class="lqd-column col-md-6 text-md-right">
+													<button type="submit">Send message</button>
+												</div>
+											</div>
+										</form>
+										<div id="responseMessage"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<script>
+				document.getElementById("contactForm").addEventListener("submit", async function (e) {
+					e.preventDefault();
+					let formData = {
+						name: document.getElementById("name").value,
+						email: document.getElementById("email").value,
+						message: document.getElementById("message").value
+					};
+					let responseDiv = document.getElementById("responseMessage");
+					try {
+						let response = await fetch("https://app.ccetours.com/.netlify/functions/sendEmail", {
+							method: "POST",
+							headers: { "Content-Type": "application/json" },
+							body: JSON.stringify(formData)
+						});
+						let result = await response.json();
+						if (result.success) {
+							responseDiv.innerHTML = "<p style='color: green;'>Message sent successfully!</p>";
+						} else {
+							responseDiv.innerHTML = "<p style='color: red;'>Error sending message.</p>";
+						}
+					} catch (error) {
+						responseDiv.innerHTML = "<p style='color: red;'>Failed to send. Try again later.</p>";
+					}
+				});
+			</script>
+			
+		</main><!-- /#content.content -->
+		
+		<footer class="main-footer pb-70">
+			
+			
+			<section class="vc_row pt-60">
+				<div class="container">
+					<div class="row d-flex flex-wrap align-items-center">
+
+						<div class="lqd-column col-md-6 d-flex flex-wrap align-items-center">
+
+							<figure class="mr-3">
+								<img style="height: 40px;" src="./logo.png" alt="Walk and  Logo">
+							</figure>
+
+							<p class="font-size-16 my-0">© 2024 - 2025 <span class="text-secondary font-weight-bold">CCE | Cultural Connoisseurs Experience</span>.</p>
+							
+						</div><!-- /.lqd-column col-md-6 -->
+						
+						<div class="lqd-column col-md-5 text-md-right">
+							
+							<ul class="social-icon social-icon-md mb-25">
+								<!--<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>-->
+							</ul>
+
+						</div><!-- /.lqd-column col-md-5 -->
+
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</section><!-- /.vc_row -->
+			
+		</footer><!-- /.main-footer -->
+	
+</div><!-- /#wrap -->
+
+<script src="./assets/vendors/jquery.min.js"></script>
+<script src="./assets/js/theme-vendors.js"></script>
+<script src="./assets/js/theme.min.js"></script>
+<script src="./assets/js/liquidAjaxMailchimp.min.js"></script>
+
+</body>
+</html>
